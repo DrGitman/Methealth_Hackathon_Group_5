@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="her">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Okwatula kwa HIV</title>
+  <style>
+    :root {
+      --primary: #e63946;
+      --secondary: #f1a9a0;
+      --bg-light: #fff5f5;
+      --text-dark: #333;
+      --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: var(--bg-light);
+      font-family: var(--font-sans);
+      color: var(--text-dark);
+      margin: 0;
+      padding: 20px;
+    }
+    .document {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      border-bottom: 3px solid var(--primary);
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+      color: var(--primary);
+    }
+    header img.logo {
+      height: 40px;
+      width: auto;
+      order: 2;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    .section h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .section p {
+      margin: 0 0 20px 0;
+      line-height: 1.6;
+    }
+    .symptom {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .symptom img {
+      width: 60px;
+      height: 60px;
+      margin-right: 15px;
+      border-radius: 4px;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="document">
+    <header>
+      <h1>Okwatula kwa HIV</h1>
+      <img class="logo" src="data:image/jpeg;base64,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" alt="HIV Inclusive logo"></header>
+
+    <div class="section" id="what-is-hiv">
+      <h2>Otjiwa ke HIV?</h2>
+      <p>HIV (Omavirusi gokunhepera omasistimu gOmuvihuri gwa muntu) okuhehera omasistimu gOmukalo ga CD4 seli, nokutileka omuviri wokuzepisika marwadho. Nga ta tjererwa, HIV ohinga oku nyenka VIG (Omuhehuka gwOmasistimu ga muntu).</p>
+    </div>
+
+    <div class="section" id="symptoms">
+      <h2>Eemaongo gOnawa?</h2>
+      <p>Eemaongo gayi ongombe mwana di nawa oteya okwa: </p>
+      <div class="symptom">
+        <p><strong>Oluheha.</strong> Omuhovi gwo mevhe nookwavoha moshepe.</p>
+      </div>
+      <div class="symptom">
+        <p><strong>Osumurai.</strong> Opo nekomwa nooruheha.</p>
+      </div>
+      <div class="symptom">
+        <p><strong>Omukondo noomutumbo gawomakungo.</strong> Okuheha omuviri.</p>
+      </div>
+      <div class="symptom">
+        <p><strong>Omutumba.</strong> Ompopa gwomururu, ogupondwa omu ndjo.</p>
+      </div>
+      <div class="symptom">
+        <p><strong>Omulungu nomashonesho omuhumeni.</strong></p>
+      </div>
+      <div class="symptom">
+        <p><strong>Omatumba gOmalogo.</strong> Omatumba omu mutwe, okupireka noomu mbale.</p>
+      </div>
+      <div class="symptom">
+        <p><strong>Okucala.</strong> Okuhwemera omudjila.</p>
+      </div>
+      <div class="symptom">
+        <p><strong>Okutematja.</strong> Okuhudjita okumwe neokuhava.</p>
+      </div>
+      <div class="symptom">
+        <p><strong>Okuposi.</strong> Okuposi oko tatuheha.</p>
+      </div>
+      <div class="symptom">
+        <p><strong>Okumogoza omushepe.</strong> Okuwatira voshepe ovihari vikuu.</p>
+      </div>
+    </div>
+
+    <div class="section" id="who-can-get">
+      <h2>Ondjiwa ani omwa nawa HIV?</h2>
+      <p>Muntu umwe nawa omwa nawa HIV, tashi kunganga omaheha, ondjina, ondjiva, kombinga ya muntu.</p>
+    </div>
+
+    <div class="section" id="transmission">
+      <h2>Ouwihapa otji?</h2>
+      <p>HIV okutja negamba gOmakanyo gOmuviri: omuulu, omatu ga semen (na pre-cum), omatu ga rectal, omatu ga vaginal, nomatu ga borsmelk. Ouwihapa puka pOombwa aba muomu ku hodjo dyOmuviri.</p>
+      <p>HIV tatja pOombwa gOmutungu wa ovise woogwedhini.</p>
+      <p><strong>Ouwihapa gwOmondjila:</strong> Okuva omaheha nomuntu omwa nawa, okwidhana omutumba gwona, momama uhangana omu kusibata, nokupilula obi.</p>
+      <p><strong>Tatja:</strong> Tashi ouwihapa pOshike, oshaana, oku hugara, okuposi, omatumba ogoongo, oshikaangu.</p>
+    </div>
+
+    <div class="section" id="prevention">
+      <h2>Okuvikila otjiwa lOnawa HIV</h2>
+      <p>Shindika kondomu moshi meha. Kondomu shivikila HIV nokweha emaongo yolwa marwadho.</p>
+      <p>Ukula uku lava otjiha.</p>
+      <p>PrEP (Pre-exposure prophylaxis) ni medisine yaoshaheha oku vikila infection.</p>
+      <p>PEP (Post-exposure) mo72 ooera okungeke infection.</p>
+      <p>Tashi uvike gOmakanyogopwe; shindika gOkutja go moneka gamwega.</p>
+      <p>Ohangana na omwega wawu oku testha.</p>
+      <p>Oma mama? Vithwa oku testha noOye medisine ya HIV oku vikila otjiwa lOshapere mu mwana.</p>
+    </div>
+
+    <div class="section" id="treatment">
+      <h2>Okumagula</h2>
+      <p>Tashi eendelelo oshi cure HIV, amma ART (Antiretroviral Therapy) okungura omavirusi kOma opinga oyaheha, okuvirira omurwari nomutima nokuvikila ouwihapa.</p>
+      <p>Thama oku testha noOkumagula oko yendje; inhale oma pills nama injections.</p>
+      <p>Tshika omatemba gOmalalapo nooshigula okukwiendja.</p>
+    </div>
+
+    <div class="section" id="myths">
+      <h2>Eemiembo gopeha</h2>
+      <p><strong>Omiembo:</strong> Oomakopori omwega ongwa nawa HIV. <strong>Oshililo:</strong> Oomakopori tatja HIV.</p>
+      <p><strong>Omiembo:</strong> Otja nawa HIV momuhugara kana omatilo. <strong>Oshililo:</strong> Tatja momuhugara kana okushikika.</p>
+      <p><strong>Omiembo:</strong> HIV opona cure. <strong>Oshililo:</strong> Olihano lyovikila omavirusi, kombinga tatja cure.</p>
+    </div>
+
+    <div class="section" id="stigma-support">
+      <h2>Okutjijingusha noOkushigula</h2>
+      <p>Okutjijingusha oku teka okukura, ovilaho nokuvitha okumagula. Pinga omombo, onkalo nooshigula.</p>
+      <p>Longila ku groups gooshigula nokupanda ompomoka kufika omunga.</p>
+    </div>
+
+    <div class="section" id="disclosure">
+      <h2>Okukwata okupeta noOkushigula</h2>
+      <p>Ku HIV Inclusive tashi itingi, kupeta status yo omaheha oyi ngeleha mOmagula noguronga. Tuhandja uhe kupeta.</p>
+      <p>Tsha <strong>*6345#</strong> unga uyenda oku talk na counselor mu langa rawe. Line yatwepo 24/7.</p>
+      <p>Kumbuka: Okupeta okufikira okuaguzha ovina oku shigula, onkalo noomagula. Oka uli nde, tuki nawe.</p>
+    </div>
+
+    <footer>
+      &copy; 2025 HIV Inclusive • Okupfundja ovandu nokuronga
+    </footer>
+  </div>
+</body>
+</html>
