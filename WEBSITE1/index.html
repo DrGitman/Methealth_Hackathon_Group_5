@@ -1,0 +1,2072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIV Prevention | Stop HIV Spread</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    /* Global Styles */
+        :root {
+            --primary-color: #ffa398;
+            --secondary-color: #e70404;
+            --dark-color:#ff484c;
+            --light-color: #ecf0f1;
+            --success-color: #2ecc71;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+        color: var(--dark-color);
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--secondary-color);
+    }
+
+    .btn {
+        display: inline-block;
+        background: var(--dark-color);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background: var(--secondary-color);
+        transform: translateY(-2px);
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        color: var(--primary-color);
+        font-size: 2rem;
+    }
+
+    .bg-light {
+        background-color: var(--light-color);
+    }
+
+    /* Header Styles */
+    header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+    
+    .logo h1 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin: 0;
+    }
+    
+    .logo i {
+        margin-right: 10px;
+        font-size: 1.5rem;
+    }
+    
+    nav ul {
+        display: flex;
+        list-style: none;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+    
+    nav ul li a {
+        color: var(--dark-color);
+        font-weight: 600;
+        padding: 15px 0;
+        display: block;
+        position: relative;
+    }
+    
+    nav ul li a:hover {
+        color: var(--primary-color);
+    }
+    
+    nav ul li.active a {
+        color: var(--primary-color);
+    }
+    
+    nav ul li.active a:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+        position: relative;
+        color: white;
+        text-align: center;
+        padding: 150px 0 100px;
+        margin-top: 60px;
+        overflow: hidden;
+    }
+
+    .video-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        background-color: #c39eb8; /* Fallback color */
+    }
+
+    .hero .container {
+        position: relative;
+        z-index: 1;
+        background-color: rgba(201, 186, 198, 0.8);
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto 20px;
+    }
+
+    /* Image Styling */
+    .section-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Prevention Methods Grid Images */
+    .methods-grid .section-image {
+        height: 180px;
+        object-position: center;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .method-card {
+        overflow: hidden; /* Keeps image corners rounded */
+    }
+
+    /* Testing Section Images */
+    .testing-info .section-image {
+        max-height: 250px;
+        margin: 0 auto 25px;
+    }
+
+    .testing-image .section-image {
+        max-height: 400px;
+        border: 3px solid rgb(207, 145, 192);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* Myths Section Images */
+    .myths-grid .section-image {
+        height: 160px;
+        margin-bottom: 15px;
+    }
+
+    /* Stats Section Images */
+    .stats-grid .section-image {
+        height: 120px;
+        margin-bottom: 15px;
+    }
+
+    /* Responsive Image Adjustments */
+    @media (max-width: 768px) {
+        .methods-grid .section-image {
+            height: 150px;
+        }
+        
+        .testing-info .section-image,
+        .testing-image .section-image {
+            max-height: 300px;
+        }
+        
+        .myths-grid .section-image {
+            height: 140px;
+        }
+        
+        .stats-grid .section-image {
+            height: 100px;
+        }
+    }
+
+    /* Image Hover Effects */
+    .method-card:hover .section-image {
+        transform: scale(1.03);
+        transition: transform 0.3s ease;
+    }
+
+    /* Accessibility for Images */
+    .section-image {
+        transition: all 0.3s ease;
+    }
+
+    .section-image:focus {
+        outline: 3px solid #3498db;
+        outline-offset: 3px;
+    }
+
+    /* Image Containers */
+    .method-card,
+    .myth-card,
+    .stat-card {
+        position: relative;
+        overflow: hidden;
+        background: white;
+        border-radius: 8px;
+    }
+
+    /* Prevention Methods Grid */
+    .methods-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+
+    .method-card {
+        background: #fde3e0;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .method-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .method-card i {
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+    }
+
+    .method-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 15px;
+    }
+
+    .method-card ul {
+        text-align: left;
+        list-style-position: inside;
+    }
+
+    .method-card ul li {
+        margin-bottom: 8px;
+    }
+
+    /* Testing Section */
+    .testing-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .testing-info {
+        padding-right: 20px;
+    }
+
+    .testing-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Myths Section */
+    .myths-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .myth-card {
+        background: #fde3e0;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        border-left: 4px solid var(--accent-color);
+    }
+
+    .myth-card h3 {
+        color: var(--accent-color);
+        margin-bottom: 10px;
+    }
+
+    /* Stats Section */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .stat-card {
+        background: #fde3e0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    /* Toggle Buttons */
+    .toggle-btn {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    /* TTS Toggle Button */
+    .tts-toggle-btn {
+        bottom: 30px;
+        left: 30px;
+        background: var(--secondary-color);
+        color: white;
+    }
+
+    .tts-toggle-btn:hover {
+        background: var(--dark-color);
+        transform: scale(1.1);
+    }
+
+    /* ASL Toggle Button */
+    .asl-toggle-btn {
+        bottom: 30px;
+        right: 30px;
+        background: var(--secondary-color);
+        color: white;
+    }
+    
+    .asl-toggle-btn:hover {
+        background: var(--dark-color);
+        transform: scale(1.1);
+    }
+
+    /* Stop TTS Button */
+    .stop-tts-btn {
+        position: fixed;
+        bottom: 100px;
+        left: 30px;
+        background: var(--accent-color);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 30px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        z-index: 1000;
+        transition: all 0.3s ease;
+    }
+
+    .stop-tts-btn i {
+        margin-right: 8px;
+    }
+
+    .stop-tts-btn:hover {
+        background: var(--secondary-color);
+        transform: scale(1.05);
+    }
+
+    body.tts-mode .stop-tts-btn {
+        display: flex;
+    }
+
+    /* Section Buttons - Hidden by default */
+    .section-btn {
+        position: absolute;
+        top: 10px;
+        border: none;
+        border-radius: 20px;
+        padding: 5px 10px;
+        font-size: 12px;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s ease;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        opacity: 0.9;
+    }
+
+    .section-btn:hover {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    .section-btn i {
+        margin-right: 5px;
+    }
+
+    /* TTS Section Buttons */
+    .tts-section-btn {
+        left: 10px;
+        background: rgba(52, 152, 219, 0.9);
+        color: white;
+    }
+
+    /* ASL Section Buttons */
+    .asl-section-btn {
+        right: 10px;
+        background: rgba(231, 76, 60, 0.9);
+        color: white;
+    }
+
+    /* Show buttons when in respective mode */
+    body.tts-mode .tts-section-btn {
+        display: flex;
+    }
+
+    body.asl-mode .asl-section-btn {
+        display: flex;
+    }
+
+    /* Enhanced ASL Modal Styles */
+    .asl-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .asl-modal-content {
+        background: #2c3e50;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 800px;
+        position: relative;
+        padding: 20px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        color: white;
+    }
+    
+    .asl-video-container {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        background: #1a2636;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    .asl-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .close-asl {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        z-index: 10;
+        background: rgba(0,0,0,0.5);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    .close-asl:hover {
+        background: var(--accent-color);
+        transform: rotate(90deg);
+    }
+    
+    .asl-transcript {
+        margin-top: 15px;
+        padding: 15px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 8px;
+        font-size: 0.9rem;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .container {
+            width: 95%;
+        }
+        
+        .testing-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .testing-info {
+            padding-right: 0;
+            margin-bottom: 30px;
+        }
+        
+        nav ul {
+            flex-direction: column;
+        }
+        
+        nav ul li {
+            margin-left: 0;
+            margin-bottom: 10px;
+        }
+        
+        .hero {
+            padding: 120px 0 80px;
+        }
+        
+        .hero h2 {
+            font-size: 2rem;
+        }
+
+        .toggle-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            bottom: 20px;
+        }
+        
+        .asl-toggle-btn {
+            right: 20px;
+        }
+        
+        .tts-toggle-btn {
+            left: 20px;
+        }
+        
+        .stop-tts-btn {
+            bottom: 80px;
+            left: 20px;
+            font-size: 14px;
+            padding: 8px 12px;
+        }
+        
+        .asl-modal-content {
+            width: 95%;
+            padding: 15px;
+        }
+        
+        .close-asl {
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            width: 36px;
+            height: 36px;
+        }
+
+        .section-btn {
+            padding: 4px 8px;
+            font-size: 11px;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-ribbon"></i> HIV Inclusive</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="index.html">Symptoms/Preventions</a></li>
+                    <li><a href="maintenance.html">Living with HIV</a></li>
+                    <li><a href="relationships.html">Relationship</a></li>
+                    <li><a href="motivation.html">Community</a></li>
+                    <li><a href="quiz.html">Take a quiz</a></li>
+                    <li><a href="visuals.html">Images/Videos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <video autoplay muted loop class="video-background">
+            <source src="prevent.mp4" type="video/mp4">
+            <!-- Fallback if video doesn't load -->
+            <img src="images/prevention-fallback.jpg" alt="Diverse group practicing HIV prevention">
+        </video>
+        <div class="container">
+            <h2>HIV Prevention: Protect Yourself and Others</h2>
+            <p>Effective prevention methods can stop HIV transmission</p>
+            <a href="#prevention-methods" class="btn">Learn Prevention Methods</a>
+        </div>
+    </section>
+
+    <section id="prevention-methods" class="section">
+        <div class="container">
+            <h2><i class="fas fa-shield-virus"></i> HIV Prevention Methods</h2>
+            <div class="methods-grid">
+                <div class="method-card">
+                    <img src="images/safesex.jpg" alt="Condom and sexual health items" class="section-image">
+                    <h3>Safe Sex Practices</h3>
+                    <ul>
+                        <li>Correct condom use every time</li>
+                        <li>Dental dams for oral sex</li>
+                        <li>Use lubrication to prevent tears</li>
+                    </ul>
+                </div>
+                
+                <div class="method-card">
+                    <img src="images/prep.jpg" alt="Person taking PrEP medication" class="section-image">
+                    <h3>PrEP (Pre-Exposure Prophylaxis)</h3>
+                    <ul>
+                        <li>Daily pill to prevent HIV</li>
+                        <li>Over 99% effective when taken as prescribed</li>
+                        <li>Available by prescription</li>
+                    </ul>
+                </div>
+                
+                <div class="method-card">
+                    <img src="images/pep.jpg" alt="Emergency medical kit" class="section-image">
+                    <h3>PEP (Post-Exposure Prophylaxis)</h3>
+                    <ul>
+                        <li>Emergency treatment after potential exposure</li>
+                        <li>Must be started within 72 hours</li>
+                        <li>Taken for 28 days</li>
+                    </ul>
+                </div>
+                
+                <div class="method-card">
+                    <img src="images/needle.jpg" alt="Needle exchange program" class="section-image">
+                    <h3>Harm Reduction</h3>
+                    <ul>
+                        <li>Never share needles</li>
+                        <li>Use needle exchange programs</li>
+                        <li>Always use sterile equipment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testing" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-vial"></i> Get Tested</h2>
+            <div class="testing-content">
+                <div class="testing-info">
+                    <img src="images/gum.jpg" alt="HIV self-testing kit" class="section-image">
+                    <p>Regular HIV testing is crucial for early detection and prevention. Many people with HIV don't show symptoms for years.</p>
+                    <ul>
+                        <li><strong>Frequency:</strong> At least once a year if sexually active</li>
+                        <li><strong>Types:</strong> Rapid tests, home tests, lab tests</li>
+                        <li><strong>Confidentiality:</strong> Testing is private</li>
+                    </ul>
+                    <button id="find-testing" class="btn">Find A Clinic Near You</button>
+                </div>
+                <div class="testing-image">
+                    <img src="images/tip.jpg" alt="Friendly clinic environment" class="section-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="myths" class="section">
+        <div class="container">
+            <h2><i class="fas fa-question-circle"></i> HIV Myths vs Facts</h2>
+            <div class="myths-grid">
+                <div class="myth-card">
+                    <img src="images/contact.jpg" alt="People hugging safely" class="section-image">
+                    <h3>Myth: HIV can spread through casual contact</h3>
+                    <p><strong>Fact:</strong> HIV is not spread through hugging, shaking hands, or sharing food.</p>
+                </div>
+                <div class="myth-card">
+                    <img src="images/bite.jpg" alt="Mosquito on skin with red X" class="section-image">
+                    <h3>Myth: Mosquitoes can transmit HIV</h3>
+                    <p><strong>Fact:</strong> HIV cannot survive or replicate in mosquitoes.</p>
+                </div>
+                <div class="myth-card">
+                    <img src="images/healthy.jpg" alt="Senior person exercising" class="section-image">
+                    <h3>Myth: HIV is a death sentence</h3>
+                    <p><strong>Fact:</strong> With treatment, people with HIV can live long, healthy lives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-chart-line"></i> Prevention Works</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <img src="images/decline-graph.jpg" alt="Chart showing HIV decline" class="section-image">
+                    <h3>40% Decline</h3>
+                    <p>New HIV infections have fallen by 40% since peak in 1990s</p>
+                </div>
+                <div class="stat-card">
+                    <img src="images/prep-effective.jpg" alt="Person with protection shield" class="section-image">
+                    <h3>99% Effective</h3>
+                    <p>PrEP is over 99% effective at preventing HIV when taken daily</p>
+                </div>
+                <div class="stat-card">
+                    <img src="images/early-detect.jpg" alt="Microscope with early detection" class="section-image">
+                    <h3>Early Detection</h3>
+                    <p>People who test early and get treatment can live normal lifespans</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TTS Toggle Button -->
+    <div class="tts-toggle-btn toggle-btn" id="ttsToggle">
+        <i class="fas fa-volume-up"></i>
+    </div>
+
+    <!-- Stop TTS Button -->
+    <button class="stop-tts-btn" id="stopTTS">
+        <i class="fas fa-stop"></i> Stop Reading
+    </button>
+
+    <!-- ASL Toggle Button -->
+    <div class="asl-toggle-btn toggle-btn" id="aslToggle">
+        <i class="fas fa-sign-language"></i>
+    </div>
+
+    <!-- Enhanced ASL Modal -->
+    <div id="aslModal" class="asl-modal">
+        <div class="asl-modal-content">
+            <span class="close-asl" onclick="closeASLModal()">&times;</span>
+            <div class="asl-video-container">
+                <video id="aslVideo" class="asl-video" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="asl-transcript">
+                <p id="aslTranscriptText">Sign language interpretation for this content. Video will show proper signing for this section.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // TTS functionality
+        let currentSpeech = null;
+
+        // Toggle TTS mode
+        document.getElementById('ttsToggle').addEventListener('click', function() {
+            document.body.classList.toggle('tts-mode');
+            
+            // Change icon based on state
+            const icon = this.querySelector('i');
+            if (document.body.classList.contains('tts-mode')) {
+                icon.classList.remove('fa-volume-up');
+                icon.classList.add('fa-volume-mute');
+                this.setAttribute('aria-label', 'Close TTS mode');
+            } else {
+                icon.classList.remove('fa-volume-mute');
+                icon.classList.add('fa-volume-up');
+                this.setAttribute('aria-label', 'Open TTS mode');
+                // Stop any ongoing speech when closing TTS mode
+                if (currentSpeech) {
+                    window.speechSynthesis.cancel();
+                    currentSpeech = null;
+                }
+            }
+        });
+
+        // Stop TTS button functionality
+        document.getElementById('stopTTS').addEventListener('click', function() {
+            if (currentSpeech) {
+                window.speechSynthesis.cancel();
+                currentSpeech = null;
+            }
+        });
+
+        // Function to speak text
+        function speakText(text) {
+            // Stop any ongoing speech
+            if (currentSpeech) {
+                window.speechSynthesis.cancel();
+            }
+            
+            // Create a new speech synthesis utterance
+            const utterance = new SpeechSynthesisUtterance();
+            utterance.text = text;
+            utterance.volume = 1;
+            utterance.rate = 1;
+            utterance.pitch = 1;
+            
+            // Speak the text
+            window.speechSynthesis.speak(utterance);
+            currentSpeech = utterance;
+            
+            // Handle when speech ends
+            utterance.onend = function() {
+                currentSpeech = null;
+            };
+        }
+
+        // Add TTS buttons to all relevant sections
+        function addTTSButtons() {
+            // Method cards
+            const methodCards = document.querySelectorAll('.method-card');
+            methodCards.forEach(card => {
+                const title = card.querySelector('h3').textContent;
+                const listItems = Array.from(card.querySelectorAll('li')).map(li => li.textContent).join('. ');
+                const textToRead = `${title}. ${listItems}`;
+                
+                const ttsBtn = document.createElement('button');
+                ttsBtn.className = 'tts-section-btn section-btn';
+                ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
+                ttsBtn.onclick = () => speakText(textToRead);
+                card.prepend(ttsBtn);
+            });
+            
+            // Testing info
+            const testingInfo = document.querySelector('.testing-info');
+            const testingText = Array.from(testingInfo.querySelectorAll('p, li')).map(el => el.textContent).join('. ');
+            const testingTTSBtn = document.createElement('button');
+            testingTTSBtn.className = 'tts-section-btn section-btn';
+            testingTTSBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
+            testingTTSBtn.onclick = () => speakText(testingText);
+            testingInfo.prepend(testingTTSBtn);
+            
+            // Myths section
+            const mythCards = document.querySelectorAll('.myth-card');
+            mythCards.forEach(card => {
+                const title = card.querySelector('h3').textContent;
+                const content = card.querySelector('p').textContent;
+                const textToRead = `${title}. ${content}`;
+                
+                const ttsBtn = document.createElement('button');
+                ttsBtn.className = 'tts-section-btn section-btn';
+                ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
+                ttsBtn.onclick = () => speakText(textToRead);
+                card.prepend(ttsBtn);
+            });
+            
+            // Stats section
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach(card => {
+                const title = card.querySelector('h3').textContent;
+                const content = card.querySelector('p').textContent;
+                const textToRead = `${title}. ${content}`;
+                
+                const ttsBtn = document.createElement('button');
+                ttsBtn.className = 'tts-section-btn section-btn';
+                ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
+                ttsBtn.onclick = () => speakText(textToRead);
+                card.prepend(ttsBtn);
+            });
+        }
+
+        // Toggle ASL mode
+        document.getElementById('aslToggle').addEventListener('click', function() {
+            document.body.classList.toggle('asl-mode');
+            
+            // Change icon based on state
+            const icon = this.querySelector('i');
+            if (document.body.classList.contains('asl-mode')) {
+                icon.classList.remove('fa-sign-language');
+                icon.classList.add('fa-times');
+                this.setAttribute('aria-label', 'Close ASL mode');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-sign-language');
+                this.setAttribute('aria-label', 'Open ASL mode');
+            }
+        });
+
+        // Add ASL buttons to all relevant sections
+        function addASLButtons() {
+            // Method cards
+            const methodCards = document.querySelectorAll('.method-card');
+            methodCards.forEach(card => {
+                const sectionId = card.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
+                const aslBtn = document.createElement('button');
+                aslBtn.className = 'asl-section-btn section-btn';
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+                aslBtn.onclick = () => openASLModal(sectionId);
+                card.prepend(aslBtn);
+            });
+            
+            // Testing info
+            const testingInfo = document.querySelector('.testing-info');
+            const testingBtn = document.createElement('button');
+            testingBtn.className = 'asl-section-btn section-btn';
+            testingBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+            testingBtn.onclick = () => openASLModal('testing');
+            testingInfo.prepend(testingBtn);
+            
+            // Myths section
+            const mythsTitle = document.querySelector('#myths h2');
+            const mythsBtn = document.createElement('button');
+            mythsBtn.className = 'asl-section-btn section-btn';
+            mythsBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+            mythsBtn.onclick = () => openASLModal('myths');
+            mythsTitle.parentNode.insertBefore(mythsBtn, mythsTitle.nextSibling);
+            
+            // Stats section
+            const statsTitle = document.querySelector('#stats h2');
+            const statsBtn = document.createElement('button');
+            statsBtn.className = 'asl-section-btn section-btn';
+            statsBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+            statsBtn.onclick = () => openASLModal('stats');
+            statsTitle.parentNode.insertBefore(statsBtn, statsTitle.nextSibling);
+        }
+        
+        // Call these functions when page loads
+        window.onload = function() {
+            addASLButtons();
+            addTTSButtons();
+        };
+
+        // ASL Video Modal Functionality
+        // (Removed duplicate declaration of videoTranscripts and related functions to avoid redeclaration error)
+
+        // Make the find testing button functional
+        document.getElementById('find-testing').addEventListener('click', function() {
+            alert("This would normally link to a clinic finder service. For now, please visit: https://locator.hiv.gov/");
+        });
+    </script>
+        <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #ffa398;
+            --secondary-color: #e70404;
+            --dark-color:#ff484c;
+            --light-color: #ecf0f1;
+            --success-color: #2ecc71;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 15px 0;
+            display: block;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav ul li.active a {
+            color: var(--primary-color);
+        }
+        
+        nav ul li.active a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero2 {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero2 .container {
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero2 h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero2 p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .bg-light {
+            background-color: var(--light-color);
+        }
+        
+        .section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+        }
+        
+        .section h2 i {
+            margin-right: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Stage Grid */
+        .stage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .stage-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .stage-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .stage-card h3 {
+            padding: 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .stage-card ul {
+            padding: 0 20px 20px;
+            list-style-position: inside;
+        }
+        
+        .stage-card ul li {
+            margin-bottom: 10px;
+        }
+        
+        .section-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* Symptom Grid */
+        .symptom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .symptom-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .symptom-card h3 {
+            padding: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .symptom-card p {
+            padding: 0 15px 15px;
+        }
+        
+        /* Visual Symptoms Content */
+        .visual-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .rash-symptoms, .oral-symptoms, .other-visual {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .visual-content h3 {
+            color: var(--dark-color);
+            margin: 15px 0;
+        }
+        
+        /* Resources Grid */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .resource-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .resource-card ul {
+            list-style: none;
+        }
+        
+        .resource-card ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .resource-card ul li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 0;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: var(--light-color);
+        }
+        
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-col i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .confidentiality {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+
+        /* ASL Toggle Button */
+        .asl-toggle-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--secondary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .asl-toggle-btn:hover {
+            background: #c0392b;
+            transform: scale(1.1);
+        }
+        
+        /* Hidden ASL Buttons */
+        .asl-section-btn {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(231, 76, 60, 0.9);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .asl-section-btn:hover {
+            background: #c0392b;
+        }
+        
+        .asl-section-btn i {
+            margin-right: 5px;
+        }
+        
+        /* When ASL mode is active */
+        body.asl-mode .asl-section-btn {
+            display: block;
+        }
+
+        /* Enhanced ASL Modal Styles */
+        .asl-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .asl-modal-content {
+            background: #2c3e50;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            color: white;
+        }
+        
+        .asl-video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #1a2636;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .asl-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .close-asl {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .close-asl:hover {
+            background: var(--secondary-color);
+            transform: rotate(90deg);
+        }
+        
+        .asl-transcript {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* ASL Options Menu */
+        .asl-options-menu {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            width: 200px;
+            overflow: hidden;
+        }
+
+        .asl-options-menu.active {
+            display: block;
+        }
+
+        .asl-option {
+            padding: 12px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .asl-option:hover {
+            background: #f0f0f0;
+        }
+
+        .asl-option i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .asl-option.asl {
+            color: #e74c3c;
+        }
+
+        .asl-option.audio-desc {
+            color: #3498db;
+        }
+
+        .asl-option.close {
+            color: #7f8c8d;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            nav ul li.active a:after {
+                display: none;
+            }
+            
+            .hero2 h2 {
+                font-size: 2rem;
+            }
+            
+            .hero2 p {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .asl-toggle-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .asl-modal-content {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            .close-asl {
+                top: 10px;
+                right: 10px;
+                font-size: 24px;
+                width: 36px;
+                height: 36px;
+            }
+
+            .asl-options-menu {
+                bottom: 80px;
+                right: 20px;
+                width: 180px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero2 {
+                height: 60vh;
+            }
+            
+            .hero2 h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero2 p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+
+    <section id="stages" class="section">
+        <div class="container">
+            <h2><i class="fas fa-stethoscope"></i> HIV Stages & Symptoms</h2>
+            <div class="stage-grid">
+                <div class="stage-card">
+                    <img src="images/acute-stage.jpg" alt="Person with fever" class="section-image">
+                    <h3>Acute HIV Infection</h3>
+                    <ul>
+                        <li>Fever and chills</li>
+                        <li>Rash (often on torso)</li>
+                        <li>Sore throat</li>
+                        <li>Muscle aches and joint pain</li>
+                        <li>Swollen lymph nodes</li>
+                        <li>Mouth ulcers</li>
+                    </ul>
+                </div>
+                
+                <div class="stage-card">
+                    <img src="images/chronic-stage.jpg" alt="Person looking fatigued" class="section-image">
+                    <h3>Chronic HIV Infection</h3>
+                    <ul>
+                        <li>Often asymptomatic for years</li>
+                        <li>Swollen lymph nodes</li>
+                        <li>Fatigue</li>
+                        <li>Weight loss</li>
+                        <li>Fever and night sweats</li>
+                        <li>Diarrhea</li>
+                    </ul>
+                </div>
+                
+                <div class="stage-card">
+                    <img src="images/aids-stage.jpg" alt="Person with Kaposi's sarcoma" class="section-image">
+                    <h3>AIDS (Advanced Stage)</h3>
+                    <ul>
+                        <li>Rapid weight loss</li>
+                        <li>Recurring fever/night sweats</li>
+                        <li>Extreme fatigue</li>
+                        <li>Prolonged diarrhea</li>
+                        <li>Memory loss and confusion</li>
+                        <li>Opportunistic infections</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="visual-symptoms" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-eye"></i> Visual Symptoms</h2>
+            <div class="visual-content">
+                <div class="rash-symptoms">
+                    <img src="images/hiv-rash.jpg" alt="HIV rash on skin" class="section-image">
+                    <h3>Skin Conditions</h3>
+                    <ul>
+                        <li>Red or brownish rash (often itchy)</li>
+                        <li>Kaposi's sarcoma lesions</li>
+                        <li>Dry, flaky skin</li>
+                        <li>Shingles (painful blisters)</li>
+                        <li>Folliculitis (inflamed hair follicles)</li>
+                    </ul>
+                </div>
+                <div class="oral-symptoms">
+                    <img src="images/oral-thrush.jpg" alt="Oral thrush in mouth" class="section-image">
+                    <h3>Oral Symptoms</h3>
+                    <ul>
+                        <li>Oral thrush (white patches)</li>
+                        <li>Hairy leukoplakia (white tongue)</li>
+                        <li>Canker sores</li>
+                        <li>Gum disease</li>
+                        <li>Dry mouth</li>
+                    </ul>
+                </div>
+                <div class="other-visual">
+                    <img src="images/weight-loss.jpg" alt="Person showing weight loss" class="section-image">
+                    <h3>Other Visible Signs</h3>
+                    <ul>
+                        <li>Rapid weight loss</li>
+                        <li>Swollen lymph nodes</li>
+                        <li>Yellowing of skin/eyes (jaundice)</li>
+                        <li>Purple skin lesions (Kaposi's sarcoma)</li>
+                        <li>Nail changes (discoloration)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testing" class="section">
+        <div class="container">
+            <h2><i class="fas fa-vial"></i> Testing & Diagnosis</h2>
+            <div class="symptom-grid">
+                <div class="symptom-card">
+                    <img src="images/antibody-test.jpg" alt="Blood test sample" class="section-image">
+                    <h3>When to Get Tested</h3>
+                    <p>Get tested if you experience acute symptoms or have risk factors (unprotected sex, shared needles). Many people have no symptoms for years.</p>
+                </div>
+                <div class="symptom-card">
+                    <img src="images/lab-test.jpg" alt="Lab technician working" class="section-image">
+                    <h3>Test Types</h3>
+                    <p>Antibody tests, antigen/antibody tests, and nucleic acid tests (NAT). Most tests can detect HIV within 2-6 weeks of exposure.</p>
+                </div>
+                <div class="symptom-card">
+                    <img src="images/doctor-consult.jpg" alt="Doctor consulting patient" class="section-image">
+                    <h3>Confirming Diagnosis</h3>
+                    <p>Positive results require follow-up testing. Viral load and CD4 count tests help determine disease progression.</p>
+                </div>
+                <div class="symptom-card">
+                    <img src="images/rapid-test.jpg" alt="Rapid HIV test kit" class="section-image">
+                    <h3>At-Home Testing</h3>
+                    <p>Oral fluid and fingerstick blood tests available. Positive results need confirmation from a healthcare provider.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-info-circle"></i> Resources & Support</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <img src="images/testing-centers.jpg" alt="HIV testing center" class="section-image">
+                    <h3>Testing Centers</h3>
+                    <ul>
+                        <li><a href="#">CDC Testing Locator</a></li>
+                        <li><a href="#">Local health departments</a></li>
+                        <li><a href="#">Planned Parenthood centers</a></li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <img src="images/symptom-guide.jpg" alt="Medical information book" class="section-image">
+                    <h3>Symptom Guides</h3>
+                    <ul>
+                        <li><a href="#">TheBody.com Symptom Checker</a></li>
+                        <li><a href="#">AIDSinfo Symptom Library</a></li>
+                        <li><a href="#">HIV.gov Symptom Information</a></li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <img src="images/doctor-hotline.jpg" alt="Phone with medical symbol" class="section-image">
+                    <h3>Consultation Services</h3>
+                    <ul>
+                        <li><a href="#">National HIV Hotline</a></li>
+                        <li><a href="#">Telehealth services</a></li>
+                        <li><a href="#">Local HIV specialists</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ASL Toggle Button -->
+    <div class="asl-toggle-btn" id="aslToggle">
+        <i class="fas fa-sign-language"></i>
+    </div>
+
+    <!-- ASL Options Menu -->
+    <div class="asl-options-menu" id="aslOptionsMenu">
+        <div class="asl-option asl" onclick="enableASLMode()">
+            <i class="fas fa-sign-language"></i> ASL Videos
+        </div>
+        <div class="asl-option audio-desc" onclick="enableAudioDescriptionMode()">
+            <i class="fas fa-audio-description"></i> Audio Descriptions
+        </div>
+        <div class="asl-option close" onclick="closeOptionsMenu()">
+            <i class="fas fa-times"></i> Close Menu
+        </div>
+    </div>
+
+    <!-- Enhanced ASL Modal -->
+    <div id="aslModal" class="asl-modal">
+        <div class="asl-modal-content">
+            <span class="close-asl" onclick="closeASLModal()">&times;</span>
+            <div class="asl-video-container">
+                <video id="aslVideo" class="asl-video" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="asl-transcript">
+                <p id="aslTranscriptText">Sign language interpretation for this content. Video will show proper signing for this section.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Description Modal -->
+    <div id="audioDescModal" class="asl-modal">
+        <div class="asl-modal-content">
+            <span class="close-asl" onclick="closeAudioDescModal()">&times;</span>
+            <div class="asl-video-container">
+                <video id="audioDescVideo" class="asl-video" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="asl-transcript">
+                <p id="audioDescTranscriptText">Audio description for this content. Video will describe visual elements in detail.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle ASL options menu
+        document.getElementById('aslToggle').addEventListener('click', function() {
+            document.getElementById('aslOptionsMenu').classList.toggle('active');
+            
+            // Change icon based on state
+            const icon = this.querySelector('i');
+            if (document.getElementById('aslOptionsMenu').classList.contains('active')) {
+                icon.classList.remove('fa-sign-language');
+                icon.classList.add('fa-times');
+                this.setAttribute('aria-label', 'Close accessibility options');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-sign-language');
+                this.setAttribute('aria-label', 'Open accessibility options');
+            }
+        });
+
+        function closeOptionsMenu() {
+            document.getElementById('aslOptionsMenu').classList.remove('active');
+            const icon = document.getElementById('aslToggle').querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-sign-language');
+        }
+
+        function enableASLMode() {
+            document.body.classList.add('asl-mode');
+            closeOptionsMenu();
+            // Change the toggle button icon
+            const icon = document.getElementById('aslToggle').querySelector('i');
+            icon.classList.remove('fa-sign-language');
+            icon.classList.add('fa-sign-language');
+        }
+
+        function enableAudioDescriptionMode() {
+            document.body.classList.add('audio-desc-mode');
+            closeOptionsMenu();
+            // Show audio description buttons
+            const audioDescBtns = document.querySelectorAll('.audio-desc-btn');
+            audioDescBtns.forEach(btn => {
+                btn.style.display = 'block';
+            });
+        }
+
+        // Add ASL buttons to all relevant sections
+        function addASLButtons() {
+            // Stage cards
+            const stageCards = document.querySelectorAll('.stage-card');
+            stageCards.forEach(card => {
+                const sectionId = card.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
+                const aslBtn = document.createElement('button');
+                aslBtn.className = 'asl-section-btn';
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+                aslBtn.onclick = () => openASLModal(sectionId);
+                card.prepend(aslBtn);
+
+                // Add audio description button
+                const audioDescBtn = document.createElement('button');
+                audioDescBtn.className = 'asl-section-btn audio-desc-btn';
+                audioDescBtn.innerHTML = '<i class="fas fa-audio-description"></i> Audio Desc';
+                audioDescBtn.onclick = () => openAudioDescModal(sectionId);
+                audioDescBtn.style.display = 'none';
+                audioDescBtn.style.right = '100px';
+                audioDescBtn.style.backgroundColor = 'rgba(52, 152, 219, 0.9)';
+                card.prepend(audioDescBtn);
+            });
+            
+            // Symptom cards
+            const symptomCards = document.querySelectorAll('.symptom-card');
+            symptomCards.forEach(card => {
+                const sectionId = card.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
+                const aslBtn = document.createElement('button');
+                aslBtn.className = 'asl-section-btn';
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+                aslBtn.onclick = () => openASLModal(sectionId);
+                card.prepend(aslBtn);
+
+                // Add audio description button
+                const audioDescBtn = document.createElement('button');
+                audioDescBtn.className = 'asl-section-btn audio-desc-btn';
+                audioDescBtn.innerHTML = '<i class="fas fa-audio-description"></i> Audio Desc';
+                audioDescBtn.onclick = () => openAudioDescModal(sectionId);
+                audioDescBtn.style.display = 'none';
+                audioDescBtn.style.right = '100px';
+                audioDescBtn.style.backgroundColor = 'rgba(52, 152, 219, 0.9)';
+                card.prepend(audioDescBtn);
+            });
+            
+            // Visual symptoms sections
+            const visualSections = document.querySelectorAll('.rash-symptoms, .oral-symptoms, .other-visual');
+            visualSections.forEach(section => {
+                const sectionId = section.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
+                const aslBtn = document.createElement('button');
+                aslBtn.className = 'asl-section-btn';
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+                aslBtn.onclick = () => openASLModal(sectionId);
+                section.prepend(aslBtn);
+
+                // Add audio description button
+                const audioDescBtn = document.createElement('button');
+                audioDescBtn.className = 'asl-section-btn audio-desc-btn';
+                audioDescBtn.innerHTML = '<i class="fas fa-audio-description"></i> Audio Desc';
+                audioDescBtn.onclick = () => openAudioDescModal(sectionId);
+                audioDescBtn.style.display = 'none';
+                audioDescBtn.style.right = '100px';
+                audioDescBtn.style.backgroundColor = 'rgba(52, 152, 219, 0.9)';
+                section.prepend(audioDescBtn);
+            });
+            
+            // Resource cards
+            const resourceCards = document.querySelectorAll('.resource-card');
+            resourceCards.forEach(card => {
+                const sectionId = card.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
+                const aslBtn = document.createElement('button');
+                aslBtn.className = 'asl-section-btn';
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+                aslBtn.onclick = () => openASLModal(sectionId);
+                card.prepend(aslBtn);
+
+                // Add audio description button
+                const audioDescBtn = document.createElement('button');
+                audioDescBtn.className = 'asl-section-btn audio-desc-btn';
+                audioDescBtn.innerHTML = '<i class="fas fa-audio-description"></i> Audio Desc';
+                audioDescBtn.onclick = () => openAudioDescModal(sectionId);
+                audioDescBtn.style.display = 'none';
+                audioDescBtn.style.right = '100px';
+                audioDescBtn.style.backgroundColor = 'rgba(52, 152, 219, 0.9)';
+                card.prepend(audioDescBtn);
+            });
+            
+            // Main sections
+            const mainSections = document.querySelectorAll('#stages, #visual-symptoms, #testing, #resources');
+            mainSections.forEach(section => {
+                const sectionId = section.id;
+                const sectionTitle = section.querySelector('h2');
+                const aslBtn = document.createElement('button');
+                aslBtn.className = 'asl-section-btn';
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+                aslBtn.onclick = () => openASLModal(sectionId);
+                sectionTitle.parentNode.insertBefore(aslBtn, sectionTitle.nextSibling);
+
+                // Add audio description button
+                const audioDescBtn = document.createElement('button');
+                audioDescBtn.className = 'asl-section-btn audio-desc-btn';
+                audioDescBtn.innerHTML = '<i class="fas fa-audio-description"></i> Audio Desc';
+                audioDescBtn.onclick = () => openAudioDescModal(sectionId);
+                audioDescBtn.style.display = 'none';
+                audioDescBtn.style.right = '100px';
+                audioDescBtn.style.backgroundColor = 'rgba(52, 152, 219, 0.9)';
+                sectionTitle.parentNode.insertBefore(audioDescBtn, sectionTitle.nextSibling);
+            });
+        }
+        
+        // Call this function when page loads
+        window.onload = addASLButtons;
+
+        // ASL Video Modal Functionality
+        const videoTranscripts = {
+            'acute-hiv-infection': 'This video demonstrates sign language for acute HIV infection symptoms like fever, rash, and swollen lymph nodes.',
+            'chronic-hiv-infection': 'Sign language interpretation explaining chronic HIV infection symptoms that may develop over years.',
+            'aids-(advanced-stage)': 'This interpretation explains AIDS symptoms in sign language, including opportunistic infections.',
+            'skin-conditions': 'Proper signing for HIV-related skin conditions like rashes and Kaposi\'s sarcoma.',
+            'oral-symptoms': 'This video demonstrates sign language for oral symptoms of HIV like thrush and leukoplakia.',
+            'other-visible-signs': 'Sign language interpretation about other visible HIV symptoms like weight loss and nail changes.',
+            'when-to-get-tested': 'This video explains when to get tested for HIV in sign language.',
+            'test-types': 'Sign language interpretation of different HIV test types and their accuracy.',
+            'confirming-diagnosis': 'This video demonstrates sign language for HIV diagnosis confirmation process.',
+            'at-home-testing': 'Sign language explanation of at-home HIV testing options.',
+            'testing-centers': 'This interpretation explains how to find HIV testing centers in sign language.',
+            'symptom-guides': 'Sign language video about reliable HIV symptom information sources.',
+            'consultation-services': 'This video demonstrates sign language for accessing HIV consultation services.',
+            'stages': 'Overview of HIV stages and symptoms in sign language.',
+            'visual-symptoms': 'Visual symptoms of HIV explained in sign language.',
+            'testing': 'HIV testing information in sign language.',
+            'resources': 'Resource information for HIV symptoms in sign language.'
+        };
+
+        // Audio Description Transcripts
+        const audioDescTranscripts = {
+            'acute-hiv-infection': 'This audio description provides detailed narration of acute HIV infection symptoms and visual examples.',
+            'chronic-hiv-infection': 'Audio description explaining chronic HIV infection symptoms with visual representations.',
+            'aids-(advanced-stage)': 'Detailed narration describing AIDS symptoms and visual elements.',
+            'skin-conditions': 'Audio description of HIV-related skin conditions with visual examples.',
+            'oral-symptoms': 'Narration describing oral symptoms of HIV with visual representations.',
+            'other-visible-signs': 'Audio description explaining other visible HIV symptoms with visual examples.',
+            'when-to-get-tested': 'Detailed narration about when to get tested for HIV with visual elements.',
+            'test-types': 'Audio description of different HIV test types with visual representations.',
+            'confirming-diagnosis': 'Narration describing HIV diagnosis confirmation process with visual examples.',
+            'at-home-testing': 'Audio description explaining at-home HIV testing options with visual elements.',
+            'testing-centers': 'Detailed narration about finding HIV testing centers with visual representations.',
+            'symptom-guides': 'Audio description of reliable HIV symptom information sources with visual examples.',
+            'consultation-services': 'Narration describing HIV consultation services with visual elements.',
+            'stages': 'Audio description overview of HIV stages and symptoms with visual representations.',
+            'visual-symptoms': 'Detailed narration of visual HIV symptoms with examples.',
+            'testing': 'Audio description of HIV testing information with visual elements.',
+            'resources': 'Narration describing HIV symptom resources with visual examples.'
+        };
+
+        function openASLModal(section) {
+            const modal = document.getElementById('aslModal');
+            const video = document.getElementById('aslVideo');
+            const transcript = document.getElementById('aslTranscriptText');
+            
+            // Set video source
+            video.src = `asl/${section}.mp4`;
+            
+            // Set transcript text
+            transcript.textContent = videoTranscripts[section] || 'Sign language interpretation for this content.';
+            
+            modal.style.display = 'flex';
+            video.load();
+            video.play();
+        }
+
+        function openAudioDescModal(section) {
+            const modal = document.getElementById('audioDescModal');
+            const video = document.getElementById('audioDescVideo');
+            const transcript = document.getElementById('audioDescTranscriptText');
+            
+            // Set video source
+            video.src = `audio-desc/${section}.mp4`;
+            
+            // Set transcript text
+            transcript.textContent = audioDescTranscripts[section] || 'Audio description for this content.';
+            
+            modal.style.display = 'flex';
+            video.load();
+            video.play();
+        }
+        
+        function closeASLModal() {
+            const modal = document.getElementById('aslModal');
+            const video = document.getElementById('aslVideo');
+            
+            video.pause();
+            modal.style.display = 'none';
+        }
+
+        function closeAudioDescModal() {
+            const modal = document.getElementById('audioDescModal');
+            const video = document.getElementById('audioDescVideo');
+            
+            video.pause();
+            modal.style.display = 'none';
+        }
+        
+        // Close modal when clicking outside the content
+        window.onclick = function(event) {
+            const aslModal = document.getElementById('aslModal');
+            const audioDescModal = document.getElementById('audioDescModal');
+            
+            if (event.target == aslModal) {
+                closeASLModal();
+            }
+            
+            if (event.target == audioDescModal) {
+                closeAudioDescModal();
+            }
+        }
+    </script>
+</body>
+</html>

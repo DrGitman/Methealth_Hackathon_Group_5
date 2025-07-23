@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIV Awareness Quiz | Test Your Knowledge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles - Matches Your Other Pages */
+        :root {
+            --primary-color: #ffa398;
+            --secondary-color: #e70404;
+            --dark-color:#ff484c;
+            --light-color: #ecf0f1;
+            --success-color: #2ecc71;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 15px 0;
+            display: block;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav ul li.active a {
+            color: var(--primary-color);
+        }
+        
+        nav ul li.active a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* Hero Section - Updated to Match Your Style */
+        .hero {
+            position: relative;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .quiz-hero {
+            background: linear-gradient(rgba(231, 76, 60, 0.8), rgba(231, 76, 60, 0.8)), url('../images/quiz-hero.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Quiz Container - Updated Colors */
+        .quiz-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        #quiz-intro {
+            text-align: center;
+        }
+        
+        #quiz-intro h2 {
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        #quiz-intro p {
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+        
+        /* Buttons - Matches Your Other Pages */
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .secondary-btn {
+            background: white;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .secondary-btn:hover {
+            background: #f8f9fa;
+        }
+        
+        /* Progress Bar */
+        .quiz-progress {
+            margin-bottom: 30px;
+        }
+        
+        #progress-bar {
+            height: 10px;
+            background: var(--light-color);
+            border-radius: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        
+        #progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        #progress-text {
+            display: block;
+            text-align: right;
+            color: var(--text-light);
+        }
+        
+        /* Questions */
+        .question {
+            margin-bottom: 30px;
+        }
+        
+        .question-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .answers {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .answer-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: white;
+            border: 2px solid var(--light-color);
+            border-radius: 8px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .answer-btn:hover {
+            background: #f8f9fa;
+            border-color: var(--primary-color);
+        }
+        
+        /* Feedback */
+        .quiz-feedback {
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+            display: none;
+        }
+        
+        .correct-feedback {
+            background: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid #2ecc71;
+        }
+        
+        .incorrect-feedback {
+            background: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        #feedback-text {
+            margin-bottom: 20px;
+        }
+        
+        #feedback-text .correct-answer {
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        /* Results */
+        .result-score {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .result-score #score {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+        }
+        
+        .result-message {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .quiz-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        /* Footer - Matches Your Other Pages */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 50px 0 0;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            transition: color 0.3s ease;
+        }
+        
+        .footer-col a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .confidentiality {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            margin-top: 10px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero {
+                height: 40vh;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .quiz-container {
+                padding: 30px 20px;
+            }
+            
+            .quiz-actions {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero {
+                height: 60vh;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-ribbon"></i> HIV Inclusive</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Symptoms/Preventions</a></li>
+                    <li><a href="maintenance.html">Living with HIV</a></li>
+                    <li><a href="relationships.html">Relationship</a></li>
+                    <li><a href="motivation.html">Community</a></li>
+                    <li class="active"><a href="quiz.html">Take a Quiz</a></li>
+                    <li><a href="visuals.html">Visuals</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero quiz-hero">
+        <div class="container">
+            <h2>Test Your HIV Knowledge</h2>
+            <p>Take this 10-question quiz to see how much you know about HIV prevention and treatment</p>
+        </div>
+    </section>
+
+    <section id="quiz" class="section">
+        <div class="container">
+            <div class="quiz-container">
+                <div id="quiz-intro">
+                    <h2>Ready to Test Your Knowledge?</h2>
+                    <p>This quiz covers essential information about HIV prevention, treatment, and relationships. You'll get immediate feedback on each answer and a final score.</p>
+                    <button id="start-quiz" class="btn">Start Quiz</button>
+                </div>
+
+                <div id="quiz-questions" style="display: none;">
+                    <div class="quiz-progress">
+                        <div id="progress-bar">
+                            <div id="progress-bar-fill"></div>
+                        </div>
+                        <span id="progress-text">Question 1 of 10</span>
+                    </div>
+
+                    <div id="question-container">
+                        <!-- Questions will be inserted here by JavaScript -->
+                    </div>
+
+                    <div class="quiz-feedback" id="feedback-container">
+                        <div id="feedback-text"></div>
+                        <button id="next-question" class="btn">Next Question</button>
+                    </div>
+                </div>
+
+                <div id="quiz-results" style="display: none;">
+                    <h2>Your Quiz Results</h2>
+                    <div class="result-score">
+                        You scored <span id="score">0</span>/10
+                    </div>
+                    <div class="result-message" id="result-message"></div>
+                    <div class="quiz-actions">
+                        <button id="restart-quiz" class="btn">Take Quiz Again</button>
+                        <a href="index.html" class="btn secondary-btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Prevention</a></li>
+                        <li><a href="maintenance.html">Living with HIV</a></li>
+                        <li><a href="motivation.html">Motivation</a></li>
+                        <li><a href="relationships.html">Relationships</a></li>
+                        <li><a href="quiz.html">Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> Hotline: 1-800-XXX-XXXX</li>
+                        <li><i class="fas fa-envelope"></i> info@hivawareness.org</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Accessibility</h4>
+                    <ul>
+                        <li><i class="fas fa-assistive-listening-systems"></i> TTY: 1-800-XXX-XXXX</li>
+                        <li><i class="fas fa-sign-language"></i> ASL interpreters available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 HIV Awareness. All rights reserved.</p>
+                <p class="confidentiality">All information is kept confidential.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const allQuizQuestions = [
+                {
+                    question: "What does U=U stand for in HIV treatment?",
+                    answers: [
+                        "Undetectable equals Unhealthy",
+                        "Untested equals Unknown",
+                        "Undetectable equals Untransmittable",
+                        "Unprotected equals Unsafe"
+                    ],
+                    correctAnswer: 2,
+                    explanation: "U=U means that when a person with HIV takes antiretroviral therapy (ART) as prescribed and maintains an undetectable viral load, they cannot sexually transmit HIV to others."
+                },
+                {
+                    question: "How effective is PrEP at preventing HIV when taken as prescribed?",
+                    answers: [
+                        "About 50% effective",
+                        "About 75% effective",
+                        "About 90% effective",
+                        "Over 99% effective"
+                    ],
+                    correctAnswer: 3,
+                    explanation: "When taken consistently, PrEP is highly effective at preventing HIV, reducing the risk of getting HIV from sex by about 99%."
+                },
+                {
+                    question: "How soon after potential HIV exposure should PEP be started?",
+                    answers: [
+                        "Within 6 hours",
+                        "Within 72 hours",
+                        "Within 1 week",
+                        "Within 1 month"
+                    ],
+                    correctAnswer: 1,
+                    explanation: "PEP (post-exposure prophylaxis) must be started within 72 hours (3 days) after a possible exposure to HIV, and the sooner the better."
+                },
+                {
+                    question: "Which of these activities CANNOT transmit HIV?",
+                    answers: [
+                        "Sharing needles",
+                        "Unprotected sex",
+                        "Kissing",
+                        "From mother to baby during childbirth"
+                    ],
+                    correctAnswer: 2,
+                    explanation: "HIV cannot be transmitted through kissing, hugging, or casual contact. It is not spread through saliva, tears, or sweat."
+                },
+                {
+                    question: "How often should someone with HIV have their viral load tested?",
+                    answers: [
+                        "Every month",
+                        "Every 3-6 months",
+                        "Once a year",
+                        "Only when they feel sick"
+                    ],
+                    correctAnswer: 1,
+                    explanation: "People with HIV should typically have their viral load tested every 3-6 months to ensure their treatment is working effectively."
+                },
+                {
+                    question: "What is the most effective way to prevent HIV transmission during sex?",
+                    answers: [
+                        "Pulling out before ejaculation",
+                        "Using condoms consistently and correctly",
+                        "Only having sex with people who look healthy",
+                        "Douching before and after sex"
+                    ],
+                    correctAnswer: 1,
+                    explanation: "Consistent and correct use of condoms is highly effective at preventing HIV transmission during sexual activity."
+                },
+                {
+                    question: "Which of these is NOT a common way HIV is transmitted?",
+                    answers: [
+                        "Sharing needles or syringes",
+                        "From mother to baby during breastfeeding",
+                        "Through mosquito bites",
+                        "Unprotected anal or vaginal sex"
+                    ],
+                    correctAnswer: 2,
+                    explanation: "HIV cannot be transmitted by mosquitoes or other insects. The virus does not survive and cannot reproduce in insects."
+                },
+                {
+                    question: "What should a discordant couple (one positive, one negative) do to prevent transmission?",
+                    answers: [
+                        "The positive partner should maintain an undetectable viral load",
+                        "The negative partner should consider taking PrEP",
+                        "Use condoms consistently",
+                        "All of the above"
+                    ],
+                    correctAnswer: 3,
+                    explanation: "All of these strategies together provide the best protection for discordant couples. This combination approach is sometimes called 'combination prevention'."
+                },
+                {
+                    question: "How long does it typically take for ART to make someone's viral load undetectable?",
+                    answers: [
+                        "1-2 days",
+                        "1-2 weeks",
+                        "1-6 months",
+                        "1-2 years"
+                    ],
+                    correctAnswer: 2,
+                    explanation: "Most people who start taking ART daily as prescribed achieve an undetectable viral load within 1 to 6 months."
+                },
+                {
+                    question: "Can people with HIV have healthy, HIV-negative children?",
+                    answers: [
+                        "No, the baby will always have HIV",
+                        "Yes, but only through adoption",
+                        "Yes, with proper medical care and treatment",
+                        "Only if the mother is HIV-negative"
+                    ],
+                    correctAnswer: 2,
+                    explanation: "With proper medical care, including ART during pregnancy and delivery, the risk of mother-to-child transmission can be reduced to less than 1%."
+                },
+                {
+                    question: "What is the window period for HIV tests?",
+                    answers: [
+                        "1-2 days after exposure",
+                        "1-2 weeks after exposure",
+                        "2-6 weeks after exposure (depending on test type)",
+                        "6 months after exposure"
+                    ],
+                    correctAnswer: 2,
+                    explanation: "The window period varies by test type. Most rapid tests detect HIV 2-6 weeks after exposure, while nucleic acid tests can detect it earlier."
+                },
+                {
+                    question: "Which population is most affected by HIV globally?",
+                    answers: [
+                        "Heterosexual women in sub-Saharan Africa",
+                        "Men who have sex with men worldwide",
+                        "People who inject drugs",
+                        "All populations are equally affected"
+                    ],
+                    correctAnswer: 0,
+                    explanation: "While HIV affects all populations, heterosexual women in sub-Saharan Africa bear the highest burden globally, representing about 60% of new infections in the region."
+                },
+                {
+                    question: "What does a CD4 count measure?",
+                    answers: [
+                        "Viral load in the blood",
+                        "White blood cells that fight infection",
+                        "Red blood cell production",
+                        "Liver function"
+                    ],
+                    correctAnswer: 1,
+                    explanation: "CD4 cells are a type of white blood cell that HIV attacks. The CD4 count measures how many of these immune cells are present in a blood sample."
+                },
+                {
+                    question: "Which is NOT a common early symptom of HIV infection?",
+                    answers: [
+                        "Fever",
+                        "Rash",
+                        "Sore throat",
+                        "Bone fractures"
+                    ],
+                    correctAnswer: 3,
+                    explanation: "About 2-4 weeks after infection, many people experience flu-like symptoms (fever, rash, sore throat), but bone fractures are not associated with acute HIV infection."
+                },
+                {
+                    question: "What is the main goal of HIV treatment?",
+                    answers: [
+                        "Complete cure of HIV",
+                        "Making viral load undetectable",
+                        "Boosting CD4 count only",
+                        "Eliminating all symptoms"
+                    ],
+                    correctAnswer: 1,
+                    explanation: "While there's no cure yet, the main goal of treatment is to achieve and maintain an undetectable viral load, which preserves health and prevents transmission."
+                },
+                {
+                    question: "Which of these is NOT a mode of HIV transmission?",
+                    answers: [
+                        "Sharing toothbrushes",
+                        "Unprotected sex",
+                        "Pregnancy/childbirth",
+                        "Sharing needles"
+                    ],
+                    correctAnswer: 0,
+                    explanation: "HIV cannot be transmitted through sharing toothbrushes or other casual contact. The virus doesn't survive long outside the body."
+                },
+                {
+                    question: "What is the most common way HIV is transmitted in the Namibia?",
+                    answers: [
+                        "Male-to-male sexual contact",
+                        "Heterosexual contact",
+                        "Sharing needles",
+                        "Blood transfusions"
+                    ],
+                    correctAnswer: 0,
+                    explanation: "In Namibia, male-to-male sexual contact accounts for about 70% of new HIV infections, followed by heterosexual contact and injection drug use."
+                },
+                {
+                    question: "Which statement about HIV and aging is TRUE?",
+                    answers: [
+                        "People with HIV don't live long enough to age",
+                        "HIV accelerates aging by about 5-10 years",
+                        "Aging doesn't affect people with HIV differently",
+                        "HIV medications prevent all aging effects"
+                    ],
+                    correctAnswer: 1,
+                    explanation: "With treatment, people with HIV live long lives but may experience age-related conditions 5-10 years earlier due to chronic immune activation."
+                },
+                {
+                    question: "What is the best way to prevent mother-to-child HIV transmission?",
+                    answers: [
+                        "C-section delivery only",
+                        "Formula feeding only",
+                        "ART for mother during pregnancy/delivery",
+                        "All of the above combined"
+                    ],
+                    correctAnswer: 3,
+                    explanation: "The most effective prevention combines ART for the mother, proper delivery management, and formula feeding, reducing transmission risk to <1%."
+                },
+                {
+                    question: "Which of these is NOT an HIV prevention method?",
+                    answers: [
+                        "Condoms",
+                        "PrEP",
+                        "PEP",
+                        "Antibiotics"
+                    ],
+                    correctAnswer: 3,
+                    explanation: "While condoms, PrEP (pre-exposure), and PEP (post-exposure) prevent HIV, antibiotics treat bacterial infections and have no effect on HIV."
+                },
+                {
+                    question: "What percentage of people with HIV know their status globally?",
+                    answers: [
+                        "25%",
+                        "50%",
+                        "75%",
+                        "85%"
+                    ],
+                    correctAnswer: 3,
+                    explanation: "About 85% of people with HIV globally know their status, meaning 15% remain undiagnosed and unaware they need treatment."
+                },
+                {
+                    question: "Which organ is most affected by untreated HIV?",
+                    answers: [
+                        "Liver",
+                        "Heart",
+                        "Immune system",
+                        "Kidneys"
+                    ],
+                    correctAnswer: 2,
+                    explanation: "HIV primarily attacks the immune system, specifically CD4 cells, weakening the body's ability to fight infections and certain cancers."
+                },
+                {
+                    question: "What is the biggest barrier to ending the HIV epidemic?",
+                    answers: [
+                        "Lack of effective treatments",
+                        "Stigma and discrimination",
+                        "No effective prevention methods",
+                        "HIV vaccines don't exist"
+                    ],
+                    correctAnswer: 1,
+                    explanation: "While we have effective treatments and prevention, stigma remains the biggest barrier as it prevents people from getting tested and treated."
+                },
+                {
+                    question: "How does HIV treatment help prevent new infections?",
+                    answers: [
+                        "It cures HIV so people can't transmit it",
+                        "It reduces viral load making transmission unlikely",
+                        "It provides immunity to partners",
+                        "It only helps prevent infections in newborns"
+                    ],
+                    correctAnswer: 1,
+                    explanation: "Treatment reduces viral load to undetectable levels, making sexual transmission effectively impossible (U=U)."
+                },
+                {
+                    question: "Which demographic has seen rising HIV rates recently?",
+                    answers: [
+                        "Young women of color",
+                        "Adolescent girls and young women in Africa",
+                        "People over 50",
+                        "All of the above"
+                    ],
+                    correctAnswer: 3,
+                    explanation: "All these groups have seen concerning rises in HIV rates due to various factors including lack of prevention services and late diagnoses."
+                },
+                {
+                    question: "What's the most common route of HIV transmission in children?",
+                    answers: [
+                        "Breastfeeding",
+                        "Casual contact with infected children",
+                        "Mother-to-child during pregnancy/delivery",
+                        "Blood transfusions"
+                    ],
+                    correctAnswer: 2,
+                    explanation: "Without intervention, mother-to-child transmission during pregnancy/delivery is most common, though breastfeeding also poses risk."
+                },
+                {
+                    question: "Which statement about HIV and COVID-19 is TRUE?",
+                    answers: [
+                        "People with HIV can't get COVID-19",
+                        "HIV increases COVID-19 mortality 3-fold",
+                        "Well-managed HIV doesn't increase COVID-19 risk",
+                        "COVID vaccines don't work for people with HIV"
+                    ],
+                    correctAnswer: 2,
+                    explanation: "People with well-managed HIV (on treatment, undetectable) have similar COVID-19 outcomes as the general population."
+                },
+                {
+                    question: "What's the main benefit of starting HIV treatment early?",
+                    answers: [
+                        "It cures HIV faster",
+                        "It prevents damage to the immune system",
+                        "It reduces treatment costs",
+                        "It eliminates all symptoms immediately"
+                    ],
+                    correctAnswer: 1,
+                    explanation: "Early treatment preserves immune function and leads to better long-term health outcomes, though it doesn't cure HIV."
+                },
+                {
+                    question: "Which of these is NOT an HIV-related stigma?",
+                    answers: [
+                        "Assuming all gay men have HIV",
+                        "Thinking HIV only affects certain groups",
+                        "Believing U=U (undetectable=untransmittable)",
+                        "Avoiding physical contact with someone because they have HIV"
+                    ],
+                    correctAnswer: 2,
+                    explanation: "U=U is a scientifically proven concept, not a stigma. The other options represent common HIV-related stigmas and misconceptions."
+                },
+                {
+                    question: "What percentage of new HIV infections come from people who don't know their status?",
+                    answers: [
+                        "10%",
+                        "30%",
+                        "50%",
+                        "70%"
+                    ],
+                    correctAnswer: 1,
+                    explanation: "About 30-40% of new infections come from people unaware they have HIV, highlighting the importance of regular testing."
+                }
+            ];
+
+            // Quiz variables
+            let currentQuestion = 0;
+            let score = 0;
+            let userAnswers = [];
+            let quizQuestions = [];
+
+            // DOM elements
+            const quizIntro = document.getElementById('quiz-intro');
+            const quizQuestionsContainer = document.getElementById('quiz-questions');
+            const questionContainer = document.getElementById('question-container');
+            const feedbackContainer = document.getElementById('feedback-container');
+            const feedbackText = document.getElementById('feedback-text');
+            const nextQuestionBtn = document.getElementById('next-question');
+            const quizResults = document.getElementById('quiz-results');
+            const scoreElement = document.getElementById('score');
+            const resultMessage = document.getElementById('result-message');
+            const progressBarFill = document.getElementById('progress-bar-fill');
+            const progressText = document.getElementById('progress-text');
+
+            // Function to select random questions
+            function getRandomQuestions() {
+                // Make a copy of all questions
+                const questionsCopy = [...allQuizQuestions];
+                const randomQuestions = [];
+                
+                // Select 10 random questions
+                for (let i = 0; i < 10; i++) {
+                    const randomIndex = Math.floor(Math.random() * questionsCopy.length);
+                    randomQuestions.push(questionsCopy[randomIndex]);
+                    questionsCopy.splice(randomIndex, 1); // Remove selected question
+                }
+                
+                return randomQuestions;
+            }
+
+            // Start quiz
+            document.getElementById('start-quiz').addEventListener('click', startQuiz);
+            document.getElementById('restart-quiz').addEventListener('click', restartQuiz);
+
+            // Display question
+            function displayQuestion() {
+                const question = quizQuestions[currentQuestion];
+                
+                // Update progress
+                const progressPercent = (currentQuestion / quizQuestions.length) * 100;
+                progressBarFill.style.width = `${progressPercent}%`;
+                progressText.textContent = `Question ${currentQuestion + 1} of ${quizQuestions.length}`;
+                
+                // Create question HTML
+                let questionHTML = `
+                    <div class="question">
+                        <div class="question-text">${question.question}</div>
+                        <div class="answers">
+                `;
+                
+                // Add answer buttons
+                question.answers.forEach((answer, index) => {
+                    questionHTML += `
+                        <button class="answer-btn" data-index="${index}">${answer}</button>
+                    `;
+                });
+                
+                questionHTML += `</div></div>`;
+                questionContainer.innerHTML = questionHTML;
+                
+                // Add event listeners to answer buttons
+                document.querySelectorAll('.answer-btn').forEach(button => {
+                    button.addEventListener('click', selectAnswer);
+                });
+            }
+
+            // Select answer
+            function selectAnswer(e) {
+                const selectedButton = e.target;
+                const selectedAnswer = parseInt(selectedButton.getAttribute('data-index'));
+                const question = quizQuestions[currentQuestion];
+                
+                // Disable all answer buttons
+                document.querySelectorAll('.answer-btn').forEach(button => {
+                    button.disabled = true;
+                    button.style.cursor = 'default';
+                    
+                    // Highlight correct answer
+                    if (parseInt(button.getAttribute('data-index')) === question.correctAnswer) {
+                        button.style.borderColor = '#2ecc71';
+                        button.style.backgroundColor = 'rgba(46, 204, 113, 0.1)';
+                    }
+                    
+                    // Highlight wrong answer if selected
+                    if (button === selectedButton && selectedAnswer !== question.correctAnswer) {
+                        button.style.borderColor = '#e74c3c';
+                        button.style.backgroundColor = 'rgba(231, 76, 60, 0.1)';
+                    }
+                });
+                
+                // Check if answer is correct
+                const isCorrect = selectedAnswer === question.correctAnswer;
+                
+                // Update score
+                if (isCorrect) {
+                    score++;
+                }
+                
+                // Store user answer
+                userAnswers.push({
+                    question: question.question,
+                    userAnswer: question.answers[selectedAnswer],
+                    correctAnswer: question.answers[question.correctAnswer],
+                    isCorrect: isCorrect,
+                    explanation: question.explanation
+                });
+                
+                // Show feedback
+                showFeedback(isCorrect, question.explanation);
+            }
+
+            // Show feedback
+            function showFeedback(isCorrect, explanation) {
+                feedbackContainer.style.display = 'block';
+                feedbackContainer.className = 'quiz-feedback ' + (isCorrect ? 'correct-feedback' : 'incorrect-feedback');
+                
+                feedbackText.innerHTML = isCorrect 
+                    ? `<p><i class="fas fa-check-circle"></i> Correct! Well done.</p>`
+                    : `<p><i class="fas fa-times-circle"></i> That's not correct.</p>`;
+                    
+                feedbackText.innerHTML += `<p class="explanation">${explanation}</p>`;
+            }
+
+            // Next question
+            nextQuestionBtn.addEventListener('click', () => {
+                currentQuestion++;
+                
+                if (currentQuestion < quizQuestions.length) {
+                    feedbackContainer.style.display = 'none';
+                    displayQuestion();
+                } else {
+                    showResults();
+                }
+            });
+
+            // Show results
+            function showResults() {
+                quizQuestionsContainer.style.display = 'none';
+                quizResults.style.display = 'block';
+                
+                // Update progress bar to 100%
+                progressBarFill.style.width = '100%';
+                
+                scoreElement.textContent = score;
+                
+                // Custom result message based on score
+                if (score === quizQuestions.length) {
+                    resultMessage.innerHTML = `
+                        <h3>Perfect Score! <i class="fas fa-star"></i></h3>
+                        <p>You have excellent knowledge about HIV prevention and treatment. Consider sharing this quiz to help educate others!</p>
+                    `;
+                } else if (score >= quizQuestions.length * 0.7) {
+                    resultMessage.innerHTML = `
+                        <h3>Great Job! <i class="fas fa-thumbs-up"></i></h3>
+                        <p>You have good knowledge about HIV, but there's still more to learn. Check out our resources to improve your understanding.</p>
+                    `;
+                } else if (score >= quizQuestions.length * 0.4) {
+                    resultMessage.innerHTML = `
+                        <h3>Not Bad <i class="fas fa-meh"></i></h3>
+                        <p>You know some basics about HIV, but there are important gaps in your knowledge. Our prevention page has great information to help you learn more.</p>
+                    `;
+                } else {
+                    resultMessage.innerHTML = `
+                        <h3>Keep Learning <i class="fas fa-book"></i></h3>
+                        <p>HIV education is important for everyone. We encourage you to explore our website to learn more about prevention and treatment.</p>
+                    `;
+                }
+            }
+
+            // Start quiz
+            function startQuiz() {
+                quizIntro.style.display = 'none';
+                quizQuestionsContainer.style.display = 'block';
+                currentQuestion = 0;
+                score = 0;
+                userAnswers = [];
+                quizQuestions = getRandomQuestions(); // Get new random questions
+                displayQuestion();
+                feedbackContainer.style.display = 'none';
+            }
+
+            // Restart quiz
+            function restartQuiz() {
+                quizResults.style.display = 'none';
+                quizQuestionsContainer.style.display = 'block';
+                currentQuestion = 0;
+                score = 0;
+                userAnswers = [];
+                quizQuestions = getRandomQuestions(); // Get new random questions
+                displayQuestion();
+                feedbackContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

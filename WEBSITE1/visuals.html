@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIV Awareness Resource Folder</title>
+    <style>
+        /* CSS Styling */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            background-color: #3498db;
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+        }
+        .section {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .image-placeholder {
+            background-color: #eee;
+            padding: 20px;
+            text-align: center;
+            margin: 15px 0;
+            border: 1px dashed #999;
+        }
+        .myth-vs-fact {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .myth, .fact {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .myth {
+            background-color: #ffdddd;
+            border-left: 4px solid #ff6b6b;
+        }
+        .fact {
+            background-color: #ddffdd;
+            border-left: 4px solid #4CAF50;
+        }
+        .contact-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .contact {
+            background-color: #e3f2fd;
+            padding: 10px;
+            border-radius: 5px;
+            flex: 1;
+            min-width: 200px;
+        }
+        .download-btn {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>📁 HIV Awareness Resource Folder</h1>
+    <p style="text-align: center;">A comprehensive guide to HIV prevention, symptoms, and care.</p>
+
+    <!-- HIV Basics Section -->
+    <div class="section">
+        <h2>🔬 HIV Basics</h2>
+        <p><strong>HIV (Human Immunodeficiency Virus)</strong> attacks the immune system, weakening the body's ability to fight infections.</p>
+        <div class="image-placeholder">
+            [Infographic: How HIV spreads (e.g., unprotected sex, needles) vs. how it doesn’t (e.g., hugging, sharing food)]
+        </div>
+        <ul>
+            <li><strong>Transmission:</strong> Blood, semen, vaginal fluids, breast milk.</li>
+            <li><strong>No Transmission:</strong> Saliva, tears, casual contact.</li>
+        </ul>
+    </div>
+
+    <!-- Prevention Section -->
+    <div class="section">
+        <h2>🛡️ Prevention</h2>
+        <h3>Key Strategies:</h3>
+        <ul>
+            <li>Use condoms consistently.</li>
+            <li>PrEP (Pre-Exposure Prophylaxis) for high-risk individuals.</li>
+            <li>Never share needles.</li>
+        </ul>
+        <div class="image-placeholder">
+            [Image: Condom + PrEP pill infographic]
+        </div>
+    </div>
+
+    <!-- Symptoms & Testing -->
+    <div class="section">
+        <h2>⚠️ Symptoms & Testing</h2>
+        <h3>Early Signs (2-4 weeks after exposure):</h3>
+        <ul>
+            <li>Fever, fatigue, swollen lymph nodes.</li>
+            <li>Rash or sore throat.</li>
+        </ul>
+        <h3>Testing Options:</h3>
+        <ul>
+            <li>Rapid tests (20-minute results).</li>
+            <li>Lab tests (blood draw).</li>
+        </ul>
+        <div class="image-placeholder">
+            [Image: HIV testing kit example]
+        </div>
+    </div>
+
+    <!-- Facts vs. Myths -->
+    <div class="section">
+        <h2>✅ Facts vs. Myths</h2>
+        <div class="myth-vs-fact">
+            <div class="myth">
+                <h3>❌ Myth</h3>
+                <p>"HIV can spread through mosquito bites."</p>
+            </div>
+            <div class="fact">
+                <h3>✔️ Fact</h3>
+                <p>HIV cannot survive in mosquitoes. No transmission this way.</p>
+            </div>
+        </div>
+        <div class="myth-vs-fact">
+            <div class="myth">
+                <h3>❌ Myth</h3>
+                <p>"You can tell if someone has HIV by looking."</p>
+            </div>
+            <div class="fact">
+                <h3>✔️ Fact</h3>
+                <p>Many people with HIV show no symptoms for years.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="section">
+        <h2>📞 Contact Information</h2>
+        <div class="contact-card">
+            <div class="contact">
+                <h3>Global Hotline</h3>
+                <p>WHO HIV Helpline: +41 22 791 21 11</p>
+            </div>
+            <div class="contact">
+                <h3>U.S. CDC</h3>
+                <p>1-800-CDC-INFO (1-800-232-4636)</p>
+            </div>
+            <div class="contact">
+                <h3>Local Clinic Finder</h3>
+                <p><a href="https://www.hiv.gov" target="_blank">HIV.gov</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download Button (Functionality requires JS) -->
+    <button class="download-btn" onclick="window.print()">⬇️ Download as PDF</button>
+
+    <script>
+        // Optional: Enhance with JavaScript for PDF export or ZIP download
+        document.querySelector('.download-btn').addEventListener('click', function() {
+            alert("Tip: Use 'Print' → 'Save as PDF' to download this page.");
+        });
+    </script>
+</body>
+</html>
