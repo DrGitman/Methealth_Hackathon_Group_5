@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living with HIV | Treatment and Care</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #ff5409;
+            --light: #f1ecf1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #7f8c8d;
+            --primary-color:#ffa398;
+            --secondary-color: #e70404;
+            --dark-color:#ff484c;
+            --light-color: #ecf0f1;
+            --success-color: #2ecc71;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 15px 0;
+            display: block;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav ul li.active a {
+            color: var(--primary-color);
+        }
+        
+        nav ul li.active a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero2 {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero2 .container {
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero2 h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero2 p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .bg-light {
+            background-color: var(--light-color);
+        }
+        
+        .section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark-color);
+        }
+        
+        .section h2 i {
+            margin-right: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Treatment Grid */
+        .treatment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .treatment-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        
+        .treatment-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .treatment-card h3 {
+            padding: 20px;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .treatment-card ul {
+            padding: 0 20px 20px;
+            list-style-position: inside;
+        }
+        
+        .treatment-card ul li {
+            margin-bottom: 10px;
+        }
+        
+        .section-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        /* Health Grid */
+        .health-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+        
+        .health-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .health-card h3 {
+            padding: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .health-card p {
+            padding: 0 15px 15px;
+        }
+        
+        /* Relationships Content */
+        .relationships-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .u-equals-u, .disclosure, .family-planning {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .relationships-content h3 {
+            color: var(--dark-color);
+            margin: 15px 0;
+        }
+        
+        /* Resources Grid */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .resource-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .resource-card h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+        }
+        
+        .resource-card ul {
+            list-style: none;
+        }
+        
+        .resource-card ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .resource-card ul li:before {
+            content: "•";
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 0;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: var(--light-color);
+        }
+        
+        .footer-col a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-col i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .confidentiality {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+
+        /* ASL Toggle Button */
+        .asl-toggle-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--secondary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .asl-toggle-btn:hover {
+            background: #c0392b;
+            transform: scale(1.1);
+        }
+        
+        /* Hidden ASL Buttons */
+        .asl-section-btn {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(231, 76, 60, 0.9);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .asl-section-btn:hover {
+            background: #c0392b;
+        }
+        
+        .asl-section-btn i {
+            margin-right: 5px;
+        }
+        
+        /* Text-to-Speech Buttons */
+        .tts-section-btn {
+            display: none;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(52, 152, 219, 0.9);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .tts-section-btn:hover {
+            background: #2980b9;
+        }
+        
+        .tts-section-btn i {
+            margin-right: 5px;
+        }
+        
+        /* When ASL mode is active */
+        body.asl-mode .asl-section-btn {
+            display: block;
+        }
+
+        /* When TTS mode is active */
+        body.tts-mode .tts-section-btn {
+            display: block;
+        }
+
+        /* Enhanced ASL Modal Styles */
+        .asl-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .asl-modal-content {
+            background: #2c3e50;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            position: relative;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            color: white;
+        }
+        
+        .asl-video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #1a2636;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .asl-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .close-asl {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .close-asl:hover {
+            background: var(--secondary-color);
+            transform: rotate(90deg);
+        }
+        
+        .asl-transcript {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* ASL Options Menu */
+        .asl-options-menu {
+            display: none;
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            width: 200px;
+            overflow: hidden;
+        }
+
+        .asl-options-menu.active {
+            display: block;
+        }
+
+        .asl-option {
+            padding: 12px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .asl-option:hover {
+            background: #f0f0f0;
+        }
+
+        .asl-option i {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+
+        .asl-option.asl {
+            color: #e74c3c;
+        }
+
+        .asl-option.tts {
+            color: #3498db;
+        }
+
+        .asl-option.close {
+            color: #7f8c8d;
+            border-top: 1px solid #eee;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 5px 0;
+            }
+            
+            nav ul li.active a:after {
+                display: none;
+            }
+            
+            .hero2 h2 {
+                font-size: 2rem;
+            }
+            
+            .hero2 p {
+                font-size: 1.2rem;
+            }
+            
+            .section {
+                padding: 50px 0;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .asl-toggle-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .asl-modal-content {
+                width: 95%;
+                padding: 15px;
+            }
+            
+            .close-asl {
+                top: 10px;
+                right: 10px;
+                font-size: 24px;
+                width: 36px;
+                height: 36px;
+            }
+
+            .asl-options-menu {
+                bottom: 80px;
+                right: 20px;
+                width: 180px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero2 {
+                height: 60vh;
+            }
+            
+            .hero2 h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero2 p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-ribbon"></i> HIV Inclusive</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Symptoms/Preventions</a></li>
+                    <li class="active"><a href="maintenance.html">Living with HIV</a></li>
+                    <li><a href="relationships.html">Relationship</a></li>
+                    <li><a href="motivation.html">Community</a></li>
+                    <li><a href="quiz.html">Take a Quiz</a></li>
+                    <li><a href="visuals.html">Visuals</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero2">
+        <video autoplay muted loop class="video-background">
+            <source src="living.mp4" type="video/mp4">
+            <!-- Fallback if video doesn't load -->
+            <img src="images/fallback-image.jpg" alt="Happy diverse group of people living with HIV">
+        </video>
+        <div class="container">
+            <h2>Thriving with HIV: Modern Treatment and Care</h2>
+            <p>With proper treatment, people with HIV can live long, healthy lives</p>
+            <a href="#treatment" class="btn">Learn About Treatment</a>
+        </div>
+    </section>
+
+    <section id="treatment" class="section">
+        <div class="container">
+            <h2><i class="fas fa-pills"></i> HIV Treatment/Management</h2>
+            <div class="treatment-grid">
+                <div class="treatment-card">
+                    <img src="images/pill.jpg" alt="Person taking HIV medication" class="section-image">
+                    <h3>ART (Antiretroviral Therapy)</h3>
+                    <ul>
+                        <li>Combination of medications that suppress the virus</li>
+                        <li>Must be taken daily as prescribed</li>
+                        <li>Can make viral load undetectable</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-card">
+                    <img src="images/checkup.jpg" alt="Doctor reviewing medical chart" class="section-image">
+                    <h3>Medical Monitoring</h3>
+                    <ul>
+                        <li>Regular viral load tests</li>
+                        <li>CD4 count monitoring</li>
+                        <li>Other health screenings (liver, kidney, etc.)</li>
+                    </ul>
+                </div>
+                
+                <div class="treatment-card">
+                    <img src="images/no.jpg" alt="Person drinking water with medication" class="section-image">
+                    <h3>Avoid Alcohol</h3>
+                    <ul>
+                        <li>Alcohol weakens the immune system</li>
+                        <li>Excessive consumption can lead to liver damage</li>
+                        <li>Interference with ART,leading to increased viral load,etc</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="healthy-living" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-heartbeat"></i> Healthy Living with HIV</h2>
+            <div class="health-grid">
+                <div class="health-card">
+                    <img src="images/healthy.jpg" alt="Colorful healthy food plate" class="section-image">
+                    <h3>Nutrition</h3>
+                    <p>Eat a balanced diet with plenty of fruits, vegetables, and lean proteins to support your immune system.</p>
+                </div>
+                <div class="health-card">
+                    <img src="images/workout.jpg" alt="Person jogging in park" class="section-image">
+                    <h3>Exercise</h3>
+                    <p>Regular physical activity helps maintain strength, reduce stress, and improve overall health.</p>
+                </div>
+                <div class="health-card">
+                    <img src="images/help.jpg" alt="Group therapy session" class="section-image">
+                    <h3>Mental Health</h3>
+                    <p>Seek support for depression or anxiety. Support groups and counseling can help.</p>
+                </div>
+                <div class="health-card">
+                    <img src="images/sleep.jpg" alt="Person sleeping peacefully" class="section-image">
+                    <h3>Sleep</h3>
+                    <p>Aim for 7-9 hours of quality sleep each night to help your body recover and stay healthy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="relationships" class="section">
+        <div class="container">
+            <h2><i class="fas fa-people-arrows"></i> Relationships & Prevention</h2>
+            <div class="relationships-content">
+                <div class="u-equals-u">
+                    <img src="images/U=U.jpg" alt="Couple hugging with U=U symbol" class="section-image">
+                    <h3>U=U (Undetectable = Untransmittable)</h3>
+                    <p>When a person with HIV takes ART as prescribed and maintains an undetectable viral load, they cannot sexually transmit HIV to partners.</p>
+                </div>
+                <div class="disclosure">
+                    <img src="images/convo.jpg" alt="Two people having serious conversation" class="section-image">
+                    <h3>Disclosure Considerations</h3>
+                    <ul>
+                        <li>Legal requirements vary by location</li>
+                        <li>Consider safety and support systems</li>
+                        <li>Healthcare providers can offer guidance</li>
+                    </ul>
+                </div>
+                <div class="family-planning">
+                    <img src="images/fam2.jpg" alt="Happy diverse family" class="section-image">
+                    <h3>Family Planning</h3>
+                    <p>With proper medical care, people with HIV can have healthy HIV-negative children through assisted reproduction techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="section bg-light">
+        <div class="container">
+            <h2><i class="fas fa-hands-helping"></i> Resources & Support</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <img src="images/organ.jpg" alt="Support group meeting" class="section-image">
+                    <h3>Support Organizations</h3>
+                    <ul>
+                        <li><a href="#">TheBody.com</a> - Comprehensive HIV information</li>
+                        <li><a href="#">POZ Magazine</a> - News and resources</li>
+                        <li><a href="#">Local AIDS Service Organizations</a></li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <img src="images/fan.jpg" alt="Hands holding money and documents" class="section-image">
+                    <h3>Financial Assistance</h3>
+                    <ul>
+                        <li><a href="#">Ryan White HIV/AIDS Program</a></li>
+                        <li><a href="#">Patient Assistance Programs</a> from drug manufacturers</li>
+                        <li>State Medicaid programs</li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <img src="images/late.jpg" alt="Scientist in lab" class="section-image">
+                    <h3>Latest Research</h3>
+                    <ul>
+                        <li><a href="#">ClinicalTrials.gov</a> for participating in studies</li>
+                        <li><a href="#">HIV.gov research updates</a></li>
+                        <li><a href="#">International AIDS conferences</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ASL Toggle Button -->
+    <div class="asl-toggle-btn" id="aslToggle">
+        <i class="fas fa-sign-language"></i>
+    </div>
+
+    <!-- ASL Options Menu -->
+    <div class="asl-options-menu" id="aslOptionsMenu">
+        <div class="asl-option asl" onclick="enableASLMode()">
+            <i class="fas fa-sign-language"></i> ASL Videos
+        </div>
+        <div class="asl-option tts" onclick="enableTTSMode()">
+            <i class="fas fa-volume-up"></i> Text-to-Speech
+        </div>
+        <div class="asl-option close" onclick="closeOptionsMenu()">
+            <i class="fas fa-times"></i> Close Menu
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Prevention</a></li>
+                        <li><a href="maintenance.html">Living with HIV</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> Hotline: 1-800-XXX-XXXX</li>
+                        <li><i class="fas fa-envelope"></i> info@hivawareness.org</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Accessibility</h4>
+                    <ul>
+                        <li><i class="fas fa-assistive-listening-systems"></i> TTY: 1-800-XXX-XXXX</li>
+                        <li><i class="fas fa-sign-language"></i> ASL interpreters available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 HIV Awareness. All rights reserved.</p>
+                <p class="confidentiality">All information is kept confidential.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced ASL Modal -->
+    <div id="aslModal" class="asl-modal">
+        <div class="asl-modal-content">
+            <span class="close-asl" onclick="closeASLModal()">&times;</span>
+            <div class="asl-video-container">
+                <video id="aslVideo" class="asl-video" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="asl-transcript">
+                <p id="aslTranscriptText">Sign language interpretation for this content. Video will show proper signing for this section.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle ASL options menu
+        document.getElementById('aslToggle').addEventListener('click', function() {
+            document.getElementById('aslOptionsMenu').classList.toggle('active');
+            
+            // Change icon based on state
+            const icon = this.querySelector('i');
+            if (document.getElementById('aslOptionsMenu').classList.contains('active')) {
+                icon.classList.remove('fa-sign-language');
+                icon.classList.add('fa-times');
+                this.setAttribute('aria-label', 'Close accessibility options');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-sign-language');
+                this.setAttribute('aria-label', 'Open accessibility options');
+            }
+        });
+
+        function closeOptionsMenu() {
+            document.getElementById('aslOptionsMenu').classList.remove('active');
+            const icon = document.getElementById('aslToggle').querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-sign-language');
+        }
+
+        function enableASLMode() {
+            document.body.classList.add('asl-mode');
+            closeOptionsMenu();
+        }
+
+        function enableTTSMode() {
+            document.body.classList.add('tts-mode');
+            closeOptionsMenu();
+        }
+
+        // Add ASL and TTS buttons to all relevant sections
+        function addAccessibilityButtons() {
+            // Treatment cards
+            const treatmentCards = document.querySelectorAll('.treatment-card');
+            treatmentCards.forEach(card => {
+                const sectionId = card.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
+                
+                // Add ASL button
+                const aslBtn = document.createElement('button');
+                aslBtn.className = 'asl-section-btn';
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+                aslBtn.onclick = () => openASLModal(sectionId);
+                card.prepend(aslBtn);
+
+                // Add TTS button
+                const ttsBtn = document.createElement('button');
+                ttsBtn.className = 'tts-section-btn';
+                ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
+                ttsBtn.onclick = () => readSection(card);
+                card.prepend(ttsBtn);
+            });
+            
+            // Health cards
+            const healthCards = document.querySelectorAll('.health-card');
+            healthCards.forEach(card => {
+                const sectionId = card.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
+                
+                // Add ASL button
+                const aslBtn = document.createElement('button');
+                aslBtn.className = 'asl-section-btn';
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+                aslBtn.onclick = () => openASLModal(sectionId);
+                card.prepend(aslBtn);
+
+                // Add TTS button
+                const ttsBtn = document.createElement('button');
+                ttsBtn.className = 'tts-section-btn';
+                ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
+                ttsBtn.onclick = () => readSection(card);
+                card.prepend(ttsBtn);
+            });
+            
+            // Relationship sections
+            const relationshipSections = document.querySelectorAll('.u-equals-u, .disclosure, .family-planning');
+            relationshipSections.forEach(section => {
+                const sectionId = section.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
+                
+                // Add ASL button
+                const aslBtn = document.createElement('button');
+                aslBtn.className = 'asl-section-btn';
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+                aslBtn.onclick = () => openASLModal(sectionId);
+                section.prepend(aslBtn);
+
+                // Add TTS button
+                const ttsBtn = document.createElement('button');
+                ttsBtn.className = 'tts-section-btn';
+                ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
+                ttsBtn.onclick = () => readSection(section);
+                section.prepend(ttsBtn);
+            });
+            
+            // Resource cards
+            const resourceCards = document.querySelectorAll('.resource-card');
+            resourceCards.forEach(card => {
+                const sectionId = card.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
+                
+                // Add ASL button
+                const aslBtn = document.createElement('button');
+                aslBtn.className = 'asl-section-btn';
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+                aslBtn.onclick = () => openASLModal(sectionId);
+                card.prepend(aslBtn);
+
+                // Add TTS button
+                const ttsBtn = document.createElement('button');
+                ttsBtn.className = 'tts-section-btn';
+                ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
+                ttsBtn.onclick = () => readSection(card);
+                card.prepend(ttsBtn);
+            });
+            
+            // Main sections
+            const mainSections = document.querySelectorAll('#treatment, #healthy-living, #relationships, #resources');
+            mainSections.forEach(section => {
+                const sectionId = section.id;
+                const sectionTitle = section.querySelector('h2');
+                
+                // Add ASL button
+                const aslBtn = document.createElement('button');
+                aslBtn.className = 'asl-section-btn';
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
+                aslBtn.onclick = () => openASLModal(sectionId);
+                sectionTitle.parentNode.insertBefore(aslBtn, sectionTitle.nextSibling);
+
+                // Add TTS button
+                const ttsBtn = document.createElement('button');
+                ttsBtn.className = 'tts-section-btn';
+                ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
+                ttsBtn.onclick = () => readSection(section);
+                sectionTitle.parentNode.insertBefore(ttsBtn, sectionTitle.nextSibling);
+            });
+        }
+        
+        // Call this function when page loads
+        window.onload = addAccessibilityButtons;
+
+        // ASL Video Modal Functionality
+        const videoTranscripts = {
+            'prep': 'This video demonstrates sign language for antiretroviral therapy, explaining how it suppresses the virus and makes viral load undetectable.',
+            'pep': 'This interpretation explains the importance of regular viral load tests, CD4 count monitoring, and other health screenings.',
+            'avoid-alcohol': 'Sign language explanation about how alcohol weakens the immune system and interferes with ART medications.',
+            'how-to-disclose': 'Proper signing for nutrition recommendations for people living with HIV.',
+            'exercise-now': 'Sign language interpretation about the benefits of regular physical activity for people with HIV.',
+            'mental-health': 'This video demonstrates sign language for mental health support options for people living with HIV.',
+            'sleep': 'Sign language explanation about the importance of quality sleep for immune system health.',
+            'u=u-(undetectable-=-untransmittable)': 'This interpretation explains the U=U concept in sign language.',
+            'disclosure-considerations': 'Sign language video about legal requirements and safety considerations for HIV disclosure.',
+            'family-planning': 'This video demonstrates sign language for family planning options for people with HIV.',
+            'support-organizations': 'Sign language interpretation about support organizations for people living with HIV.',
+            'financial-assistance': 'This video explains financial assistance programs in sign language.',
+            'latest-research': 'Sign language interpretation of the latest HIV research and clinical trials.',
+            'treatment': 'Overview of HIV treatment options in sign language.',
+            'healthy-living': 'General healthy living tips for people with HIV in sign language.',
+            'relationships': 'Relationship advice for people living with HIV in sign language.',
+            'resources': 'Resource information for HIV support in sign language.'
+        };
+
+        // Text-to-Speech Functionality
+        function readSection(sectionElement) {
+            if ('speechSynthesis' in window) {
+                // Cancel any ongoing speech
+                window.speechSynthesis.cancel();
+                
+                // Get all text content from the section
+                let textToRead = '';
+                const elements = sectionElement.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li');
+                
+                elements.forEach(element => {
+                    textToRead += element.textContent + '. ';
+                });
+                
+                if (textToRead.trim().length > 0) {
+                    const utterance = new SpeechSynthesisUtterance(textToRead);
+                    utterance.rate = 1;
+                    utterance.pitch = 1;
+                    
+                    // Speak the text
+                    window.speechSynthesis.speak(utterance);
+                } else {
+                    alert('No text content found in this section to read.');
+                }
+            } else {
+                alert('Text-to-speech is not supported in your browser.');
+            }
+        }
+
+        function openASLModal(section) {
+            const modal = document.getElementById('aslModal');
+            const video = document.getElementById('aslVideo');
+            const transcript = document.getElementById('aslTranscriptText');
+            
+            // Set video source
+            video.src = `asl/${section}.mp4`;
+            
+            // Set transcript text
+            transcript.textContent = videoTranscripts[section] || 'Sign language interpretation for this content.';
+            
+            modal.style.display = 'flex';
+            video.load();
+            video.play();
+        }
+        
+        function closeASLModal() {
+            const modal = document.getElementById('aslModal');
+            const video = document.getElementById('aslVideo');
+            
+            video.pause();
+            modal.style.display = 'none';
+        }
+        
+        // Close modal when clicking outside the content
+        window.onclick = function(event) {
+            const aslModal = document.getElementById('aslModal');
+            
+            if (event.target == aslModal) {
+                closeASLModal();
+            }
+        }
+    </script>
+</body>
+</html>

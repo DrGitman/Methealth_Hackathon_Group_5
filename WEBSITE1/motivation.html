@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIV Disclosure | HIV Awareness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+     :root {
+            --primary-color: #ffa398;
+            --secondary-color: #e70404;
+            --dark-color:#ff484c;
+            --light-color: #ecf0f1;
+            --success-color: #2ecc71;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--primary-color);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+                .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin: 0;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: var(--dark-color);
+            font-weight: 600;
+            padding: 15px 0;
+            display: block;
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav ul li.active a {
+            color: var(--primary-color);
+        }
+        
+        nav ul li.active a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        /* Hero Section */
+        .hero2 {
+            position: relative;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero2 .container {
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        }
+        
+        .hero2 h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero2 p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--dark-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/logo5.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 100px 0;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            color: #fff;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Relationship Grid */
+        .relationship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .relationship-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .relationship-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .section-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+        }
+
+        .relationship-card h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .relationship-card ul {
+            list-style-position: inside;
+            padding-left: 5px;
+        }
+
+        .relationship-card ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Steps Grid */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .step-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            padding-top: 50px;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-number {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: var(--primary-color);
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .step-card h3 {
+            font-size: 1.6em;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Support Content */
+        .support-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .support-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .support-card h3 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .support-card p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        /* Final CTA */
+        .final-cta {
+            margin-top: 50px;
+        }
+
+        .final-cta p {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding: 40px 0 20px 0;
+            font-size: 0.9em;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-col ul li .fas {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-bottom p {
+            margin-bottom: 5px;
+        }
+
+        .footer-bottom .confidentiality {
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Accessibility Widget */
+        .accessibility-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1001;
+        }
+
+        .accessibility-toggle-btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.8em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .accessibility-toggle-btn:hover {
+            background-color: #C0392B;
+            transform: translateY(-2px);
+        }
+
+        .accessibility-options {
+            background-color: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+            padding: 25px;
+            width: 250px;
+            position: absolute;
+            bottom: calc(100% + 15px);
+            right: 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            text-align: center;
+        }
+
+        .accessibility-options.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .accessibility-options h4 {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .accessibility-options .option-btn {
+            display: block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 12px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            font-size: 0.95em;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .accessibility-options .option-btn:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .accessibility-options .option-btn:hover {
+            background-color: #27AE60;
+        }
+
+        .accessibility-options .option-btn .fas {
+            margin-right: 10px;
+        }
+
+        .accessibility-options .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.2em;
+            color: #999;
+            cursor: pointer;
+            padding: 5px;
+            transition: color 0.3s ease;
+        }
+
+        .accessibility-options .close-btn:hover {
+            color: var(--primary-color);
+        }
+
+        .accessibility-options .widget-note {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 15px;
+        }
+
+        /* Sign Language Video Player */
+        #signLanguageVideoPlayer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #signLanguageVideoPlayer > div {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        #closeVideoBtn {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #signLanguageVideo {
+            width: 100%;
+        }
+
+        /* Section TTS Controls */
+        .section-tts-controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+        }
+
+        .tts-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1em;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .tts-btn:hover {
+            background-color: var(--dark-color);
+            transform: scale(1.1);
+        }
+
+        .tts-btn.active {
+            background-color: var(--secondary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.8em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .relationship-grid,
+            .steps-grid,
+            .support-content {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h2 {
+                font-size: 2.2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .section h2 {
+                font-size: 2em;
+                margin-bottom: 30px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-col h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 15px;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            .logo h1 {
+                font-size: 1.5em;
+            }
+
+            nav ul li a {
+                font-size: 0.9em;
+            }
+
+            .hero {
+                padding: 60px 0;
+            }
+
+            .hero h2 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 0.9em;
+            }
+
+            .accessibility-widget {
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .accessibility-toggle-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5em;
+            }
+
+            .accessibility-options {
+                width: 220px;
+                padding: 20px;
+                bottom: calc(100% + 10px);
+            }
+        }
+    </style>
+</head>
+<body>
+ <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-ribbon"></i> HIV Inclusive</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Symptoms/Preventions</a></li>
+                    <li><a href="maintenance.html">Living with HIV</a></li>
+                    <li><a href="relationships.html">Relationship</a></li>
+                    <li class="active"><a href="motivation.html">Community</a></li>
+                    <li><a href="quiz.html">Take a Quiz</a></li>
+                    <li><a href="visuals.html">Images/Videos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <h2>HIV Disclosure: Your Journey to Empowerment</h2>
+            <p>Taking control of your narrative and finding the support you deserve</p>
+            <a href="#why-disclose" class="btn">Why Disclosure Matters</a>
+        </div>
+    </section>
+
+    <section id="why-disclose" class="section">
+        <div class="container">
+            <div class="section-tts-controls">
+                <button class="tts-btn" data-section="why-disclose"><i class="fas fa-volume-up"></i></button>
+            </div>
+            <h2>The Power of Sharing Your Status</h2>
+            <div class="relationship-grid">
+                <div class="relationship-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="reduced-burden"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <img src="images/heart.jpg" alt="Heart with hands" class="section-image">
+                    <h3>Reduced Burden & Stress</h3>
+                    <ul>
+                        <li>Lighten your mental load</li>
+                        <li>Reduce anxiety and isolation</li>
+                        <li>Experience emotional freedom</li>
+                    </ul>
+                </div>
+                
+                <div class="relationship-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="better-support"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <img src="images/support.jpg" alt="Group of people supporting each other" class="section-image">
+                    <h3>Access to Better Support</h3>
+                    <ul>
+                        <li>Build a supportive network</li>
+                        <li>Receive emotional assistance</li>
+                        <li>Get practical help when needed</li>
+                    </ul>
+                </div>
+                
+                <div class="relationship-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="fostering-trust"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <img src="images/trust.jpg" alt="Hands forming a heart" class="section-image">
+                    <h3>Fostering Trust</h3>
+                    <ul>
+                        <li>Build stronger relationships</li>
+                        <li>Create authentic connections</li>
+                        <li>Develop mutual understanding</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to-disclose" class="section bg-light">
+        <div class="container">
+            <div class="section-tts-controls">
+                <button class="tts-btn" data-section="how-to-disclose"><i class="fas fa-volume-up"></i></button>
+            </div>
+            <h2>Your Guide to Disclosure</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="prepare-yourself"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="step-number">1</div>
+                    <h3>Prepare Yourself</h3>
+                    <p>Understand your feelings and know the facts about HIV treatment (U=U). Consider what you want to achieve by disclosing.</p>
+                </div>
+                <div class="step-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="choose-who-to-tell"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="step-number">2</div>
+                    <h3>Choose Who to Tell</h3>
+                    <p>Start with someone you trust deeply, who you believe will react with compassion - a close friend, family member, or counselor.</p>
+                </div>
+                <div class="step-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="pick-right-time"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="step-number">3</div>
+                    <h3>Pick the Right Time & Place</h3>
+                    <p>Choose a private, calm setting where you won't be rushed. Ensure you both have time to talk without interruption.</p>
+                </div>
+                <div class="step-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="start-conversation"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="step-number">4</div>
+                    <h3>How to Start the Conversation</h3>
+                    <p>You might say, "I have something important to tell you..." or "I want to share something personal that affects me, and I trust you."</p>
+                </div>
+                <div class="step-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="prepare-for-reactions"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="step-number">5</div>
+                    <h3>Be Prepared for Reactions</h3>
+                    <p>People react differently. Some may be supportive immediately, others might need time. Educate them gently if they have misconceptions.</p>
+                </div>
+                <div class="step-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="seek-support"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <div class="step-number">6</div>
+                    <h3>Seek Support</h3>
+                    <p>Have a plan for your own emotional support after disclosing. Talk to a therapist, support group, or another trusted person.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="section">
+        <div class="container">
+            <div class="section-tts-controls">
+                <button class="tts-btn" data-section="benefits"><i class="fas fa-volume-up"></i></button>
+            </div>
+            <h2>The Benefits of Disclosure</h2>
+            <div class="support-content">
+                <div class="support-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="medical-care"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <img src="images/medical.jpg" alt="Doctor with patient" class="section-image">
+                    <h3>Better Medical Care</h3>
+                    <p>Openly discussing your HIV status with doctors leads to more personalized and effective treatment plans.</p>
+                </div>
+                <div class="support-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="reduced-isolation"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <img src="images/community.jpg" alt="People in a circle" class="section-image">
+                    <h3>Reduced Isolation</h3>
+                    <p>You don't have to carry this burden alone. Connecting with others can build strong support networks.</p>
+                </div>
+                <div class="support-card">
+                    <div class="section-tts-controls">
+                        <button class="tts-btn" data-card="improved-wellbeing"><i class="fas fa-volume-up"></i></button>
+                    </div>
+                    <img src="images/mental-health.jpg" alt="Person meditating" class="section-image">
+                    <h3>Improved Well-being</h3>
+                    <p>Secrecy can cause anxiety and depression. Disclosure can be a huge step towards emotional freedom.</p>
+                </div>
+            </div>
+            <div class="final-cta">
+                <p>Remember, your worth is not defined by your diagnosis. You are resilient, and help is always available.</p>
+                <a href="maintenance.html" class="btn">Find Local Support Resources</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Prevention</a></li>
+                        <li><a href="maintenance.html">Living with HIV</a></li>
+                        <li><a href="relationships.html">Relationships</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> Hotline: 1-800-XXX-XXXX</li>
+                        <li><i class="fas fa-envelope"></i> info@hivawareness.org</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Accessibility</h4>
+                    <ul>
+                        <li><i class="fas fa-assistive-listening-systems"></i> TTY: 1-800-XXX-XXXX</li>
+                        <li><i class="fas fa-sign-language"></i> ASL interpreters available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 HIV Awareness. All rights reserved.</p>
+                <p class="confidentiality">All information is kept confidential.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="accessibility-widget" id="accessibilityWidget">
+        <button class="accessibility-toggle-btn" id="accessibilityToggleBtn">
+            <i class="fas fa-universal-access"></i>
+        </button>
+        <div class="accessibility-options" id="accessibilityOptions">
+            <button class="close-btn" id="closeAccessibility"><i class="fas fa-times"></i></button>
+            <h4>Accessibility Options</h4>
+            <button class="option-btn" id="toggleSignLanguageBtn">
+                <i class="fas fa-sign-language"></i> Sign Language Video
+            </button>
+            <p class="widget-note">For enhanced accessibility features</p>
+        </div>
+    </div>
+
+    <div id="signLanguageVideoPlayer">
+        <div>
+            <button id="closeVideoBtn"><i class="fas fa-times"></i></button>
+            <video id="signLanguageVideo" controls>
+                <source src="sign-language.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tab Functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                    button.classList.add('active');
+                    const targetTabId = button.dataset.tab;
+                    const targetPane = document.getElementById(targetTabId);
+
+                    if (targetPane) {
+                        targetPane.classList.add('active');
+                    }
+                });
+            });
+
+            if (!document.querySelector('.tab-btn.active') && tabButtons.length > 0) {
+                tabButtons[0].click();
+            }
+
+            // Accessibility Widget
+            const accessibilityToggleBtn = document.getElementById('accessibilityToggleBtn');
+            const accessibilityOptions = document.getElementById('accessibilityOptions');
+            const closeAccessibilityBtn = document.getElementById('closeAccessibility');
+            const accessibilityWidget = document.getElementById('accessibilityWidget');
+
+            const toggleSignLanguageBtn = document.getElementById('toggleSignLanguageBtn');
+            const signLanguageVideoPlayer = document.getElementById('signLanguageVideoPlayer');
+            const signLanguageVideo = document.getElementById('signLanguageVideo');
+            const closeVideoBtn = document.getElementById('closeVideoBtn');
+
+            if (accessibilityToggleBtn && accessibilityOptions && closeAccessibilityBtn && accessibilityWidget) {
+                accessibilityToggleBtn.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    accessibilityOptions.classList.toggle('show');
+                    if (signLanguageVideoPlayer) {
+                        signLanguageVideoPlayer.style.display = 'none';
+                        signLanguageVideo.pause();
+                    }
+                });
+
+                closeAccessibilityBtn.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    accessibilityOptions.classList.remove('show');
+                });
+
+                document.addEventListener('click', (event) => {
+                    if (!accessibilityWidget.contains(event.target) && accessibilityOptions.classList.contains('show')) {
+                        accessibilityOptions.classList.remove('show');
+                    }
+                });
+
+                // Sign Language Video Player
+                if (toggleSignLanguageBtn && signLanguageVideoPlayer && signLanguageVideo && closeVideoBtn) {
+                    toggleSignLanguageBtn.addEventListener('click', () => {
+                        if (signLanguageVideoPlayer.style.display === 'flex') {
+                            signLanguageVideoPlayer.style.display = 'none';
+                            signLanguageVideo.pause();
+                        } else {
+                            signLanguageVideoPlayer.style.display = 'flex';
+                            signLanguageVideo.play();
+                        }
+                        accessibilityOptions.classList.remove('show');
+                    });
+
+                    closeVideoBtn.addEventListener('click', () => {
+                        signLanguageVideoPlayer.style.display = 'none';
+                        signLanguageVideo.pause();
+                    });
+                }
+            }
+
+            // Text-to-Speech for Sections and Cards
+            if ('speechSynthesis' in window) {
+                const ttsButtons = document.querySelectorAll('.tts-btn');
+                let currentUtterance = null;
+                let currentButton = null;
+
+                ttsButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // Stop any ongoing speech
+                        if (currentUtterance) {
+                            speechSynthesis.cancel();
+                            
+                            // If clicking the same button, just stop
+                            if (currentButton === button) {
+                                currentButton.classList.remove('active');
+                                currentButton = null;
+                                currentUtterance = null;
+                                return;
+                            }
+                        }
+
+                        // Get the text to speak based on button type
+                        let textToSpeak = '';
+                        const sectionId = button.getAttribute('data-section');
+                        const cardId = button.getAttribute('data-card');
+
+                        if (sectionId) {
+                            // For section buttons
+                            const section = document.getElementById(sectionId);
+                            if (section) {
+                                // Get all text content from the section container
+                                const container = section.querySelector('.container');
+                                if (container) {
+                                    // Exclude text from other TTS buttons in this section
+                                    const elementsToRead = Array.from(container.children).filter(
+                                        el => !el.classList.contains('section-tts-controls')
+                                    );
+                                    textToSpeak = elementsToRead.map(el => el.textContent).join('. ');
+                                }
+                            }
+                        } else if (cardId) {
+                            // For card buttons
+                            const card = button.closest('.relationship-card, .step-card, .support-card');
+                            if (card) {
+                                // Get all text content from the card
+                                const elementsToRead = Array.from(card.children).filter(
+                                    el => !el.classList.contains('section-tts-controls') && 
+                                          !el.classList.contains('step-number')
+                                );
+                                textToSpeak = elementsToRead.map(el => el.textContent).join('. ');
+                            }
+                        }
+
+                        if (textToSpeak.trim()) {
+                            // Set up the utterance
+                            currentUtterance = new SpeechSynthesisUtterance(textToSpeak);
+                            currentUtterance.pitch = 1;
+                            currentUtterance.rate = 1;
+                            
+                            // Update button states
+                            if (currentButton) {
+                                currentButton.classList.remove('active');
+                            }
+                            button.classList.add('active');
+                            currentButton = button;
+                            
+                            // Handle speech events
+                            currentUtterance.onend = () => {
+                                button.classList.remove('active');
+                                currentButton = null;
+                                currentUtterance = null;
+                            };
+                            
+                            currentUtterance.onerror = (event) => {
+                                console.error('SpeechSynthesisUtterance.onerror', event);
+                                button.classList.remove('active');
+                                currentButton = null;
+                                currentUtterance = null;
+                                alert('Text-to-speech failed or was interrupted.');
+                            };
+                            
+                            // Start speaking
+                            speechSynthesis.speak(currentUtterance);
+                        }
+                    });
+                });
+
+                // Cancel speech when leaving the page
+                window.addEventListener('beforeunload', () => {
+                    if (speechSynthesis.speaking) {
+                        speechSynthesis.cancel();
+                    }
+                });
+            } else {
+                // Disable TTS buttons if not supported
+                const ttsButtons = document.querySelectorAll('.tts-btn');
+                ttsButtons.forEach(button => {
+                    button.disabled = true;
+                    button.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    button.title = 'Text-to-speech not supported in your browser';
+                    button.style.cursor = 'not-allowed';
+                    button.style.backgroundColor = '#999';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
