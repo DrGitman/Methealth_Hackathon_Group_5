@@ -16,6 +16,13 @@ app.get('/', (req, res) => {
   res.redirect('/info/GeneralInfoStandardEnglish.html');
 });
 
+// under your existing /download/general-hiv-info route
+app.get('/download/general-hiv-info-afrikaans', (req, res) => {
+  const filePath = path.join(__dirname, 'InformationCards', 'GeneralInfoAfrikaans.html');
+  res.download(filePath, 'Algemene_HIV_Inligting.html');
+});
+
+
 app.get('/download/general-hiv-info', (req, res) => {
   const filePath = path.join(__dirname, 'InformationCards', 'GeneralInforStandardEnglish.html');
   res.download(filePath, 'General_HIV_Info.html');
@@ -104,6 +111,8 @@ function buildMenu(header, lines=[]) {
 // ─── USSD LOGIC ────────────────────────────────────────────────────────────────
 app.use(bodyParser.urlencoded({ extended: false }));
 
+
+
 app.post('/ussd', async (req, res) => {
   const { text = '', phoneNumber = '' } = req.body;
   let parts = text === '' ? [] : text.split('*');
@@ -131,12 +140,15 @@ app.post('/ussd', async (req, res) => {
   }
   else if (parts[1] === '1' && parts[2] === '1' && parts[3] === '1') {
     const lk = getLangKey(parts[0]);
-    const link = `${process.env.SERVER_URL}/download/general-hiv-info`;
+    const route = lk === 'afrikaans'
+   ? '/download/general-hiv-info-afrikaans'
+     : '/download/general-hiv-info';
+   const link = `${process.env.SERVER_URL}${route}`
     const sms = lk === 'afrikaans'
       ? `Laai Algemene HIV-inligting af: ${link}`
       : `Download General HIV Info here: ${link}`;
     
-      try {
+      try {https://8c5ff62c017a.ngrok-free.app
       await sendSMS(phoneNumber, sms);
       response = 'END ' + getMsg(lk, 'smsInfoSent');
     } catch (err) {
