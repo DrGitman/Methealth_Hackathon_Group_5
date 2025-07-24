@@ -739,6 +739,30 @@
             .btn {
                 padding: 10px 20px;
             }
+
+        /* Add to your existing CSS */
+.download-li {
+    margin-left: 20px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.download-li:hover {
+    background-color: var(--dark-color);
+}
+
+.download-btn {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    font-weight: 600;
+}
+
+.download-btn i {
+    margin-right: 5px;
+}
+
         }
     </style>
 </head>
@@ -755,7 +779,11 @@
                     <li class="active"><a href="#prevention">Relationship</a></li>
                     <li><a href="motivation.html">Community</a></li>
                     <li><a href="quiz.html">Take a Quiz</a></li>
-                    <li><a href="visuals.html">Images/Videos</a></li>
+                     <li class="download-li">
+                    <a href="downloads/Comprehensive HIV Guide.pdf" class="download-btn" download>
+                        <i class="fas fa-file-pdf"></i> Download PDF
+                    </a>
+                </li>
                 </ul>
             </nav>
         </div>
@@ -1282,7 +1310,7 @@
             'how-to-disclose': 'Sign language interpretation explaining strategies for disclosing your HIV status effectively.',
             'legal-considerations': 'This interpretation explains legal considerations around HIV disclosure in sign language.',
             'with-partners': 'Sign language video about communicating with partners about HIV status and prevention.',
-            'pep': 'This video demonstrates sign language for discussing HIV status with family members.',
+            'with-friends': 'This video demonstrates sign language for discussing HIV status with family members.',
             'prep': 'Sign language interpretation about talking to friends about your HIV status.',
             'with-healthcare-providers': 'Proper signing for communicating with healthcare providers about HIV.',
             'partner-support': 'Sign language explanation of building supportive partnerships while living with HIV.',

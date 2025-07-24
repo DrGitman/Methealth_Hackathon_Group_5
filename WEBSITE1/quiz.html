@@ -416,6 +416,28 @@
             .hero p {
                 font-size: 1rem;
             }
+            /* Add to your existing CSS */
+.download-li {
+    margin-left: 20px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.download-li:hover {
+    background-color: var(--dark-color);
+}
+
+.download-btn {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    font-weight: 600;
+}
+
+.download-btn i {
+    margin-right: 5px;
+}
         }
     </style>
 </head>
@@ -432,7 +454,11 @@
                     <li><a href="relationships.html">Relationship</a></li>
                     <li><a href="motivation.html">Community</a></li>
                     <li class="active"><a href="quiz.html">Take a Quiz</a></li>
-                    <li><a href="visuals.html">Visuals</a></li>
+                     <li class="download-li">
+                    <a href="downloads/Comprehensive HIV Guide.pdf" class="download-btn" download>
+                        <i class="fas fa-file-pdf"></i> Download PDF
+                    </a>
+                </li>
                 </ul>
             </nav>
         </div>

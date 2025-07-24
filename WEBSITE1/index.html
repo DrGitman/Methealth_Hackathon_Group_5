@@ -628,27 +628,53 @@
             padding: 4px 8px;
             font-size: 11px;
         }
+        /* Add to your existing CSS */
+.download-li {
+    margin-left: 20px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.download-li:hover {
+    background-color: var(--dark-color);
+}
+
+.download-btn {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    font-weight: 600;
+}
+
+.download-btn i {
+    margin-right: 5px;
+}
     }
 </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1><i class="fas fa-ribbon"></i> HIV Inclusive</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li class="active"><a href="index.html">Symptoms/Preventions</a></li>
-                    <li><a href="maintenance.html">Living with HIV</a></li>
-                    <li><a href="relationships.html">Relationship</a></li>
-                    <li><a href="motivation.html">Community</a></li>
-                    <li><a href="quiz.html">Take a quiz</a></li>
-                    <li><a href="visuals.html">Images/Videos</a></li>
-                </ul>
-            </nav>
+   <header>
+    <div class="container">
+        <div class="logo">
+            <h1><i class="fas fa-ribbon"></i> HIV Inclusive</h1>
         </div>
-    </header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Symptoms/Preventions</a></li>
+                <li><a href="maintenance.html">Living with HIV</a></li>
+                <li><a href="relationships.html">Relationship</a></li>
+                <li><a href="motivation.html">Community</a></li>
+                <li><a href="quiz.html">Take a Quiz</a></li>
+                <li class="download-li">
+                    <a href="downloads/Comprehensive HIV Guide.pdf" class="download-btn" download>
+                        <i class="fas fa-file-pdf"></i> Download PDF
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <section class="hero">
         <video autoplay muted loop class="video-background">
@@ -1613,7 +1639,7 @@
             <h2><i class="fas fa-stethoscope"></i> HIV Stages & Symptoms</h2>
             <div class="stage-grid">
                 <div class="stage-card">
-                    <img src="images/acute-stage.jpg" alt="Person with fever" class="section-image">
+                    <img src="images/fever.jpg" alt="Person with fever" class="section-image">
                     <h3>Acute HIV Infection</h3>
                     <ul>
                         <li>Fever and chills</li>
@@ -1626,7 +1652,7 @@
                 </div>
                 
                 <div class="stage-card">
-                    <img src="images/chronic-stage.jpg" alt="Person looking fatigued" class="section-image">
+                    <img src="images/fati.jpg" alt="Person looking fatigued" class="section-image">
                     <h3>Chronic HIV Infection</h3>
                     <ul>
                         <li>Often asymptomatic for years</li>
@@ -1639,7 +1665,7 @@
                 </div>
                 
                 <div class="stage-card">
-                    <img src="images/aids-stage.jpg" alt="Person with Kaposi's sarcoma" class="section-image">
+                    <img src="images/kapo.jpg" alt="Person with Kaposi's sarcoma" class="section-image">
                     <h3>AIDS (Advanced Stage)</h3>
                     <ul>
                         <li>Rapid weight loss</li>
@@ -1659,7 +1685,7 @@
             <h2><i class="fas fa-eye"></i> Visual Symptoms</h2>
             <div class="visual-content">
                 <div class="rash-symptoms">
-                    <img src="images/hiv-rash.jpg" alt="HIV rash on skin" class="section-image">
+                    <img src="images/rash.jpg" alt="HIV rash on skin" class="section-image">
                     <h3>Skin Conditions</h3>
                     <ul>
                         <li>Red or brownish rash (often itchy)</li>
@@ -1670,7 +1696,7 @@
                     </ul>
                 </div>
                 <div class="oral-symptoms">
-                    <img src="images/oral-thrush.jpg" alt="Oral thrush in mouth" class="section-image">
+                    <img src="images/rush.jpg" alt="Oral thrush in mouth" class="section-image">
                     <h3>Oral Symptoms</h3>
                     <ul>
                         <li>Oral thrush (white patches)</li>
@@ -1681,7 +1707,7 @@
                     </ul>
                 </div>
                 <div class="other-visual">
-                    <img src="images/weight-loss.jpg" alt="Person showing weight loss" class="section-image">
+                    <img src="images/loss.jpg" alt="Person showing weight loss" class="section-image">
                     <h3>Other Visible Signs</h3>
                     <ul>
                         <li>Rapid weight loss</li>
@@ -1700,22 +1726,22 @@
             <h2><i class="fas fa-vial"></i> Testing & Diagnosis</h2>
             <div class="symptom-grid">
                 <div class="symptom-card">
-                    <img src="images/antibody-test.jpg" alt="Blood test sample" class="section-image">
+                    <img src="images/test.jpg" alt="Blood test sample" class="section-image">
                     <h3>When to Get Tested</h3>
                     <p>Get tested if you experience acute symptoms or have risk factors (unprotected sex, shared needles). Many people have no symptoms for years.</p>
                 </div>
                 <div class="symptom-card">
-                    <img src="images/lab-test.jpg" alt="Lab technician working" class="section-image">
+                    <img src="images/lab.jpg" alt="Lab technician working" class="section-image">
                     <h3>Test Types</h3>
                     <p>Antibody tests, antigen/antibody tests, and nucleic acid tests (NAT). Most tests can detect HIV within 2-6 weeks of exposure.</p>
                 </div>
                 <div class="symptom-card">
-                    <img src="images/doctor-consult.jpg" alt="Doctor consulting patient" class="section-image">
+                    <img src="images/doc.jpg" alt="Doctor consulting patient" class="section-image">
                     <h3>Confirming Diagnosis</h3>
                     <p>Positive results require follow-up testing. Viral load and CD4 count tests help determine disease progression.</p>
                 </div>
                 <div class="symptom-card">
-                    <img src="images/rapid-test.jpg" alt="Rapid HIV test kit" class="section-image">
+                    <img src="images/rapid.jpg" alt="Rapid HIV test kit" class="section-image">
                     <h3>At-Home Testing</h3>
                     <p>Oral fluid and fingerstick blood tests available. Positive results need confirmation from a healthcare provider.</p>
                 </div>
@@ -1985,6 +2011,26 @@
             'resources': 'Resource information for HIV symptoms in sign language.'
         };
 
+        // Audio Description Transcripts
+        const audioDescTranscripts = {
+            'acute-hiv-infection': 'This audio description provides detailed narration of acute HIV infection symptoms and visual examples.',
+            'chronic-hiv-infection': 'Audio description explaining chronic HIV infection symptoms with visual representations.',
+            'aids-(advanced-stage)': 'Detailed narration describing AIDS symptoms and visual elements.',
+            'skin-conditions': 'Audio description of HIV-related skin conditions with visual examples.',
+            'oral-symptoms': 'Narration describing oral symptoms of HIV with visual representations.',
+            'other-visible-signs': 'Audio description explaining other visible HIV symptoms with visual examples.',
+            'when-to-get-tested': 'Detailed narration about when to get tested for HIV with visual elements.',
+            'test-types': 'Audio description of different HIV test types with visual representations.',
+            'confirming-diagnosis': 'Narration describing HIV diagnosis confirmation process with visual examples.',
+            'at-home-testing': 'Audio description explaining at-home HIV testing options with visual elements.',
+            'testing-centers': 'Detailed narration about finding HIV testing centers with visual representations.',
+            'symptom-guides': 'Audio description of reliable HIV symptom information sources with visual examples.',
+            'consultation-services': 'Narration describing HIV consultation services with visual elements.',
+            'stages': 'Audio description overview of HIV stages and symptoms with visual representations.',
+            'visual-symptoms': 'Detailed narration of visual HIV symptoms with examples.',
+            'testing': 'Audio description of HIV testing information with visual elements.',
+            'resources': 'Narration describing HIV symptom resources with visual examples.'
+        };
 
         function openASLModal(section) {
             const modal = document.getElementById('aslModal');
