@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HIV Disclosure | HIV Awareness</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-     :root {
+        :root {
             --primary-color: #ffa398;
             --secondary-color: #e70404;
             --dark-color:#ff484c;
@@ -61,7 +60,7 @@
             z-index: 1000;
         }
         
-                .logo {
+        .logo {
             display: flex;
             align-items: center;
         }
@@ -168,6 +167,7 @@
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/logo5.jpg') no-repeat center center/cover;
@@ -206,8 +206,8 @@
         .relationship-card {
             background-color: #fff;
             padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: left;
             display: flex;
             flex-direction: column;
@@ -225,7 +225,7 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: var(--border-radius);
+            border-radius: 10px;
             margin-bottom: 20px;
         }
 
@@ -255,8 +255,8 @@
         .step-card {
             background-color: #fff;
             padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -300,7 +300,7 @@
         .step-card p {
             font-size: 1em;
             line-height: 1.6;
-            color: var(--text-dark);
+            color: var(--text-color);
         }
 
         /* Support Content */
@@ -314,8 +314,8 @@
         .support-card {
             background-color: #fff;
             padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -338,7 +338,7 @@
         .support-card p {
             font-size: 1em;
             line-height: 1.6;
-            color: var(--text-dark);
+            color: var(--text-color);
         }
 
         /* Final CTA */
@@ -355,8 +355,8 @@
 
         /* Footer */
         footer {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
+            background-color: var(--dark-color);
+            color: white;
             padding: 40px 0 20px 0;
             font-size: 0.9em;
         }
@@ -384,7 +384,7 @@
             bottom: 0;
             width: 40px;
             height: 3px;
-            background-color: var(--text-light);
+            background-color: var(--light-color);
             border-radius: 2px;
         }
 
@@ -397,7 +397,7 @@
         }
 
         .footer-col ul li a {
-            color: var(--text-light);
+            color: var(--light-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
@@ -408,7 +408,7 @@
 
         .footer-col ul li .fas {
             margin-right: 10px;
-            color: var(--accent-color);
+            color: var(--success-color);
         }
 
         .footer-bottom {
@@ -457,7 +457,7 @@
 
         .accessibility-options {
             background-color: #fff;
-            border-radius: var(--border-radius);
+            border-radius: 10px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
             padding: 25px;
             width: 250px;
@@ -485,7 +485,7 @@
 
         .accessibility-options .option-btn {
             display: block;
-            background-color: var(--accent-color);
+            background-color: #ffa398;
             color: #fff;
             padding: 12px 15px;
             text-decoration: none;
@@ -504,7 +504,7 @@
         }
 
         .accessibility-options .option-btn:hover {
-            background-color: #27AE60;
+            background-color: #ff484c;
         }
 
         .accessibility-options .option-btn .fas {
@@ -535,7 +535,7 @@
         }
 
         /* Sign Language Video Player */
-        #signLanguageVideoPlayer {
+        .asl-modal {
             display: none;
             position: fixed;
             top: 0;
@@ -548,25 +548,64 @@
             align-items: center;
         }
 
-        #signLanguageVideoPlayer > div {
+        .asl-modal-content {
             position: relative;
             width: 80%;
             max-width: 800px;
-        }
-
-        #closeVideoBtn {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            background: none;
-            border: none;
+            background: #2c3e50;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
             color: white;
-            font-size: 24px;
-            cursor: pointer;
         }
 
-        #signLanguageVideo {
+        .asl-video-container {
+            position: relative;
             width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #1a2636;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .asl-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .close-asl {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-asl:hover {
+            background: var(--secondary-color);
+            transform: rotate(90deg);
+        }
+
+        .asl-transcript {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
         }
 
         /* Section TTS Controls */
@@ -575,6 +614,11 @@
             top: 10px;
             right: 10px;
             z-index: 10;
+            display: none; /* Hidden by default */
+        }
+
+        .tts-mode .section-tts-controls {
+            display: block; /* Show when in TTS mode */
         }
 
         .tts-btn {
@@ -599,6 +643,35 @@
 
         .tts-btn.active {
             background-color: var(--secondary-color);
+        }
+
+        /* ASL Section Buttons */
+        .asl-section-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(231, 76, 60, 0.9);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: none; /* Hidden by default */
+        }
+
+        .asl-mode .asl-section-btn {
+            display: block; /* Show when in ASL mode */
+        }
+
+        .asl-section-btn:hover {
+            background-color: #c0392b;
+        }
+
+        .asl-section-btn i {
+            margin-right: 5px;
         }
 
         /* Responsive Design */
@@ -667,6 +740,10 @@
                 left: 50%;
                 transform: translateX(-50%);
             }
+
+            .asl-modal-content {
+                width: 95%;
+            }
         }
 
         @media (max-width: 576px) {
@@ -715,6 +792,28 @@
                 padding: 20px;
                 bottom: calc(100% + 10px);
             }
+            /* Add to your existing CSS */
+.download-li {
+    margin-left: 20px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.download-li:hover {
+    background-color: var(--dark-color);
+}
+
+.download-btn {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    font-weight: 600;
+}
+
+.download-btn i {
+    margin-right: 5px;
+}
         }
     </style>
 </head>
@@ -731,7 +830,11 @@
                     <li><a href="relationships.html">Relationship</a></li>
                     <li class="active"><a href="motivation.html">Community</a></li>
                     <li><a href="quiz.html">Take a Quiz</a></li>
-                    <li><a href="visuals.html">Images/Videos</a></li>
+                    <li class="download-li">
+                    <a href="downloads/Comprehensive HIV Guide.pdf" class="download-btn" download>
+                        <i class="fas fa-file-pdf"></i> Download PDF
+                    </a>
+                </li>
                 </ul>
             </nav>
         </div>
@@ -749,12 +852,14 @@
             <div class="section-tts-controls">
                 <button class="tts-btn" data-section="why-disclose"><i class="fas fa-volume-up"></i></button>
             </div>
+            <button class="asl-section-btn" data-section="why-disclose"><i class="fas fa-sign-language"></i> ASL</button>
             <h2>The Power of Sharing Your Status</h2>
             <div class="relationship-grid">
                 <div class="relationship-card">
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="reduced-burden"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="reduced-burden"><i class="fas fa-sign-language"></i> ASL</button>
                     <img src="images/heart.jpg" alt="Heart with hands" class="section-image">
                     <h3>Reduced Burden & Stress</h3>
                     <ul>
@@ -768,6 +873,7 @@
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="better-support"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="better-support"><i class="fas fa-sign-language"></i> ASL</button>
                     <img src="images/support.jpg" alt="Group of people supporting each other" class="section-image">
                     <h3>Access to Better Support</h3>
                     <ul>
@@ -781,6 +887,7 @@
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="fostering-trust"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="fostering-trust"><i class="fas fa-sign-language"></i> ASL</button>
                     <img src="images/trust.jpg" alt="Hands forming a heart" class="section-image">
                     <h3>Fostering Trust</h3>
                     <ul>
@@ -798,12 +905,14 @@
             <div class="section-tts-controls">
                 <button class="tts-btn" data-section="how-to-disclose"><i class="fas fa-volume-up"></i></button>
             </div>
+            <button class="asl-section-btn" data-section="how-to-disclose"><i class="fas fa-sign-language"></i> ASL</button>
             <h2>Your Guide to Disclosure</h2>
             <div class="steps-grid">
                 <div class="step-card">
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="prepare-yourself"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="prepare-yourself"><i class="fas fa-sign-language"></i> ASL</button>
                     <div class="step-number">1</div>
                     <h3>Prepare Yourself</h3>
                     <p>Understand your feelings and know the facts about HIV treatment (U=U). Consider what you want to achieve by disclosing.</p>
@@ -812,6 +921,7 @@
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="choose-who-to-tell"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="choose-who-to-tell"><i class="fas fa-sign-language"></i> ASL</button>
                     <div class="step-number">2</div>
                     <h3>Choose Who to Tell</h3>
                     <p>Start with someone you trust deeply, who you believe will react with compassion - a close friend, family member, or counselor.</p>
@@ -820,6 +930,7 @@
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="pick-right-time"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="pick-right-time"><i class="fas fa-sign-language"></i> ASL</button>
                     <div class="step-number">3</div>
                     <h3>Pick the Right Time & Place</h3>
                     <p>Choose a private, calm setting where you won't be rushed. Ensure you both have time to talk without interruption.</p>
@@ -828,6 +939,7 @@
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="start-conversation"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="start-conversation"><i class="fas fa-sign-language"></i> ASL</button>
                     <div class="step-number">4</div>
                     <h3>How to Start the Conversation</h3>
                     <p>You might say, "I have something important to tell you..." or "I want to share something personal that affects me, and I trust you."</p>
@@ -836,6 +948,7 @@
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="prepare-for-reactions"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="prepare-for-reactions"><i class="fas fa-sign-language"></i> ASL</button>
                     <div class="step-number">5</div>
                     <h3>Be Prepared for Reactions</h3>
                     <p>People react differently. Some may be supportive immediately, others might need time. Educate them gently if they have misconceptions.</p>
@@ -844,6 +957,7 @@
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="seek-support"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="seek-support"><i class="fas fa-sign-language"></i> ASL</button>
                     <div class="step-number">6</div>
                     <h3>Seek Support</h3>
                     <p>Have a plan for your own emotional support after disclosing. Talk to a therapist, support group, or another trusted person.</p>
@@ -857,12 +971,14 @@
             <div class="section-tts-controls">
                 <button class="tts-btn" data-section="benefits"><i class="fas fa-volume-up"></i></button>
             </div>
+            <button class="asl-section-btn" data-section="benefits"><i class="fas fa-sign-language"></i> ASL</button>
             <h2>The Benefits of Disclosure</h2>
             <div class="support-content">
                 <div class="support-card">
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="medical-care"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="medical-care"><i class="fas fa-sign-language"></i> ASL</button>
                     <img src="images/medical.jpg" alt="Doctor with patient" class="section-image">
                     <h3>Better Medical Care</h3>
                     <p>Openly discussing your HIV status with doctors leads to more personalized and effective treatment plans.</p>
@@ -871,6 +987,7 @@
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="reduced-isolation"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="reduced-isolation"><i class="fas fa-sign-language"></i> ASL</button>
                     <img src="images/community.jpg" alt="People in a circle" class="section-image">
                     <h3>Reduced Isolation</h3>
                     <p>You don't have to carry this burden alone. Connecting with others can build strong support networks.</p>
@@ -879,6 +996,7 @@
                     <div class="section-tts-controls">
                         <button class="tts-btn" data-card="improved-wellbeing"><i class="fas fa-volume-up"></i></button>
                     </div>
+                    <button class="asl-section-btn" data-card="improved-wellbeing"><i class="fas fa-sign-language"></i> ASL</button>
                     <img src="images/mental-health.jpg" alt="Person meditating" class="section-image">
                     <h3>Improved Well-being</h3>
                     <p>Secrecy can cause anxiety and depression. Disclosure can be a huge step towards emotional freedom.</p>
@@ -931,67 +1049,80 @@
         <div class="accessibility-options" id="accessibilityOptions">
             <button class="close-btn" id="closeAccessibility"><i class="fas fa-times"></i></button>
             <h4>Accessibility Options</h4>
-            <button class="option-btn" id="toggleSignLanguageBtn">
-                <i class="fas fa-sign-language"></i> Sign Language Video
+            <button class="option-btn" id="toggleTTSModeBtn">
+                <i class="fas fa-volume-up"></i> Text-to-Speech
+            </button>
+            <button class="option-btn" id="toggleASLModeBtn">
+                <i class="fas fa-sign-language"></i> Sign Language
             </button>
             <p class="widget-note">For enhanced accessibility features</p>
         </div>
     </div>
 
-    <div id="signLanguageVideoPlayer">
-        <div>
-            <button id="closeVideoBtn"><i class="fas fa-times"></i></button>
-            <video id="signLanguageVideo" controls>
-                <source src="sign-language.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <div class="asl-modal" id="aslModal">
+        <div class="asl-modal-content">
+            <span class="close-asl" id="closeASLModal">&times;</span>
+            <div class="asl-video-container">
+                <video id="aslVideo" class="asl-video" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="asl-transcript">
+                <p id="aslTranscriptText">Sign language interpretation for this content. Video will show proper signing for this section.</p>
+            </div>
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Tab Functionality
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabPanes = document.querySelectorAll('.tab-pane');
-
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabPanes.forEach(pane => pane.classList.remove('active'));
-
-                    button.classList.add('active');
-                    const targetTabId = button.dataset.tab;
-                    const targetPane = document.getElementById(targetTabId);
-
-                    if (targetPane) {
-                        targetPane.classList.add('active');
-                    }
-                });
-            });
-
-            if (!document.querySelector('.tab-btn.active') && tabButtons.length > 0) {
-                tabButtons[0].click();
-            }
-
             // Accessibility Widget
             const accessibilityToggleBtn = document.getElementById('accessibilityToggleBtn');
             const accessibilityOptions = document.getElementById('accessibilityOptions');
             const closeAccessibilityBtn = document.getElementById('closeAccessibility');
             const accessibilityWidget = document.getElementById('accessibilityWidget');
 
-            const toggleSignLanguageBtn = document.getElementById('toggleSignLanguageBtn');
-            const signLanguageVideoPlayer = document.getElementById('signLanguageVideoPlayer');
-            const signLanguageVideo = document.getElementById('signLanguageVideo');
-            const closeVideoBtn = document.getElementById('closeVideoBtn');
+            // TTS and ASL Mode Toggles
+            const toggleTTSModeBtn = document.getElementById('toggleTTSModeBtn');
+            const toggleASLModeBtn = document.getElementById('toggleASLModeBtn');
+            
+            // ASL Video Modal
+            const aslModal = document.getElementById('aslModal');
+            const aslVideo = document.getElementById('aslVideo');
+            const aslTranscriptText = document.getElementById('aslTranscriptText');
+            const closeASLModal = document.getElementById('closeASLModal');
 
+            // Video transcripts for each section
+            const videoTranscripts = {
+                // Main sections
+                'why-disclose': 'This video explains the importance of HIV disclosure in sign language.',
+                'how-to-disclose': 'Sign language interpretation of the guide to HIV disclosure.',
+                'benefits': 'This video demonstrates the benefits of HIV disclosure in sign language.',
+                
+                // Cards in "why-disclose" section
+                'reduced-burden': 'Sign language explanation about how disclosure can reduce burden and stress.',
+                'better-support': 'This video shows how disclosure can lead to better support in sign language.',
+                'fostering-trust': 'Sign language interpretation about how disclosure fosters trust in relationships.',
+                
+                // Cards in "how-to-disclose" section
+                'prepare-yourself': 'This video demonstrates how to prepare yourself for disclosure in sign language.',
+                'choose-who-to-tell': 'Sign language interpretation about choosing who to tell about your HIV status.',
+                'pick-right-time': 'This video explains how to pick the right time and place for disclosure in sign language.',
+                'start-conversation': 'Sign language demonstration of how to start the disclosure conversation.',
+                'prepare-for-reactions': 'This video shows how to prepare for different reactions to disclosure in sign language.',
+                'seek-support': 'Sign language interpretation about seeking support after disclosure.',
+                
+                // Cards in "benefits" section
+                'medical-care': 'This video explains how disclosure leads to better medical care in sign language.',
+                'reduced-isolation': 'Sign language interpretation about how disclosure reduces isolation.',
+                'improved-wellbeing': 'This video demonstrates how disclosure improves well-being in sign language.'
+            };
+
+            // Toggle accessibility options menu
             if (accessibilityToggleBtn && accessibilityOptions && closeAccessibilityBtn && accessibilityWidget) {
                 accessibilityToggleBtn.addEventListener('click', (event) => {
                     event.stopPropagation();
                     accessibilityOptions.classList.toggle('show');
-                    if (signLanguageVideoPlayer) {
-                        signLanguageVideoPlayer.style.display = 'none';
-                        signLanguageVideo.pause();
-                    }
                 });
 
                 closeAccessibilityBtn.addEventListener('click', (event) => {
@@ -1004,28 +1135,70 @@
                         accessibilityOptions.classList.remove('show');
                     }
                 });
-
-                // Sign Language Video Player
-                if (toggleSignLanguageBtn && signLanguageVideoPlayer && signLanguageVideo && closeVideoBtn) {
-                    toggleSignLanguageBtn.addEventListener('click', () => {
-                        if (signLanguageVideoPlayer.style.display === 'flex') {
-                            signLanguageVideoPlayer.style.display = 'none';
-                            signLanguageVideo.pause();
-                        } else {
-                            signLanguageVideoPlayer.style.display = 'flex';
-                            signLanguageVideo.play();
-                        }
-                        accessibilityOptions.classList.remove('show');
-                    });
-
-                    closeVideoBtn.addEventListener('click', () => {
-                        signLanguageVideoPlayer.style.display = 'none';
-                        signLanguageVideo.pause();
-                    });
-                }
             }
 
-            // Text-to-Speech for Sections and Cards
+            // Toggle TTS Mode
+            if (toggleTTSModeBtn) {
+                toggleTTSModeBtn.addEventListener('click', () => {
+                    document.body.classList.toggle('tts-mode');
+                    accessibilityOptions.classList.remove('show');
+                });
+            }
+
+            // Toggle ASL Mode
+            if (toggleASLModeBtn) {
+                toggleASLModeBtn.addEventListener('click', () => {
+                    document.body.classList.toggle('asl-mode');
+                    accessibilityOptions.classList.remove('show');
+                });
+            }
+
+            // ASL Video Modal
+            if (aslModal && aslVideo && aslTranscriptText && closeASLModal) {
+                // Function to open ASL modal with specific content
+                function openASLModal(sectionId) {
+                    // Set video source based on section ID
+                    aslVideo.src = `asl-videos/${sectionId}.mp4`;
+                    
+                    // Set transcript text
+                    aslTranscriptText.textContent = videoTranscripts[sectionId] || 
+                        'Sign language interpretation for this content. Video will show proper signing for this section.';
+                    
+                    // Show modal
+                    aslModal.style.display = 'flex';
+                    
+                    // Load and play video
+                    aslVideo.load();
+                    aslVideo.play();
+                }
+
+                // Close modal
+                closeASLModal.addEventListener('click', () => {
+                    aslModal.style.display = 'none';
+                    aslVideo.pause();
+                });
+
+                // Close when clicking outside modal
+                aslModal.addEventListener('click', (e) => {
+                    if (e.target === aslModal) {
+                        aslModal.style.display = 'none';
+                        aslVideo.pause();
+                    }
+                });
+
+                // Add click handlers to all ASL buttons
+                document.querySelectorAll('.asl-section-btn').forEach(button => {
+                    button.addEventListener('click', () => {
+                        const sectionId = button.getAttribute('data-section') || 
+                                         button.getAttribute('data-card');
+                        if (sectionId) {
+                            openASLModal(sectionId);
+                        }
+                    });
+                });
+            }
+
+            // Text-to-Speech Functionality
             if ('speechSynthesis' in window) {
                 const ttsButtons = document.querySelectorAll('.tts-btn');
                 let currentUtterance = null;
@@ -1060,7 +1233,8 @@
                                 if (container) {
                                     // Exclude text from other TTS buttons in this section
                                     const elementsToRead = Array.from(container.children).filter(
-                                        el => !el.classList.contains('section-tts-controls')
+                                        el => !el.classList.contains('section-tts-controls') &&
+                                              !el.classList.contains('asl-section-btn')
                                     );
                                     textToSpeak = elementsToRead.map(el => el.textContent).join('. ');
                                 }
@@ -1072,6 +1246,7 @@
                                 // Get all text content from the card
                                 const elementsToRead = Array.from(card.children).filter(
                                     el => !el.classList.contains('section-tts-controls') && 
+                                          !el.classList.contains('asl-section-btn') &&
                                           !el.classList.contains('step-number')
                                 );
                                 textToSpeak = elementsToRead.map(el => el.textContent).join('. ');

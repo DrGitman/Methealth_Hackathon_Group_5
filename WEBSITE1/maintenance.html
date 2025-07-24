@@ -656,6 +656,28 @@
             .btn {
                 padding: 10px 20px;
             }
+            /* Add to your existing CSS */
+.download-li {
+    margin-left: 20px;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.download-li:hover {
+    background-color: var(--dark-color);
+}
+
+.download-btn {
+    color: white;
+    padding: 10px 15px;
+    display: block;
+    font-weight: 600;
+}
+
+.download-btn i {
+    margin-right: 5px;
+}
         }
     </style>
 </head>
@@ -672,7 +694,11 @@
                     <li><a href="relationships.html">Relationship</a></li>
                     <li><a href="motivation.html">Community</a></li>
                     <li><a href="quiz.html">Take a Quiz</a></li>
-                    <li><a href="visuals.html">Visuals</a></li>
+                     <li class="download-li">
+                    <a href="downloads/Comprehensive HIV Guide.pdf" class="download-btn" download>
+                        <i class="fas fa-file-pdf"></i> Download PDF
+                    </a>
+                </li>
                 </ul>
             </nav>
         </div>
@@ -1028,25 +1054,25 @@
         window.onload = addAccessibilityButtons;
 
         // ASL Video Modal Functionality
-        const videoTranscripts = {
-            'prep': 'This video demonstrates sign language for antiretroviral therapy, explaining how it suppresses the virus and makes viral load undetectable.',
-            'pep': 'This interpretation explains the importance of regular viral load tests, CD4 count monitoring, and other health screenings.',
-            'avoid-alcohol': 'Sign language explanation about how alcohol weakens the immune system and interferes with ART medications.',
-            'how-to-disclose': 'Proper signing for nutrition recommendations for people living with HIV.',
-            'exercise-now': 'Sign language interpretation about the benefits of regular physical activity for people with HIV.',
-            'mental-health': 'This video demonstrates sign language for mental health support options for people living with HIV.',
-            'sleep': 'Sign language explanation about the importance of quality sleep for immune system health.',
-            'u=u-(undetectable-=-untransmittable)': 'This interpretation explains the U=U concept in sign language.',
-            'disclosure-considerations': 'Sign language video about legal requirements and safety considerations for HIV disclosure.',
-            'family-planning': 'This video demonstrates sign language for family planning options for people with HIV.',
-            'support-organizations': 'Sign language interpretation about support organizations for people living with HIV.',
-            'financial-assistance': 'This video explains financial assistance programs in sign language.',
-            'latest-research': 'Sign language interpretation of the latest HIV research and clinical trials.',
-            'treatment': 'Overview of HIV treatment options in sign language.',
-            'healthy-living': 'General healthy living tips for people with HIV in sign language.',
-            'relationships': 'Relationship advice for people living with HIV in sign language.',
-            'resources': 'Resource information for HIV support in sign language.'
-        };
+const videoTranscripts = {
+    'art-(antiretroviral-therapy)': 'This video demonstrates sign language for antiretroviral therapy, explaining how it suppresses the virus and makes viral load undetectable.',
+    'medical-monitoring': 'This interpretation explains the importance of regular viral load tests, CD4 count monitoring, and other health screenings.',
+    'avoid-alcohol': 'Sign language explanation about how alcohol weakens the immune system and interferes with ART medications.',
+    'nutrition': 'Proper signing for nutrition recommendations for people living with HIV.',
+    'exercise': 'Sign language interpretation about the benefits of regular physical activity for people with HIV.',
+    'mental-health': 'This video demonstrates sign language for mental health support options for people living with HIV.',
+    'sleep': 'Sign language explanation about the importance of quality sleep for immune system health.',
+    'u=u-(undetectable-=-untransmittable)': 'This interpretation explains the U=U concept in sign language.',
+    'disclosure-considerations': 'Sign language video about legal requirements and safety considerations for HIV disclosure.',
+    'family-planning': 'This video demonstrates sign language for family planning options for people with HIV.',
+    'support-organizations': 'Sign language interpretation about support organizations for people living with HIV.',
+    'financial-assistance': 'This video explains financial assistance programs in sign language.',
+    'latest-research': 'Sign language interpretation of the latest HIV research and clinical trials.',
+    'treatment': 'Overview of HIV treatment options in sign language.',
+    'healthy-living': 'General healthy living tips for people with HIV in sign language.',
+    'relationships': 'Relationship advice for people living with HIV in sign language.',
+    'resources': 'Resource information for HIV support in sign language.'
+};
 
         // Text-to-Speech Functionality
         function readSection(sectionElement) {
