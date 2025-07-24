@@ -198,7 +198,7 @@
         }
         
         .relationship-card {
-            background: white;
+            background: #fdf0f0;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -239,7 +239,7 @@
         }
         
         .communication-card {
-            background: white;
+            background: #fdf0f0;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -263,7 +263,7 @@
         }
         
         .partner-support, .family-support, .community-support {
-            background: white;
+            background: #fdf0f0;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -283,7 +283,7 @@
         }
         
         .resource-card {
-            background: white;
+            background:#fdf0f0;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -420,86 +420,12 @@
             display: block;
         }
 
-        /* Enhanced ASL Modal Styles */
-        .asl-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .asl-modal-content {
-            background: #2c3e50;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 800px;
-            position: relative;
-            padding: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            color: white;
-        }
-        
-        .asl-video-container {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            background: #1a2636;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .asl-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .close-asl {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 28px;
-            color: white;
-            cursor: pointer;
-            z-index: 10;
-            background: rgba(0,0,0,0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .close-asl:hover {
-            background: var(--secondary-color);
-            transform: rotate(90deg);
-        }
-        
-        .asl-transcript {
-            margin-top: 15px;
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-            font-size: 0.9rem;
-        }
-
         /* TTS Toggle Button */
         .tts-toggle-btn {
             position: fixed;
             bottom: 30px;
             right: 100px;
-            background: #3498db;
+            background: #ff484c;
             color: white;
             width: 60px;
             height: 60px;
@@ -515,7 +441,7 @@
         }
         
         .tts-toggle-btn:hover {
-            background: #2980b9;
+            background: #ffa398;
             transform: scale(1.1);
         }
         
@@ -525,7 +451,7 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            background: rgba(52, 152, 219, 0.9);
+            background: #ff484c;
             color: white;
             border: none;
             border-radius: 20px;
@@ -537,7 +463,7 @@
         }
         
         .tts-section-btn:hover {
-            background: #2980b9;
+            background: #ffa398;
         }
         
         .tts-section-btn i {
@@ -649,6 +575,67 @@
             border-top: 1px solid #eee;
         }
         
+        /* Fixed ASL Video Container */
+        #aslVideoContainer {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: auto;
+            background: #2c3e50;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 2000;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        #aslVideo {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .asl-video-controls {
+            padding: 10px;
+            background: #2c3e50;
+            color: white;
+        }
+
+        .close-asl-fixed {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-asl-fixed:hover {
+            background: var(--secondary-color);
+            transform: rotate(90deg);
+        }
+
+        .asl-transcript-fixed {
+            margin-top: 10px;
+            padding: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            font-size: 0.8rem;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+        
         /* Responsive Styles */
         @media (max-width: 768px) {
             .logo h1 {
@@ -699,17 +686,10 @@
                 right: 80px;
             }
             
-            .asl-modal-content {
-                width: 95%;
-                padding: 15px;
-            }
-            
-            .close-asl {
-                top: 10px;
-                right: 10px;
-                font-size: 24px;
-                width: 36px;
-                height: 36px;
+            #aslVideoContainer {
+                width: 250px;
+                bottom: 15px;
+                right: 15px;
             }
 
             .asl-options-menu, .tts-controls {
@@ -740,28 +720,39 @@
                 padding: 10px 20px;
             }
 
+            #aslVideoContainer {
+                width: 200px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .asl-transcript-fixed {
+                font-size: 0.7rem;
+                max-height: 80px;
+            }
+
         /* Add to your existing CSS */
-.download-li {
-    margin-left: 20px;
-    background-color: var(--primary-color);
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
+        .download-li {
+            margin-left: 20px;
+            background-color: var(--primary-color);
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
 
-.download-li:hover {
-    background-color: var(--dark-color);
-}
+        .download-li:hover {
+            background-color: var(--dark-color);
+        }
 
-.download-btn {
-    color: white;
-    padding: 10px 15px;
-    display: block;
-    font-weight: 600;
-}
+        .download-btn {
+            color: white;
+            padding: 10px 15px;
+            display: block;
+            font-weight: 600;
+        }
 
-.download-btn i {
-    margin-right: 5px;
-}
+        .download-btn i {
+            margin-right: 5px;
+        }
 
         }
     </style>
@@ -774,7 +765,8 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Symptoms/Preventions</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Symptoms&Preventions</a></li>
                     <li><a href="maintenance.html">Living with HIV</a></li>
                     <li class="active"><a href="#prevention">Relationship</a></li>
                     <li><a href="motivation.html">Community</a></li>
@@ -791,7 +783,7 @@
 
     <section class="hero2">
         <video autoplay muted loop class="video-background">
-            <source src="love.mp4" type="video/mp4">
+            <source src="asl/love.mp4" type="video/mp4">
             <!-- Fallback if video doesn't load -->
             <img src="images/relationship-fallback.jpg" alt="Happy couple embracing">
         </video>
@@ -872,22 +864,28 @@
 
     <section id="support" class="section">
         <div class="container">
-            <h2><i class="fas fa-hands-helping"></i> Support Systems</h2>
+            <h2><i class="fas fa-hands-helping"></i> Things to do When One Partner Has HIV</h2>
             <div class="support-content">
                 <div class="partner-support">
                     <img src="images/partner.jpg" alt="Couple supporting each other" class="section-image">
-                    <h3>Partner Support</h3>
-                    <p>Building a supportive partnership through mutual understanding, shared responsibility for prevention, and emotional support.</p>
+                    <h3>Practice Open Communication</h3>
+                    <p><li>Discuss HIV status early in serious relationships</li>
+                        <li>Be honest about treatment and viral load</li>
+                        <li>Share feelings and concerns regularly</li></p>
                 </div>
                 <div class="family-support">
-                    <img src="images/fam5.jpg" alt="Family gathering" class="section-image">
-                    <h3>Family Support</h3>
-                    <p>Educating family members about HIV can help them provide meaningful support while respecting your boundaries.</p>
+                    <img src="images/cop.jpg" alt="Family gathering" class="section-image">
+                    <h3>Support Treatment Adherence</h3>
+                    <p><li>Help remember medication schedules</li>
+                        <li>Attend doctor appointments together</li>
+                        <li>Celebrate treatment milestones</li></p>
                 </div>
                 <div class="community-support">
                     <img src="images/com.jpg" alt="Support group meeting" class="section-image">
-                    <h3>Community Support</h3>
-                    <p>Connecting with others living with HIV through support groups can reduce isolation and provide valuable insights.</p>
+                    <h3>Practice Safe Sex Consistently</h3>
+                    <p><li>Use condoms correctly every time</li>
+                        <li>Discuss PrEP options for negative partner</li>
+                        <li>Get tested together regularly</li></p>
                 </div>
             </div>
         </div>
@@ -895,33 +893,33 @@
 
     <section id="resources" class="section bg-light">
         <div class="container">
-            <h2><i class="fas fa-book-open"></i> Relationship Resources</h2>
+            <h2><i class="fas fa-book-open"></i>Things to NOT do When One Partner Has HIV</h2>
             <div class="resources-grid">
                 <div class="resource-card">
                     <img src="images/book.jpg" alt="Books and resources" class="section-image">
-                    <h3>Disclosure Guides</h3>
+                    <h3>Don't Stigmatize</h3>
                     <ul>
-                        <li><a href="#">TheBody.com Disclosure Guide</a></li>
-                        <li><a href="#">CDC Disclosure Resources</a></li>
-                        <li><a href="#">Local HIV organizations</a></li>
+                        <li>Avoid blame or shame about HIV status</li>
+                        <li>Don't treat your partner as "contaminated"</li>
+                        <li>Avoid isolating your partner</li>
                     </ul>
                 </div>
                 <div class="resource-card">
                     <img src="images/res.jpg" alt="Legal documents" class="section-image">
-                    <h3>Legal Resources</h3>
+                    <h3>Don't Keep Secrets</h3>
                     <ul>
-                        <li><a href="#">HIV Legal Network</a></li>
-                        <li><a href="#">Lambda Legal</a></li>
-                        <li><a href="#">Local legal aid societies</a></li>
+                        <li>Don't hide status from sexual partners</li>
+                        <li>Avoid keeping treatment a secret</li>
+                        <li>Don't lie about test results</li>
                     </ul>
                 </div>
                 <div class="resource-card">
                     <img src="images/cop.jpg" alt="Counseling session" class="section-image">
-                    <h3>Counseling Services</h3>
+                    <h3>Don't Neglect Emotional Needs</h3>
                     <ul>
-                        <li><a href="#">HIV-specific counselors</a></li>
-                        <li><a href="#">Relationship therapists</a></li>
-                        <li><a href="#">Support groups</a></li>
+                        <li>Don't ignore your partner's feelings</li>
+                        <li>Avoid making HIV the only relationship focus</li>
+                        <li>Don't skip couples counseling if needed</li>
                     </ul>
                 </div>
             </div>
@@ -941,7 +939,7 @@
     <!-- ASL Options Menu -->
     <div class="asl-options-menu" id="aslOptionsMenu">
         <div class="asl-option asl" onclick="enableASLMode()">
-            <i class="fas fa-sign-language"></i> ASL Videos
+            <i class="fas fa-sign-language"></i> NSL Videos
         </div>
         <div class="asl-option close" onclick="closeOptionsMenu()">
             <i class="fas fa-times"></i> Close Menu
@@ -967,54 +965,59 @@
         </button>
     </div>
 
+    <!-- Fixed ASL Video Container -->
+    <div id="aslVideoContainer">
+        <span class="close-asl-fixed" onclick="closeASLVideo()">&times;</span>
+        <video id="aslVideo" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="asl-video-controls">
+            <div class="asl-transcript-fixed">
+                <p id="aslTranscriptText">Sign language interpretation for this content.</p>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <div class="footer-links">
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Prevention</a></li>
-                        <li><a href="maintenance.html">Living with HIV</a></li>
-                        <li><a href="relationships.html">Relationships</a></li>
+                        <li><a href="index.html">HIV Inclusive app</a></li>
+                        <li><a href="https://www.nmcfund.com/">NMC</a></li>
+                        <li><a href="https://www.methealth.com.na/index">MetHealth</a></li>
+                        <li><a href="https://www.mhnamibia.com/contact_us.php">MyHealth</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h4>Phone</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> Hotline: 1-800-XXX-XXXX</li>
-                        <li><i class="fas fa-envelope"></i> info@hivawareness.org</li>
+                        <li><i class="fas fa-phone"></i> HIV Inclusive : *6345#</li>
+                         <li><i class="fas fa-phone"></i> NMC : 061 287 6000</li>
+                         <li><i class="fas fa-phone"></i> MetHealth: 061 287 6000</li>
+                         <li><i class="fas fa-phone"></i> MyHealth: 061 375 950</li>
+                        
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Accessibility</h4>
+                    <h4>Email</h4>
                     <ul>
-                        <li><i class="fas fa-assistive-listening-systems"></i> TTY: 1-800-XXX-XXXX</li>
-                        <li><i class="fas fa-sign-language"></i> ASL interpreters available</li>
+                        <li><i class="fas fa-envelope"></i> hivinclusive@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> enquiries@methealth.com.na</li>
+                        <li><i class="fas fa-envelope"></i> enquiries@methealth.com.na</li>
+                        <li><i class="fas fa-envelope"></i> wellness1@methealth.com.na</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 HIV Awareness. All rights reserved.</p>
+                <p>&copy; 2023 HIV Inclusive. All rights reserved.</p>
                 <p class="confidentiality">All information is kept confidential.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Enhanced ASL Modal -->
-    <div id="aslModal" class="asl-modal">
-        <div class="asl-modal-content">
-            <span class="close-asl" onclick="closeASLModal()">&times;</span>
-            <div class="asl-video-container">
-                <video id="aslVideo" class="asl-video" controls>
-                    <source src="" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="asl-transcript">
-                <p id="aslTranscriptText">Sign language interpretation for this content. Video will show proper signing for this section.</p>
-            </div>
-        </div>
-    </div>
 
     <script>
         // TTS functionality
@@ -1138,10 +1141,10 @@
         function togglePlayPause() {
             if (speechSynthesis.paused) {
                 speechSynthesis.resume();
-                this.innerHTML = '<i class="fas fa-pause"></i>';
+                this.innerHTML = '<i class="fas fa-play"></i>';
             } else if (speechSynthesis.speaking) {
                 speechSynthesis.pause();
-                this.innerHTML = '<i class="fas fa-play"></i>';
+                this.innerHTML = '<i class="fas fa-pause"></i>';
             }
         }
 
@@ -1214,8 +1217,8 @@
                 const sectionId = card.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
                 const aslBtn = document.createElement('button');
                 aslBtn.className = 'asl-section-btn';
-                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-                aslBtn.onclick = () => openASLModal(sectionId);
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> NSL';
+                aslBtn.onclick = () => openASLVideo(sectionId);
                 card.prepend(aslBtn);
             });
             
@@ -1225,8 +1228,8 @@
                 const sectionId = card.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
                 const aslBtn = document.createElement('button');
                 aslBtn.className = 'asl-section-btn';
-                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-                aslBtn.onclick = () => openASLModal(sectionId);
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> NSL';
+                aslBtn.onclick = () => openASLVideo(sectionId);
                 card.prepend(aslBtn);
             });
             
@@ -1236,8 +1239,8 @@
                 const sectionId = section.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
                 const aslBtn = document.createElement('button');
                 aslBtn.className = 'asl-section-btn';
-                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-                aslBtn.onclick = () => openASLModal(sectionId);
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> NSL';
+                aslBtn.onclick = () => openASLVideo(sectionId);
                 section.prepend(aslBtn);
             });
             
@@ -1247,8 +1250,8 @@
                 const sectionId = card.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
                 const aslBtn = document.createElement('button');
                 aslBtn.className = 'asl-section-btn';
-                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-                aslBtn.onclick = () => openASLModal(sectionId);
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> NSL';
+                aslBtn.onclick = () => openASLVideo(sectionId);
                 card.prepend(aslBtn);
             });
             
@@ -1259,8 +1262,8 @@
                 const sectionTitle = section.querySelector('h2');
                 const aslBtn = document.createElement('button');
                 aslBtn.className = 'asl-section-btn';
-                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-                aslBtn.onclick = () => openASLModal(sectionId);
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> NSL';
+                aslBtn.onclick = () => openASLVideo(sectionId);
                 sectionTitle.parentNode.insertBefore(aslBtn, sectionTitle.nextSibling);
             });
         }
@@ -1304,7 +1307,7 @@
             speechSynthesis.speak(currentUtterance);
         }
 
-        // ASL Video Modal Functionality
+        // ASL Video Functionality
         const videoTranscripts = {
             'when-to-disclose': 'This video demonstrates sign language for when to disclose your HIV status to partners and others.',
             'how-to-disclose': 'Sign language interpretation explaining strategies for disclosing your HIV status effectively.',
@@ -1325,8 +1328,8 @@
             'resources': 'Resource information for HIV relationships in sign language.'
         };
 
-        function openASLModal(section) {
-            const modal = document.getElementById('aslModal');
+        function openASLVideo(section) {
+            const container = document.getElementById('aslVideoContainer');
             const video = document.getElementById('aslVideo');
             const transcript = document.getElementById('aslTranscriptText');
             
@@ -1336,26 +1339,17 @@
             // Set transcript text
             transcript.textContent = videoTranscripts[section] || 'Sign language interpretation for this content.';
             
-            modal.style.display = 'flex';
+            container.style.display = 'block';
             video.load();
             video.play();
         }
         
-        function closeASLModal() {
-            const modal = document.getElementById('aslModal');
+        function closeASLVideo() {
+            const container = document.getElementById('aslVideoContainer');
             const video = document.getElementById('aslVideo');
             
             video.pause();
-            modal.style.display = 'none';
-        }
-        
-        // Close modal when clicking outside the content
-        window.onclick = function(event) {
-            const aslModal = document.getElementById('aslModal');
-            
-            if (event.target == aslModal) {
-                closeASLModal();
-            }
+            container.style.display = 'none';
         }
     </script>
 </body>

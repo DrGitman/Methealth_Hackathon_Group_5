@@ -203,7 +203,7 @@
         }
         
         .treatment-card {
-            background: white;
+            background: #fdf0f0;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -244,7 +244,7 @@
         }
         
         .health-card {
-            background: white;
+            background: #fdf0f0;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -268,7 +268,7 @@
         }
         
         .u-equals-u, .disclosure, .family-planning {
-            background: white;
+            background: #fdf0f0;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -288,7 +288,7 @@
         }
         
         .resource-card {
-            background: white;
+            background: #fdf0f0;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -455,80 +455,6 @@
             display: block;
         }
 
-        /* Enhanced ASL Modal Styles */
-        .asl-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .asl-modal-content {
-            background: #2c3e50;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 800px;
-            position: relative;
-            padding: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            color: white;
-        }
-        
-        .asl-video-container {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            background: #1a2636;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .asl-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .close-asl {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 28px;
-            color: white;
-            cursor: pointer;
-            z-index: 10;
-            background: rgba(0,0,0,0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .close-asl:hover {
-            background: var(--secondary-color);
-            transform: rotate(90deg);
-        }
-        
-        .asl-transcript {
-            margin-top: 15px;
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-            font-size: 0.9rem;
-        }
-
         /* ASL Options Menu */
         .asl-options-menu {
             display: none;
@@ -576,6 +502,67 @@
             color: #7f8c8d;
             border-top: 1px solid #eee;
         }
+
+        /* Fixed ASL Video Container */
+        #aslVideoContainer {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            height: auto;
+            background: #2c3e50;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 2000;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        #aslVideo {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .asl-video-controls {
+            padding: 10px;
+            background: #2c3e50;
+            color: white;
+        }
+
+        .close-asl-fixed {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-asl-fixed:hover {
+            background: var(--secondary-color);
+            transform: rotate(90deg);
+        }
+
+        .asl-transcript-fixed {
+            margin-top: 10px;
+            padding: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+            font-size: 0.8rem;
+            max-height: 100px;
+            overflow-y: auto;
+        }
         
         /* Responsive Styles */
         @media (max-width: 768px) {
@@ -620,17 +607,10 @@
                 right: 20px;
             }
             
-            .asl-modal-content {
-                width: 95%;
-                padding: 15px;
-            }
-            
-            .close-asl {
-                top: 10px;
-                right: 10px;
-                font-size: 24px;
-                width: 36px;
-                height: 36px;
+            #aslVideoContainer {
+                width: 250px;
+                bottom: 15px;
+                right: 15px;
             }
 
             .asl-options-menu {
@@ -656,28 +636,40 @@
             .btn {
                 padding: 10px 20px;
             }
+
+            #aslVideoContainer {
+                width: 200px;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .asl-transcript-fixed {
+                font-size: 0.7rem;
+                max-height: 80px;
+            }
+            
             /* Add to your existing CSS */
-.download-li {
-    margin-left: 20px;
-    background-color: var(--primary-color);
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
+            .download-li {
+                margin-left: 20px;
+                background-color: var(--primary-color);
+                border-radius: 30px;
+                transition: all 0.3s ease;
+            }
 
-.download-li:hover {
-    background-color: var(--dark-color);
-}
+            .download-li:hover {
+                background-color: var(--dark-color);
+            }
 
-.download-btn {
-    color: white;
-    padding: 10px 15px;
-    display: block;
-    font-weight: 600;
-}
+            .download-btn {
+                color: white;
+                padding: 10px 15px;
+                display: block;
+                font-weight: 600;
+            }
 
-.download-btn i {
-    margin-right: 5px;
-}
+            .download-btn i {
+                margin-right: 5px;
+            }
         }
     </style>
 </head>
@@ -689,7 +681,8 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Symptoms/Preventions</a></li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">Symptoms&Preventions</a></li>
                     <li class="active"><a href="maintenance.html">Living with HIV</a></li>
                     <li><a href="relationships.html">Relationship</a></li>
                     <li><a href="motivation.html">Community</a></li>
@@ -706,7 +699,7 @@
 
     <section class="hero2">
         <video autoplay muted loop class="video-background">
-            <source src="living.mp4" type="video/mp4">
+            <source src="asl/living.mp4" type="video/mp4">
             <!-- Fallback if video doesn't load -->
             <img src="images/fallback-image.jpg" alt="Happy diverse group of people living with HIV">
         </video>
@@ -852,7 +845,7 @@
     <!-- ASL Options Menu -->
     <div class="asl-options-menu" id="aslOptionsMenu">
         <div class="asl-option asl" onclick="enableASLMode()">
-            <i class="fas fa-sign-language"></i> ASL Videos
+            <i class="fas fa-sign-language"></i> NSL Videos
         </div>
         <div class="asl-option tts" onclick="enableTTSMode()">
             <i class="fas fa-volume-up"></i> Text-to-Speech
@@ -862,54 +855,59 @@
         </div>
     </div>
 
+    <!-- Fixed ASL Video Container -->
+    <div id="aslVideoContainer">
+        <span class="close-asl-fixed" onclick="closeASLVideo()">&times;</span>
+        <video id="aslVideo" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="asl-video-controls">
+            <div class="asl-transcript-fixed">
+                <p id="aslTranscriptText">Sign language interpretation for this content.</p>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <div class="footer-links">
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Prevention</a></li>
-                        <li><a href="maintenance.html">Living with HIV</a></li>
-                        <li><a href="#resources">Resources</a></li>
+                        <li><a href="index.html">HIV Inclusive app</a></li>
+                        <li><a href="https://www.nmcfund.com/">NMC</a></li>
+                        <li><a href="https://www.methealth.com.na/index">MetHealth</a></li>
+                        <li><a href="https://www.mhnamibia.com/contact_us.php">MyHealth</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Contact</h4>
+                    <h4>Phone</h4>
                     <ul>
-                        <li><i class="fas fa-phone"></i> Hotline: 1-800-XXX-XXXX</li>
-                        <li><i class="fas fa-envelope"></i> info@hivawareness.org</li>
+                        <li><i class="fas fa-phone"></i> HIV Inclusive : *6345#</li>
+                         <li><i class="fas fa-phone"></i> NMC : 061 287 6000</li>
+                         <li><i class="fas fa-phone"></i> MetHealth: 061 287 6000</li>
+                         <li><i class="fas fa-phone"></i> MyHealth: 061 375 950</li>
+                        
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Accessibility</h4>
+                    <h4>Email</h4>
                     <ul>
-                        <li><i class="fas fa-assistive-listening-systems"></i> TTY: 1-800-XXX-XXXX</li>
-                        <li><i class="fas fa-sign-language"></i> ASL interpreters available</li>
+                        <li><i class="fas fa-envelope"></i> hivinclusive@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> enquiries@methealth.com.na</li>
+                        <li><i class="fas fa-envelope"></i> enquiries@methealth.com.na</li>
+                        <li><i class="fas fa-envelope"></i> wellness1@methealth.com.na</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 HIV Awareness. All rights reserved.</p>
+                <p>&copy; 2023 HIV Inclusive. All rights reserved.</p>
                 <p class="confidentiality">All information is kept confidential.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Enhanced ASL Modal -->
-    <div id="aslModal" class="asl-modal">
-        <div class="asl-modal-content">
-            <span class="close-asl" onclick="closeASLModal()">&times;</span>
-            <div class="asl-video-container">
-                <video id="aslVideo" class="asl-video" controls>
-                    <source src="" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="asl-transcript">
-                <p id="aslTranscriptText">Sign language interpretation for this content. Video will show proper signing for this section.</p>
-            </div>
-        </div>
-    </div>
 
     <script>
         // Toggle ASL options menu
@@ -956,8 +954,8 @@
                 // Add ASL button
                 const aslBtn = document.createElement('button');
                 aslBtn.className = 'asl-section-btn';
-                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-                aslBtn.onclick = () => openASLModal(sectionId);
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> NSL';
+                aslBtn.onclick = () => openASLVideo(sectionId);
                 card.prepend(aslBtn);
 
                 // Add TTS button
@@ -976,8 +974,8 @@
                 // Add ASL button
                 const aslBtn = document.createElement('button');
                 aslBtn.className = 'asl-section-btn';
-                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-                aslBtn.onclick = () => openASLModal(sectionId);
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> NSL';
+                aslBtn.onclick = () => openASLVideo(sectionId);
                 card.prepend(aslBtn);
 
                 // Add TTS button
@@ -996,8 +994,8 @@
                 // Add ASL button
                 const aslBtn = document.createElement('button');
                 aslBtn.className = 'asl-section-btn';
-                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-                aslBtn.onclick = () => openASLModal(sectionId);
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> NSL';
+                aslBtn.onclick = () => openASLVideo(sectionId);
                 section.prepend(aslBtn);
 
                 // Add TTS button
@@ -1016,8 +1014,8 @@
                 // Add ASL button
                 const aslBtn = document.createElement('button');
                 aslBtn.className = 'asl-section-btn';
-                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-                aslBtn.onclick = () => openASLModal(sectionId);
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> NSL';
+                aslBtn.onclick = () => openASLVideo(sectionId);
                 card.prepend(aslBtn);
 
                 // Add TTS button
@@ -1037,8 +1035,8 @@
                 // Add ASL button
                 const aslBtn = document.createElement('button');
                 aslBtn.className = 'asl-section-btn';
-                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-                aslBtn.onclick = () => openASLModal(sectionId);
+                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> NSL';
+                aslBtn.onclick = () => openASLVideo(sectionId);
                 sectionTitle.parentNode.insertBefore(aslBtn, sectionTitle.nextSibling);
 
                 // Add TTS button
@@ -1053,26 +1051,50 @@
         // Call this function when page loads
         window.onload = addAccessibilityButtons;
 
-        // ASL Video Modal Functionality
-const videoTranscripts = {
-    'art-(antiretroviral-therapy)': 'This video demonstrates sign language for antiretroviral therapy, explaining how it suppresses the virus and makes viral load undetectable.',
-    'medical-monitoring': 'This interpretation explains the importance of regular viral load tests, CD4 count monitoring, and other health screenings.',
-    'avoid-alcohol': 'Sign language explanation about how alcohol weakens the immune system and interferes with ART medications.',
-    'nutrition': 'Proper signing for nutrition recommendations for people living with HIV.',
-    'exercise': 'Sign language interpretation about the benefits of regular physical activity for people with HIV.',
-    'mental-health': 'This video demonstrates sign language for mental health support options for people living with HIV.',
-    'sleep': 'Sign language explanation about the importance of quality sleep for immune system health.',
-    'u=u-(undetectable-=-untransmittable)': 'This interpretation explains the U=U concept in sign language.',
-    'disclosure-considerations': 'Sign language video about legal requirements and safety considerations for HIV disclosure.',
-    'family-planning': 'This video demonstrates sign language for family planning options for people with HIV.',
-    'support-organizations': 'Sign language interpretation about support organizations for people living with HIV.',
-    'financial-assistance': 'This video explains financial assistance programs in sign language.',
-    'latest-research': 'Sign language interpretation of the latest HIV research and clinical trials.',
-    'treatment': 'Overview of HIV treatment options in sign language.',
-    'healthy-living': 'General healthy living tips for people with HIV in sign language.',
-    'relationships': 'Relationship advice for people living with HIV in sign language.',
-    'resources': 'Resource information for HIV support in sign language.'
-};
+        // ASL Video Functionality
+        const videoTranscripts = {
+            'art-(antiretroviral-therapy)': 'This video demonstrates sign language for antiretroviral therapy, explaining how it suppresses the virus and makes viral load undetectable.',
+            'medical-monitoring': 'This interpretation explains the importance of regular viral load tests, CD4 count monitoring, and other health screenings.',
+            'avoid-alcohol': 'Sign language explanation about how alcohol weakens the immune system and interferes with ART medications.',
+            'nutrition': 'Proper signing for nutrition recommendations for people living with HIV.',
+            'exercise': 'Sign language interpretation about the benefits of regular physical activity for people with HIV.',
+            'mental-health': 'This video demonstrates sign language for mental health support options for people living with HIV.',
+            'sleep': 'Sign language explanation about the importance of quality sleep for immune system health.',
+            'u=u-(undetectable-=-untransmittable)': 'This interpretation explains the U=U concept in sign language.',
+            'disclosure-considerations': 'Sign language video about legal requirements and safety considerations for HIV disclosure.',
+            'family-planning': 'This video demonstrates sign language for family planning options for people with HIV.',
+            'support-organizations': 'Sign language interpretation about support organizations for people living with HIV.',
+            'financial-assistance': 'This video explains financial assistance programs in sign language.',
+            'latest-research': 'Sign language interpretation of the latest HIV research and clinical trials.',
+            'treatment': 'Overview of HIV treatment options in sign language.',
+            'healthy-living': 'General healthy living tips for people with HIV in sign language.',
+            'relationships': 'Relationship advice for people living with HIV in sign language.',
+            'resources': 'Resource information for HIV support in sign language.'
+        };
+
+        function openASLVideo(section) {
+            const container = document.getElementById('aslVideoContainer');
+            const video = document.getElementById('aslVideo');
+            const transcript = document.getElementById('aslTranscriptText');
+            
+            // Set video source
+            video.src = `asl/${section}.mp4`;
+            
+            // Set transcript text
+            transcript.textContent = videoTranscripts[section] || 'Sign language interpretation for this content.';
+            
+            container.style.display = 'block';
+            video.load();
+            video.play();
+        }
+        
+        function closeASLVideo() {
+            const container = document.getElementById('aslVideoContainer');
+            const video = document.getElementById('aslVideo');
+            
+            video.pause();
+            container.style.display = 'none';
+        }
 
         // Text-to-Speech Functionality
         function readSection(sectionElement) {
@@ -1100,39 +1122,6 @@ const videoTranscripts = {
                 }
             } else {
                 alert('Text-to-speech is not supported in your browser.');
-            }
-        }
-
-        function openASLModal(section) {
-            const modal = document.getElementById('aslModal');
-            const video = document.getElementById('aslVideo');
-            const transcript = document.getElementById('aslTranscriptText');
-            
-            // Set video source
-            video.src = `asl/${section}.mp4`;
-            
-            // Set transcript text
-            transcript.textContent = videoTranscripts[section] || 'Sign language interpretation for this content.';
-            
-            modal.style.display = 'flex';
-            video.load();
-            video.play();
-        }
-        
-        function closeASLModal() {
-            const modal = document.getElementById('aslModal');
-            const video = document.getElementById('aslVideo');
-            
-            video.pause();
-            modal.style.display = 'none';
-        }
-        
-        // Close modal when clicking outside the content
-        window.onclick = function(event) {
-            const aslModal = document.getElementById('aslModal');
-            
-            if (event.target == aslModal) {
-                closeASLModal();
             }
         }
     </script>
