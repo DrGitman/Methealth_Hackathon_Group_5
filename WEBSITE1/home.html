@@ -672,34 +672,120 @@
             .tts-btn {
                 right: 65px;
             }
+            /* Language Selector Styles */
+    .language-selector {
+        margin-left: 15px;
+        position: relative;
+    }
+    
+    .language-btn {
+        background: transparent;
+        border: none;
+        color: var(--dark-color);
+        font-weight: 600;
+        padding: 15px 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 1px;
+        font-size: 1rem;
+        position: relative;
+    }
+    
+    .language-btn:hover {
+        color: var(--primary-color);
+    }
+    
+    .language-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .language-dropdown-content {
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .language-dropdown-content a {
+        color: var(--text-color);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    
+    .language-dropdown-content a:hover {
+        background-color: var(--light-color);
+        color: var(--primary-color);
+    }
+    
+    /* Active language style */
+    .language-dropdown-content a[data-lang="en"] {
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .language-selector {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+        
+        .language-dropdown-content {
+            right: auto;
+            left: 0;
+        }
+    }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1><i class="fas fa-ribbon"></i> HIV Inclusive</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li class="active"><a href="home.html">Home</a></li>
-                    <li><a href="index.html">Symptoms&Preventions</a></li>
-                    <li><a href="maintenance.html">Living with HIV</a></li>
-                    <li><a href="relationships.html">Relationship</a></li>
-                    <li><a href="motivation.html">Community</a></li>
-                    <li><a href="quiz.html">Take a Quiz</a></li>
-                     <li class="download-li">
-                    <a href="downloads/Comprehensive HIV Guide.pdf" class="download-btn" download>
+<header>
+    <div class="container">
+        <div class="logo">
+            <h1><i class="fas fa-ribbon"></i> HIV Inclusive</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><a href="home.html">Home</a></li>
+                <li><a href="index.html">Symptoms&Preventions</a></li>
+                <li><a href="maintenance.html">Living with HIV</a></li>
+                <li><a href="relationships.html">Relationship</a></li>
+                <li><a href="motivation.html">Community</a></li>
+                <li><a href="quiz.html">Take a Quiz</a></li>
+                <li class="download-li">
+                    <a href="downloads/HIV Inclusive Summary.pdf" class="download-btn" download>
                         <i class="fas fa-file-pdf"></i> Download PDF
                     </a>
                 </li>
-                </ul>
-            </nav>
+                <!-- Language Selector -->
+               <li class="language-selector" style="position: relative; top: 10px; left:300px;">
+    <div class="language-dropdown">
+        <button class="language-btn">
+            <i class="fas fa-globe"></i> EN
+            <i class="fas fa-caret-down"></i>
+        </button>
+        <div class="language-dropdown-content" style="display: none;">
+            <a href="#" data-lang="en">English</a>
+            <a href="#" data-lang="es">Afrikans</a>
+            <a href="#" data-lang="fr">Otjiherero</a>
+            <a href="#" data-lang="zh">Oshindonga</a>
+            <a href="#" data-lang="pt">Khoekhoegowab</a>
+            
         </div>
-    </header>
-
-
+    </div>
+</li>
+            </ul>
+        </nav>
+    </div>
+</header>
     <section class="hero">
         <video autoplay muted loop class="video-background">
             <source src="asl/back.mp4" type="video/mp4">
@@ -1124,6 +1210,58 @@
                 speechSynthesis.cancel();
             });
         });
+
+          // Language selection functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const langBtn = document.querySelector('.language-btn');
+        const langDropdown = document.querySelector('.language-dropdown-content');
+        
+        // Toggle dropdown on button click
+        langBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (langDropdown.style.display === 'block') {
+                langDropdown.style.display = 'none';
+            } else {
+                langDropdown.style.display = 'block';
+            }
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            langDropdown.style.display = 'none';
+        });
+        
+        // Language selection
+        const langLinks = document.querySelectorAll('.language-dropdown-content a');
+        langLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                changeLanguage(lang);
+                langDropdown.style.display = 'none';
+            });
+        });
+        
+        // Check for saved language preference
+        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        if (savedLang !== 'en') {
+            changeLanguage(savedLang);
+        }
+    });
+    
+    function changeLanguage(lang) {
+        // Update button text
+        const langBtn = document.querySelector('.language-btn');
+        const langText = {
+            'en': 'EN',
+            'es': 'AF',
+            'fr': 'OTJ',
+            'zh': 'OSH',
+            'ar': 'KK'
+        };
+        langBtn.innerHTML = `<i class="fas fa-globe"></i> ${langText[lang]} <i class="fas fa-caret-down"></i>`;
+        
+    }
     </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comprehensive HIV Guide</title>
+    <title>HIV Inclusive</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,6 +46,7 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            cursor: pointer;
         }
         .download-btn:hover {
             background-color: #457b9d;
@@ -59,12 +60,23 @@
         .fact {
             border-left-color: #2a9d8f;
         }
+        @media print {
+            .download-btn {
+                display: none;
+            }
+            body {
+                padding: 0;
+                max-width: 100%;
+            }
+        }
     </style>
+    <!-- Include html2pdf library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-    <h1>Comprehensive HIV Summary</h1>
+    <h1>HIV Inclusive</h1>
 
-    <a href="#" class="download-btn" onclick="window.print()">Download as PDF</a>
+    <button class="download-btn" id="downloadPdf">Download as PDF</button>
 
     <h2>1. What is HIV?</h2>
     <p><strong>Human Immunodeficiency Virus (HIV)</strong>: Attacks the immune system, specifically CD4 cells (T-cells), weakening the body's ability to fight infections.</p>
@@ -138,37 +150,32 @@
         <strong>Fact</strong>: With ART, people live long, healthy lives.
     </div>
 
-    <h2>9. Global Impact</h2>
-    <ul>
-        <li>~39 million people live with HIV (2023 data)</li>
-        <li>Sub-Saharan Africa is most affected</li>
-        <li>Progress: New cases down 38% since 2010 due to education/treatment</li>
-    </ul>
-
-    <h2>10. Support & Contacts</h2>
+    <h2> Support & Contacts</h2>
     <div class="contact-card">
-        <h3>Global Organizations</h3>
-        <p><strong>UNAIDS</strong>: <a href="https://www.unaids.org" target="_blank">www.unaids.org</a></p>
-        <p><strong>WHO HIV Department</strong>: <a href="https://www.who.int/hiv" target="_blank">www.who.int/hiv</a></p>
+        <h3>HIV Inclusive App</h3>
+        <p><strong>HIV Inclusive : *6345#</strong>: </p>
+        <p><strong>NMC : 061 287 6000</strong>: </p>
+        <p><strong>MetHealth: 061 287 6000</strong>: </p>
+        <p><strong> MyHealth: 061 375 950</strong>: </p>
     </div>
-
-    <div class="contact-card">
-        <h3>United States</h3>
-        <p><strong>CDC HIV Hotline</strong>: 1-800-CDC-INFO (1-800-232-4636)</p>
-        <p><strong>The Well Project</strong> (Women & HIV): <a href="https://www.thewellproject.org" target="_blank">www.thewellproject.org</a></p>
-        <p><strong>HIV.gov</strong>: <a href="https://www.hiv.gov" target="_blank">www.hiv.gov</a></p>
-    </div>
-
-    <div class="contact-card">
-        <h3>Emergency Resources</h3>
-        <p><strong>PEP Locator</strong>: <a href="https://www.hiv.gov/hiv-basics/hiv-prevention/using-hiv-medication-to-reduce-risk/post-exposure-prophylaxis" target="_blank">Find PEP Providers</a></p>
-        <p><strong>Mental Health Support</strong>: National Suicide Prevention Lifeline (988 in US)</p>
-    </div>
-
-    <a href="#" class="download-btn" onclick="window.print()">Download as PDF</a>
 
     <script>
-        // Simple print function (browser will handle PDF conversion)
+        document.getElementById('downloadPdf').addEventListener('click', function() {
+            // Configure the PDF options
+            const element = document.body;
+            const opt = {
+                margin: 10,
+                filename: 'HIV_Inclusive_Guide.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Generate the PDF
+            html2pdf().set(opt).from(element).save();
+        });
+
+        // Simple print function (alternative method)
         function printPage() {
             window.print();
         }
