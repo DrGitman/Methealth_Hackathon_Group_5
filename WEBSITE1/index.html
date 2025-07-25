@@ -3,1004 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIV Prevention | Stop HIV Spread</title>
+    <title>HIV Awareness | Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<style>
-    /* Global Styles */
-        :root {
-            --primary-color: #ffa398;
-            --secondary-color: #e70404;
-            --dark-color:#ff484c;
-            --light-color: #ecf0f1;
-            --success-color: #2ecc71;
-            --text-color: #333;
-            --text-light: #7f8c8d;
-        }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
- body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: #f9f9f9;
-        }
-        
-        a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--primary-color);
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo h1 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin: 0;
-        }
-        
-        .logo i {
-            margin-right: 10px;
-            font-size: 1.5rem;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 20px;
-        }
-        
-        nav ul li a {
-            color: var(--dark-color);
-            font-weight: 600;
-            padding: 15px 0;
-            display: block;
-            position: relative;
-        }
-        
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-        
-        nav ul li.active a {
-            color: var(--primary-color);
-        }
-        
-        nav ul li.active a:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-    /* Hero Section */
-    .hero {
-        position: relative;
-        color: white;
-        text-align: center;
-        padding: 150px 0 100px;
-        margin-top: 60px;
-        overflow: hidden;
-    }
-
-    .video-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-        background-color: #c39eb8; /* Fallback color */
-    }
-
-    .hero .container {
-        position: relative;
-        z-index: 1;
-        background-color: rgba(201, 186, 198, 0.8);
-        padding: 30px;
-        border-radius: 8px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .hero h2 {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        max-width: 700px;
-        margin: 0 auto 20px;
-    }
-
-    /* Image Styling */
-    .section-image {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        object-fit: cover;
-        display: block;
-    }
-
-    /* Prevention Methods Grid Images */
-    .methods-grid .section-image {
-        height: 180px;
-        object-position: center;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    .method-card {
-        overflow: hidden; /* Keeps image corners rounded */
-    }
-
-    /* Testing Section Images */
-    .testing-info .section-image {
-        max-height: 250px;
-        margin: 0 auto 25px;
-    }
-
-    .testing-image .section-image {
-        max-height: 400px;
-        border: 3px solid rgb(207, 145, 192);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    /* Myths Section Images */
-    .myths-grid .section-image {
-        height: 160px;
-        margin-bottom: 15px;
-    }
-
-    /* Stats Section Images */
-    .stats-grid .section-image {
-        height: 120px;
-        margin-bottom: 15px;
-    }
-
-    /* Responsive Image Adjustments */
-    @media (max-width: 768px) {
-        .methods-grid .section-image {
-            height: 150px;
-        }
-        
-        .testing-info .section-image,
-        .testing-image .section-image {
-            max-height: 300px;
-        }
-        
-        .myths-grid .section-image {
-            height: 140px;
-        }
-        
-        .stats-grid .section-image {
-            height: 100px;
-        }
-    }
-
-    /* Image Hover Effects */
-    .method-card:hover .section-image {
-        transform: scale(1.03);
-        transition: transform 0.3s ease;
-    }
-
-    /* Accessibility for Images */
-    .section-image {
-        transition: all 0.3s ease;
-    }
-
-    .section-image:focus {
-        outline: 3px solid #3498db;
-        outline-offset: 3px;
-    }
-
-    /* Image Containers */
-    .method-card,
-    .myth-card,
-    .stat-card {
-        position: relative;
-        overflow: hidden;
-        background: white;
-        border-radius: 8px;
-    }
-
-    /* Prevention Methods Grid */
-    .methods-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-    }
-
-    .method-card {
-        background: #fdf0f0;
-        padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        text-align: center;
-        transition: transform 0.3s ease;
-    }
-
-    .method-card:hover {
-        transform: translateY(-10px);
-    }
-
-    .method-card i {
-        font-size: 2.5rem;
-        color: var(--secondary-color);
-        margin-bottom: 20px;
-    }
-
-    .method-card h3 {
-        color: var(--primary-color);
-        margin-bottom: 15px;
-    }
-
-    .method-card ul {
-        text-align: left;
-        list-style-position: inside;
-    }
-
-    .method-card ul li {
-        margin-bottom: 8px;
-    }
-
-    /* Testing Section */
-    .testing-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        align-items: center;
-    }
-
-    .testing-info {
-        padding-right: 20px;
-    }
-
-    .testing-image img {
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    /* Myths Section */
-    .myths-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    }
-
-    .myth-card {
-        background:#fdf0f0;
-        padding: 25px;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        border-left: 4px solid var(--accent-color);
-    }
-
-    .myth-card h3 {
-        color: var(--accent-color);
-        margin-bottom: 10px;
-    }
-
-    /* Stats Section */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* changed from 200px to 300px */
-    gap: 20px;
-}
-
-
-    .stat-card {
-        background: #fdf0f0;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        text-align: center;
-        
-    }
-
-    /* Toggle Buttons */
-    .toggle-btn {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        z-index: 1000;
-        transition: all 0.3s ease;
-    }
-
-    /* TTS Toggle Button */
-    .tts-toggle-btn {
-        bottom: 30px;
-        left: 30px;
-        background: var(--secondary-color);
-        color: white;
-    }
-
-    .tts-toggle-btn:hover {
-        background: var(--dark-color);
-        transform: scale(1.1);
-    }
-
-    /* ASL Toggle Button */
-    .asl-toggle-btn {
-        bottom: 30px;
-        right: 30px;
-        background: var(--secondary-color);
-        color: white;
-    }
-    
-    .asl-toggle-btn:hover {
-        background: var(--dark-color);
-        transform: scale(1.1);
-    }
-
-    /* Stop TTS Button */
-    .stop-tts-btn {
-        position: fixed;
-        bottom: 100px;
-        left: 30px;
-        background: var(--accent-color);
-        color: #ff484c;
-        padding: 10px 15px;
-        border-radius: 30px;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        z-index: 1000;
-        transition: all 0.3s ease;
-    }
-
-    .stop-tts-btn i {
-        margin-right: 8px;
-    }
-
-    .stop-tts-btn:hover {
-        background:#ffa398;
-        transform: scale(1.05);
-    }
-
-    body.tts-mode .stop-tts-btn {
-        display: flex;
-    }
-
-    /* Section Buttons - Hidden by default */
-    .section-btn {
-        position: absolute;
-        top: 10px;
-        border: none;
-        border-radius: 20px;
-        padding: 5px 10px;
-        font-size: 12px;
-        cursor: pointer;
-        z-index: 10;
-        transition: all 0.3s ease;
-        display: none; /* Hidden by default */
-        align-items: center;
-        justify-content: center;
-        opacity: 0.9;
-        background-color: #ffa398;
-    }
-
-    .section-btn:hover {
-        opacity: 1;
-        transform: scale(1.05);
-    }
-
-    .section-btn i {
-        margin-right: 5px;
-    }
-
-    /* TTS Section Buttons */
-    .tts-section-btn {
-        left: 10px;
-        background: #ffa398(52, 152, 219, 0.9);
-        color: white;
-    }
-
-    /* ASL Section Buttons */
-    .asl-section-btn {
-        right: 10px;
-        background: rgba(231, 76, 60, 0.9);
-        color: white;
-    }
-
-    /* Show buttons when in respective mode */
-    body.tts-mode .tts-section-btn {
-        display: flex;
-    }
-
-    body.asl-mode .asl-section-btn {
-        display: flex;
-    }
-
-    /* Enhanced ASL Modal Styles */
-    .asl-modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,0.9);
-        z-index: 2000;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .asl-modal-content {
-        background: #2c3e50;
-        border-radius: 12px;
-        width: 90%;
-        max-width: 800px;
-        position: relative;
-        padding: 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-        color: white;
-    }
-    
-    .asl-video-container {
-        position: relative;
-        width: 100%;
-        padding-top: 56.25%; /* 16:9 Aspect Ratio */
-        background: #1a2636;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-    
-    .asl-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-    
-    .close-asl {
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 28px;
-        color: white;
-        cursor: pointer;
-        z-index: 10;
-        background: rgba(0,0,0,0.5);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.3s ease;
-    }
-    
-    .close-asl:hover {
-        background: var(--accent-color);
-        transform: rotate(90deg);
-    }
-    
-    .asl-transcript {
-        margin-top: 15px;
-        padding: 15px;
-        background: rgba(255,255,255,0.1);
-        border-radius: 8px;
-        font-size: 0.9rem;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-        .container {
-            width: 95%;
-        }
-        
-        .testing-content {
-            grid-template-columns: 1fr;
-        }
-        
-        .testing-info {
-            padding-right: 0;
-            margin-bottom: 30px;
-        }
-        
-        nav ul {
-            flex-direction: column;
-        }
-        
-        nav ul li {
-            margin-left: 0;
-            margin-bottom: 10px;
-        }
-        
-        .hero {
-            padding: 120px 0 80px;
-        }
-        
-        .hero h2 {
-            font-size: 2rem;
-        }
-
-        .toggle-btn {
-            width: 50px;
-            height: 50px;
-            font-size: 20px;
-            bottom: 20px;
-        }
-        
-        .asl-toggle-btn {
-            right: 20px;
-        }
-        
-        .tts-toggle-btn {
-            left: 20px;
-        }
-        
-        .stop-tts-btn {
-            bottom: 80px;
-            color: #3498db;
-            left: 20px;
-            font-size: 14px;
-            padding: 8px 12px;
-        }
-        
-        .asl-modal-content {
-            width: 95%;
-            padding: 15px;
-        }
-        
-        .close-asl {
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            width: 36px;
-            height: 36px;
-        }
-
-        .section-btn {
-            padding: 4px 8px;
-            font-size: 11px;
-        }
-        /* Add to your existing CSS */
-.download-li {
-    margin-left: 20px;
-    background-color: var(--primary-color);
-    border-radius: 30px;
-    transition: all 0.3s ease;
-}
-
-.download-li:hover {
-    background-color: var(--dark-color);
-}
-
-.download-btn {
-    color: white;
-    padding: 10px 15px;
-    display: block;
-    font-weight: 600;
-}
-
-.download-btn i {
-    margin-right: 5px;
-}
-    }
-</style>
-</head>
-<body>
-<header>
-        <div class="container">
-            <div class="logo">
-                <h1><i class="fas fa-ribbon"></i> HIV Inclusive</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li class="active"><a href="index.html">Symptoms&Preventions</a></li>
-                    <li><a href="maintenance.html">Living with HIV</a></li>
-                    <li><a href="relationships.html">Relationship</a></li>
-                    <li><a href="motivation.html">Community</a></li>
-                    <li><a href="quiz.html">Take a Quiz</a></li>
-                     <li class="download-li">
-                     <a href="downloads/HIV Inclusive Summary.pdf" class="download-btn" download>
-                        <i class="fas fa-file-pdf"></i> Download PDF
-                    </a>
-                </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-
-
-    <section class="hero">
-        <video autoplay muted loop class="video-background">
-            <source src="asl/prevent.mp4" type="video/mp4">
-            <!-- Fallback if video doesn't load -->
-            <img src="images/prevention-fallback.jpg" alt="Diverse group practicing HIV prevention">
-        </video>
-        <div class="container">
-            <h2>HIV Prevention: Protect Yourself and Others</h2>
-            <p>Effective prevention methods can stop HIV transmission</p>
-            <a href="#prevention-methods" class="btn">Learn Prevention Methods</a>
-        </div>
-    </section>
-
-    <section id="prevention-methods" class="section">
-        <div class="container">
-            <h2><i class="fas fa-shield-virus"></i> HIV Prevention Methods</h2>
-            <div class="methods-grid">
-                <div class="method-card">
-                    <img src="images/safesex.jpg" alt="Condom and sexual health items" class="section-image">
-                    <h3>Safe Sex Practices</h3>
-                    <ul>
-                        <li>Correct condom use every time</li>
-                        <li>Dental dams for oral sex</li>
-                        <li>Use lubrication to prevent tears</li>
-                    </ul>
-                </div>
-                
-                <div class="method-card">
-                    <img src="images/prep.jpg" alt="Person taking PrEP medication" class="section-image">
-                    <h3>PrEP (Pre-Exposure Prophylaxis)</h3>
-                    <ul>
-                        <li>Daily pill to prevent HIV</li>
-                        <li>Over 99% effective when taken as prescribed</li>
-                        <li>Available by prescription</li>
-                    </ul>
-                </div>
-                
-                <div class="method-card">
-                    <img src="images/pep.jpg" alt="Emergency medical kit" class="section-image">
-                    <h3>PEP (Post-Exposure Prophylaxis)</h3>
-                    <ul>
-                        <li>Emergency treatment after potential exposure</li>
-                        <li>Must be started within 72 hours</li>
-                        <li>Taken for 28 days</li>
-                    </ul>
-                </div>
-                
-                <div class="method-card">
-                    <img src="images/needle.jpg" alt="Needle exchange program" class="section-image">
-                    <h3>Harm Reduction</h3>
-                    <ul>
-                        <li>Never share needles</li>
-                        <li>Use needle exchange programs</li>
-                        <li>Always use sterile equipment</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="testing" class="section bg-light">
-        <div class="container">
-            <h2><i class="fas fa-vial"></i> Get Tested</h2>
-            <div class="testing-content">
-                <div class="testing-info">
-                    <img src="images/gum.jpg" alt="HIV self-testing kit" class="section-image">
-                    <p>Regular HIV testing is crucial for early detection and prevention. Many people with HIV don't show symptoms for years.</p>
-                    <ul>
-                        <li><strong>Frequency:</strong> At least once a year if sexually active</li>
-                        <li><strong>Types:</strong> Rapid tests, home tests, lab tests</li>
-                        <li><strong>Confidentiality:</strong> Testing is private</li>
-                    </ul>
-                    <button id="find-testing" class="btn">Find A Clinic Near You</button>
-                </div>
-                <div class="testing-image">
-                    <img src="images/tip.jpg" alt="Friendly clinic environment" class="section-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="myths" class="section">
-        <div class="container">
-            <h2><i class="fas fa-question-circle"></i> HIV Myths vs Facts</h2>
-            <div class="myths-grid">
-                <div class="myth-card">
-                    <img src="images/contact.jpg" alt="People hugging safely" class="section-image">
-                    <h3>Myth: HIV can spread through casual contact</h3>
-                    <p><strong>Fact:</strong> HIV is not spread through hugging, shaking hands, or sharing food.</p>
-                </div>
-                <div class="myth-card">
-                    <img src="images/bite.jpg" alt="Mosquito on skin with red X" class="section-image">
-                    <h3>Myth: Mosquitoes can transmit HIV</h3>
-                    <p><strong>Fact:</strong> HIV cannot survive or replicate in mosquitoes.</p>
-                </div>
-                <div class="myth-card">
-                    <img src="images/healthy.jpg" alt="Senior person exercising" class="section-image">
-                    <h3>Myth: HIV is a death sentence</h3>
-                    <p><strong>Fact:</strong> With treatment, people with HIV can live long, healthy lives.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="stats" class="section bg-light">
-        <div class="container">
-            <h2><i class="fas fa-chart-line"></i> Prevention Works</h2>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <img src="images/decline.jpg" alt="Chart showing HIV decline" class="section-image">
-                    <h3>40% Decline</h3>
-                    <p>New HIV infections have fallen by 40% since peak in 1990s</p>
-                </div>
-                <div class="stat-card">
-                    <img src="images/works.jpg" alt="Person with protection shield" class="section-image">
-                    <h3>99% Effective</h3>
-                    <p>PrEP is over 99% effective at preventing HIV when taken daily</p>
-                </div>
-                <div class="stat-card">
-                    <img src="images/mic.jpg" alt="Microscope with early detection" class="section-image">
-                    <h3>Early Detection</h3>
-                    <p>People who test early and get treatment can live normal lifespans</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TTS Toggle Button -->
-    <div class="tts-toggle-btn toggle-btn" id="ttsToggle">
-        <i class="fas fa-volume-up"></i>
-    </div>
-
-    <!-- Stop TTS Button -->
-    <button class="stop-tts-btn" id="stopTTS">
-        <i class="fas fa-stop"></i> Stop Reading
-    </button>
-
-    <!-- ASL Toggle Button -->
-    <div class="asl-toggle-btn toggle-btn" id="aslToggle">
-        <i class="fas fa-sign-language"></i>
-    </div>
-
-    <!-- Enhanced ASL Modal -->
-    <div id="aslModal" class="asl-modal">
-        <div class="asl-modal-content">
-            <span class="close-asl" onclick="closeASLModal()">&times;</span>
-            <div class="asl-video-container">
-                <video id="aslVideo" class="asl-video" controls>
-                    <source src="" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="asl-transcript">
-                <p id="aslTranscriptText">Sign language interpretation for this content. Video will show proper signing for this section.</p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // TTS functionality
-        let currentSpeech = null;
-
-        // Toggle TTS mode
-        document.getElementById('ttsToggle').addEventListener('click', function() {
-            document.body.classList.toggle('tts-mode');
-            
-            // Change icon based on state
-            const icon = this.querySelector('i');
-            if (document.body.classList.contains('tts-mode')) {
-                icon.classList.remove('fa-volume-up');
-                icon.classList.add('fa-volume-mute');
-                this.setAttribute('aria-label', 'Close TTS mode');
-            } else {
-                icon.classList.remove('fa-volume-mute');
-                icon.classList.add('fa-volume-up');
-                this.setAttribute('aria-label', 'Open TTS mode');
-                // Stop any ongoing speech when closing TTS mode
-                if (currentSpeech) {
-                    window.speechSynthesis.cancel();
-                    currentSpeech = null;
-                }
-            }
-        });
-
-        // Stop TTS button functionality
-        document.getElementById('stopTTS').addEventListener('click', function() {
-            if (currentSpeech) {
-                window.speechSynthesis.cancel();
-                currentSpeech = null;
-            }
-        });
-
-        // Function to speak text
-        function speakText(text) {
-            // Stop any ongoing speech
-            if (currentSpeech) {
-                window.speechSynthesis.cancel();
-            }
-            
-            // Create a new speech synthesis utterance
-            const utterance = new SpeechSynthesisUtterance();
-            utterance.text = text;
-            utterance.volume = 1;
-            utterance.rate = 1;
-            utterance.pitch = 1;
-            
-            // Speak the text
-            window.speechSynthesis.speak(utterance);
-            currentSpeech = utterance;
-            
-            // Handle when speech ends
-            utterance.onend = function() {
-                currentSpeech = null;
-            };
-        }
-
-        // Add TTS buttons to all relevant sections
-        function addTTSButtons() {
-            // Method cards
-            const methodCards = document.querySelectorAll('.method-card');
-            methodCards.forEach(card => {
-                const title = card.querySelector('h3').textContent;
-                const listItems = Array.from(card.querySelectorAll('li')).map(li => li.textContent).join('. ');
-                const textToRead = `${title}. ${listItems}`;
-                
-                const ttsBtn = document.createElement('button');
-                ttsBtn.className = 'tts-section-btn section-btn';
-                ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
-                ttsBtn.onclick = () => speakText(textToRead);
-                card.prepend(ttsBtn);
-            });
-            
-            // Testing info
-            const testingInfo = document.querySelector('.testing-info');
-            const testingText = Array.from(testingInfo.querySelectorAll('p, li')).map(el => el.textContent).join('. ');
-            const testingTTSBtn = document.createElement('button');
-            testingTTSBtn.className = 'tts-section-btn section-btn';
-            testingTTSBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
-            testingTTSBtn.onclick = () => speakText(testingText);
-            testingInfo.prepend(testingTTSBtn);
-            
-            // Myths section
-            const mythCards = document.querySelectorAll('.myth-card');
-            mythCards.forEach(card => {
-                const title = card.querySelector('h3').textContent;
-                const content = card.querySelector('p').textContent;
-                const textToRead = `${title}. ${content}`;
-                
-                const ttsBtn = document.createElement('button');
-                ttsBtn.className = 'tts-section-btn section-btn';
-                ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
-                ttsBtn.onclick = () => speakText(textToRead);
-                card.prepend(ttsBtn);
-            });
-            
-            // Stats section
-            const statCards = document.querySelectorAll('.stat-card');
-            statCards.forEach(card => {
-                const title = card.querySelector('h3').textContent;
-                const content = card.querySelector('p').textContent;
-                const textToRead = `${title}. ${content}`;
-                
-                const ttsBtn = document.createElement('button');
-                ttsBtn.className = 'tts-section-btn section-btn';
-                ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i> Read';
-                ttsBtn.onclick = () => speakText(textToRead);
-                card.prepend(ttsBtn);
-            });
-        }
-
-        // Toggle ASL mode
-        document.getElementById('aslToggle').addEventListener('click', function() {
-            document.body.classList.toggle('asl-mode');
-            
-            // Change icon based on state
-            const icon = this.querySelector('i');
-            if (document.body.classList.contains('asl-mode')) {
-                icon.classList.remove('fa-sign-language');
-                icon.classList.add('fa-times');
-                this.setAttribute('aria-label', 'Close ASL mode');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-sign-language');
-                this.setAttribute('aria-label', 'Open ASL mode');
-            }
-        });
-
-        // Add ASL buttons to all relevant sections
-        function addASLButtons() {
-            // Method cards
-            const methodCards = document.querySelectorAll('.method-card');
-            methodCards.forEach(card => {
-                const sectionId = card.querySelector('h3').textContent.toLowerCase().replace(/\s+/g, '-');
-                const aslBtn = document.createElement('button');
-                aslBtn.className = 'asl-section-btn section-btn';
-                aslBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-                aslBtn.onclick = () => openASLModal(sectionId);
-                card.prepend(aslBtn);
-            });
-            
-            // Testing info
-            const testingInfo = document.querySelector('.testing-info');
-            const testingBtn = document.createElement('button');
-            testingBtn.className = 'asl-section-btn section-btn';
-            testingBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-            testingBtn.onclick = () => openASLModal('testing');
-            testingInfo.prepend(testingBtn);
-            
-            // Myths section
-            const mythsTitle = document.querySelector('#myths h2');
-            const mythsBtn = document.createElement('button');
-            mythsBtn.className = 'asl-section-btn section-btn';
-            mythsBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-            mythsBtn.onclick = () => openASLModal('myths');
-            mythsTitle.parentNode.insertBefore(mythsBtn, mythsTitle.nextSibling);
-            
-            // Stats section
-            const statsTitle = document.querySelector('#stats h2');
-            const statsBtn = document.createElement('button');
-            statsBtn.className = 'asl-section-btn section-btn';
-            statsBtn.innerHTML = '<i class="fas fa-sign-language"></i> ASL';
-            statsBtn.onclick = () => openASLModal('stats');
-            statsTitle.parentNode.insertBefore(statsBtn, statsTitle.nextSibling);
-        }
-        
-        // Call these functions when page loads
-        window.onload = function() {
-            addASLButtons();
-            addTTSButtons();
-        };
-
- // Make the find testing button functional
-document.getElementById('find-testing').addEventListener('click', function() {
-    // Replace the link below with the specific clinic's Google Maps link
-    window.open("https://maps.app.goo.gl/CtjJZKTj3mzeqrj46", "_blank");
-});
-    </script>
-        <style>
+    <style>
         /* Base Styles */
         :root {
             --primary-color: #ffa398;
@@ -1011,6 +16,7 @@ document.getElementById('find-testing').addEventListener('click', function() {
             --text-color: #333;
             --text-light: #7f8c8d;
         }
+        
         * {
             margin: 0;
             padding: 0;
@@ -1053,6 +59,13 @@ document.getElementById('find-testing').addEventListener('click', function() {
             position: sticky;
             top: 0;
             z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
         }
         
         .logo {
@@ -1107,9 +120,9 @@ document.getElementById('find-testing').addEventListener('click', function() {
         }
         
         /* Hero Section */
-        .hero2 {
+        .hero {
             position: relative;
-            height: 70vh;
+            height: 80vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1128,20 +141,23 @@ document.getElementById('find-testing').addEventListener('click', function() {
             z-index: -1;
         }
         
-        .hero2 .container {
+        .hero .container {
             position: relative;
             z-index: 1;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
         }
         
-        .hero2 h2 {
-            font-size: 3rem;
+        .hero h2 {
+            font-size: 3.5rem;
             margin-bottom: 20px;
         }
         
-        .hero2 p {
+        .hero p {
             font-size: 1.5rem;
             margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .btn {
@@ -1163,6 +179,16 @@ document.getElementById('find-testing').addEventListener('click', function() {
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            margin-left: 15px;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
         /* Section Styles */
         .section {
             padding: 80px 0;
@@ -1172,9 +198,16 @@ document.getElementById('find-testing').addEventListener('click', function() {
             background-color: var(--light-color);
         }
         
+        .section-header {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+        
         .section h2 {
             text-align: center;
-            margin-bottom: 50px;
             font-size: 2.5rem;
             color: var(--dark-color);
         }
@@ -1184,126 +217,197 @@ document.getElementById('find-testing').addEventListener('click', function() {
             color: var(--primary-color);
         }
         
-        /* Stage Grid */
-        .stage-grid {
+        /* Accessibility Controls */
+        .accessibility-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .asl-section-btn, .audio-section-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .asl-section-btn:hover, .audio-section-btn:hover {
+            background: var(--dark-color);
+        }
+        
+        .asl-section-btn.active, .audio-section-btn.active {
+            background: var(--secondary-color);
+        }
+        
+        /* Features Grid */
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         
-        .stage-card {
+        .feature-card {
             background: #fdf0f0;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
             position: relative;
+            text-align: center;
+            padding: 30px 20px;
         }
         
-        .stage-card:hover {
+        .feature-card:hover {
             transform: translateY(-10px);
         }
         
-        .stage-card h3 {
-            padding: 20px;
+        .feature-card i {
+            font-size: 3rem;
             color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: var(--dark-color);
             font-size: 1.5rem;
-        }
-        
-        .stage-card ul {
-            padding: 0 20px 20px;
-            list-style-position: inside;
-        }
-        
-        .stage-card ul li {
-            margin-bottom: 10px;
-        }
-        
-        .section-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        /* Symptom Grid */
-        .symptom-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-        
-        .symptom-card {
-            background: #fdf0f0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .symptom-card h3 {
-            padding: 15px;
-            color: var(--secondary-color);
-        }
-        
-        .symptom-card p {
-            padding: 0 15px 15px;
-        }
-        
-        /* Visual Symptoms Content */
-        .visual-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .rash-symptoms, .oral-symptoms, .other-visual {
-            background: #fdf0f0;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .visual-content h3 {
-            color: var(--dark-color);
-            margin: 15px 0;
-        }
-        
-        /* Resources Grid */
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .resource-card {
-            background: #fdf0f0;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .resource-card h3 {
-            color: var(--dark-color);
             margin-bottom: 15px;
         }
         
-        .resource-card ul {
-            list-style: none;
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            align-items: center;
         }
         
-        .resource-card ul li {
-            margin-bottom: 10px;
-            padding-left: 20px;
+        .about-text {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Quick Links */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .quick-link-card {
+            background: #fdf0f0;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+        
+        .quick-link-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .quick-link-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: #fdf0f0;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             position: relative;
         }
         
-        .resource-card ul li:before {
-            content: "•";
-            color: var(--primary-color);
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(231, 76, 60, 0.1);
             position: absolute;
-            left: 0;
+            top: 10px;
+            left: 10px;
+            line-height: 1;
+        }
+        
+        .testimonial-card p {
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+        
+        .testimonial-card .author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .newsletter h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-form button {
+            background-color: var(--dark-color);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #c0392b;
         }
         
         /* Footer Styles */
@@ -1359,6 +463,70 @@ document.getElementById('find-testing').addEventListener('click', function() {
             margin-top: 10px;
         }
 
+        /* ASL Video Player in Corner */
+        .asl-video-player {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 300px;
+            height: 200px;
+            background: #2c3e50;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            overflow: hidden;
+            display: none;
+        }
+        
+        .asl-video-player video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .close-asl-video {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        /* Text-to-Speech Button */
+        .tts-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 100px;
+            background: #3498db;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            display: none; /* Initially hidden */
+        }
+        
+        .tts-btn:hover {
+            background: #2980b9;
+            transform: scale(1.1);
+        }
+        
         /* ASL Toggle Button */
         .asl-toggle-btn {
             position: fixed;
@@ -1384,167 +552,16 @@ document.getElementById('find-testing').addEventListener('click', function() {
             transform: scale(1.1);
         }
         
-        /* Hidden ASL Buttons */
-        .asl-section-btn {
-            display: none;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(231, 76, 60, 0.9);
-            color: white;
-            border: none;
-            border-radius: 20px;
-            padding: 5px 10px;
-            font-size: 12px;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-        
-        .asl-section-btn:hover {
-            background: #c0392b;
-        }
-        
-        .asl-section-btn i {
-            margin-right: 5px;
-        }
-        
-        /* When ASL mode is active */
-        body.asl-mode .asl-section-btn {
-            display: block;
-        }
-
-        /* Enhanced ASL Modal Styles */
-        .asl-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .asl-modal-content {
-            background: #2c3e50;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 800px;
-            position: relative;
-            padding: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            color: white;
-        }
-        
-        .asl-video-container {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            background: #1a2636;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .asl-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .close-asl {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 28px;
-            color: white;
-            cursor: pointer;
-            z-index: 10;
-            background: rgba(0,0,0,0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .close-asl:hover {
-            background: var(--secondary-color);
-            transform: rotate(90deg);
-        }
-        
-        .asl-transcript {
-            margin-top: 15px;
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-            font-size: 0.9rem;
-        }
-
-        /* ASL Options Menu */
-        .asl-options-menu {
-            display: none;
-            position: fixed;
-            bottom: 100px;
-            right: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            width: 200px;
-            overflow: hidden;
-        }
-
-        .asl-options-menu.active {
-            display: block;
-        }
-
-        .asl-option {
-            padding: 12px 15px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            transition: all 0.2s ease;
-        }
-
-        .asl-option:hover {
-            background: #f0f0f0;
-        }
-
-        .asl-option i {
-            margin-right: 10px;
-            font-size: 18px;
-        }
-
-        .asl-option.asl {
-            color: #e74c3c;
-        }
-
-        .asl-option.audio-desc {
-            color: #3498db;
-        }
-
-        .asl-option.close {
-            color: #7f8c8d;
-            border-top: 1px solid #eee;
-        }
-        
         /* Responsive Styles */
         @media (max-width: 768px) {
-            .logo h1 {
-                font-size: 1.5rem;
+            .header-container {
+                flex-direction: column;
+                text-align: center;
             }
             
             nav ul {
+                margin-top: 20px;
                 flex-direction: column;
-                align-items: center;
             }
             
             nav ul li {
@@ -1555,12 +572,23 @@ document.getElementById('find-testing').addEventListener('click', function() {
                 display: none;
             }
             
-            .hero2 h2 {
-                font-size: 2rem;
+            .hero h2 {
+                font-size: 2.5rem;
             }
             
-            .hero2 p {
+            .hero p {
                 font-size: 1.2rem;
+            }
+            
+            .btn-group {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 15px;
             }
             
             .section {
@@ -1570,458 +598,670 @@ document.getElementById('find-testing').addEventListener('click', function() {
             .section h2 {
                 font-size: 2rem;
             }
-
-            .asl-toggle-btn {
+            
+            .section-header {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-form input {
+                border-radius: 30px;
+                margin-bottom: 10px;
+            }
+            
+            .newsletter-form button {
+                border-radius: 30px;
+                padding: 15px;
+            }
+            
+            .asl-video-player {
+                width: 250px;
+                height: 150px;
+                bottom: 80px;
+                right: 20px;
+            }
+            
+            .tts-btn, .asl-toggle-btn {
                 width: 50px;
                 height: 50px;
                 font-size: 20px;
                 bottom: 20px;
-                right: 20px;
             }
             
-            .asl-modal-content {
-                width: 95%;
-                padding: 15px;
-            }
-            
-            .close-asl {
-                top: 10px;
-                right: 10px;
-                font-size: 24px;
-                width: 36px;
-                height: 36px;
-            }
-
-            .asl-options-menu {
-                bottom: 80px;
-                right: 20px;
-                width: 180px;
+            .tts-btn {
+                right: 80px;
             }
         }
         
         @media (max-width: 480px) {
-            .hero2 {
-                height: 60vh;
+            .hero {
+                height: 70vh;
             }
             
-            .hero2 h2 {
-                font-size: 1.8rem;
+            .hero h2 {
+                font-size: 2rem;
             }
             
-            .hero2 p {
+            .hero p {
                 font-size: 1rem;
             }
             
             .btn {
                 padding: 10px 20px;
             }
+            
+            .asl-video-player {
+                width: 200px;
+                height: 120px;
+                bottom: 70px;
+                right: 10px;
+            }
+            
+            .tts-btn, .asl-toggle-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+                bottom: 15px;
+            }
+            
+            .tts-btn {
+                right: 65px;
+            }
+            /* Language Selector Styles */
+    .language-selector {
+        margin-left: 15px;
+        position: relative;
+    }
+    
+    .language-btn {
+        background: transparent;
+        border: none;
+        color: var(--dark-color);
+        font-weight: 600;
+        padding: 15px 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 1px;
+        font-size: 1rem;
+        position: relative;
+    }
+    
+    .language-btn:hover {
+        color: var(--primary-color);
+    }
+    
+    .language-dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .language-dropdown-content {
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .language-dropdown-content a {
+        color: var(--text-color);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: all 0.3s ease;
+    }
+    
+    .language-dropdown-content a:hover {
+        background-color: var(--light-color);
+        color: var(--primary-color);
+    }
+    
+    /* Active language style */
+    .language-dropdown-content a[data-lang="en"] {
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 768px) {
+        .language-selector {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+        
+        .language-dropdown-content {
+            right: auto;
+            left: 0;
+        }
+    }
         }
     </style>
 </head>
-
-    <section id="stages" class="section">
+<body>
+<header>
+    <div class="container">
+        <div class="logo">
+            <h1><i class="fas fa-ribbon"></i> HIV Inclusive</h1>
+        </div>
+        <nav>
+            <ul>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="home.html">Symptoms&Preventions</a></li>
+                <li><a href="maintenance.html">Living with HIV</a></li>
+                <li><a href="relationships.html">Relationship</a></li>
+                <li><a href="motivation.html">Community</a></li>
+                <li><a href="quiz.html">Take a Quiz</a></li>
+                <li class="download-li">
+                    <a href="downloads/HIV Inclusive Summary.pdf" class="download-btn" download>
+                        <i class="fas fa-file-pdf"></i> Download PDF
+                    </a>
+                </li>
+                <!-- Language Selector -->
+               <li class="language-selector" style="position: relative; top: 10px; left:300px;">
+    <div class="language-dropdown">
+        <button class="language-btn">
+            <i class="fas fa-globe"></i> EN
+            <i class="fas fa-caret-down"></i>
+        </button>
+        <div class="language-dropdown-content" style="display: none;">
+            <a href="#" data-lang="en">English</a>
+            <a href="#" data-lang="es">Afrikans</a>
+            <a href="#" data-lang="fr">Otjiherero</a>
+            <a href="#" data-lang="zh">Oshindonga</a>
+            <a href="#" data-lang="pt">Khoekhoegowab</a>
+            
+        </div>
+    </div>
+</li>
+            </ul>
+        </nav>
+    </div>
+</header>
+    <section class="hero">
+        <video autoplay muted loop class="video-background">
+            <source src="asl/back.mp4" type="video/mp4">
+            <!-- Fallback if video doesn't load -->
+            <img src="images/hero-fallback.jpg" alt="Diverse group of people supporting each other">
+        </video>
         <div class="container">
-            <h2><i class="fas fa-stethoscope"></i> HIV Stages & Symptoms</h2>
-            <div class="stage-grid">
-                <div class="stage-card">
-                    <img src="images/fever.jpg" alt="Person with fever" class="section-image">
-                    <h3>Acute HIV Infection</h3>
-                    <ul>
-                        <li>Fever and chills</li>
-                        <li>Rash (often on torso)</li>
-                        <li>Sore throat</li>
-                        <li>Muscle aches and joint pain</li>
-                        <li>Swollen lymph nodes</li>
-                        <li>Mouth ulcers</li>
-                    </ul>
+            <h2>Empowering HIV Awareness</h2>
+            <p>Comprehensive resources for prevention, support, and education about HIV/AIDS</p>
+            <div class="btn-group">
+                <a href="#features" class="btn">LEARN MORE</a>
+                <a href="#resources" class="btn btn-secondary">GET HELP</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-star"></i> Why Our Platform</h2>
+                <div class="accessibility-controls">
+                    <button class="asl-section-btn" data-section="features">
+                        <i class="fas fa-sign-language"></i> NSL
+                    </button>
+                    <button class="audio-section-btn" data-section="features">
+                        <i class="fas fa-volume-up"></i> Audio
+                    </button>
                 </div>
-                
-                <div class="stage-card">
-                    <img src="images/fati.jpg" alt="Person looking fatigued" class="section-image">
-                    <h3>Chronic HIV Infection</h3>
-                    <ul>
-                        <li>Often asymptomatic for years</li>
-                        <li>Swollen lymph nodes</li>
-                        <li>Fatigue</li>
-                        <li>Weight loss</li>
-                        <li>Fever and night sweats</li>
-                        <li>Diarrhea</li>
-                    </ul>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Prevention</h3>
+                    <p>Learn about the most effective methods to prevent HIV transmission and protect yourself and others.</p>
                 </div>
-                
-                <div class="stage-card">
-                    <img src="images/kapo.jpg" alt="Person with Kaposi's sarcoma" class="section-image">
-                    <h3>AIDS (Advanced Stage)</h3>
-                    <ul>
-                        <li>Rapid weight loss</li>
-                        <li>Recurring fever/night sweats</li>
-                        <li>Extreme fatigue</li>
-                        <li>Prolonged diarrhea</li>
-                        <li>Memory loss and confusion</li>
-                        <li>Opportunistic infections</li>
-                    </ul>
+                <div class="feature-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Support</h3>
+                    <p>Find community support and resources for living well with HIV at any stage.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Education</h3>
+                    <p>Accurate, up-to-date information to combat stigma and misinformation.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="visual-symptoms" class="section bg-light">
+    <section id="about" class="section">
         <div class="container">
-            <h2><i class="fas fa-eye"></i> Visual Symptoms</h2>
-            <div class="visual-content">
-                <div class="rash-symptoms">
-                    <img src="images/rash.jpg" alt="HIV rash on skin" class="section-image">
-                    <h3>Skin Conditions</h3>
-                    <ul>
-                        <li>Red or brownish rash (often itchy)</li>
-                        <li>Kaposi's sarcoma lesions</li>
-                        <li>Dry, flaky skin</li>
-                        <li>Shingles (painful blisters)</li>
-                        <li>Folliculitis (inflamed hair follicles)</li>
-                    </ul>
+            <div class="section-header">
+                <h2></i> About <br><i class="fas fa-ribbon"></i>HIV Inclusive</h2>
+                <div class="accessibility-controls">
+                    <button class="asl-section-btn" data-section="about">
+                        <i class="fas fa-sign-language"></i> NSL
+                    </button>
+                    <button class="audio-section-btn" data-section="about">
+                        <i class="fas fa-volume-up"></i> Audio
+                    </button>
                 </div>
-                <div class="oral-symptoms">
-                    <img src="images/rush.jpg" alt="Oral thrush in mouth" class="section-image">
-                    <h3>Oral Symptoms</h3>
-                    <ul>
-                        <li>Oral thrush (white patches)</li>
-                        <li>Hairy leukoplakia (white tongue)</li>
-                        <li>Canker sores</li>
-                        <li>Gum disease</li>
-                        <li>Dry mouth</li>
-                    </ul>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>HIV Inclusive is dedicated to providing comprehensive, accurate information about HIV prevention, treatment, and support. Our mission is to reduce new infections, support those affected by HIV, and combat the stigma surrounding HIV.</p>
+                    <p>With resources developed by medical professionals and community advocates, we offer guidance for everyone - whether you're looking to practise safety in your relationship, support a loved one, or learn more about living with HIV.</p>
                 </div>
-                <div class="other-visual">
-                    <img src="images/loss.jpg" alt="Person showing weight loss" class="section-image">
-                    <h3>Other Visible Signs</h3>
-                    <ul>
-                        <li>Rapid weight loss</li>
-                        <li>Swollen lymph nodes</li>
-                        <li>Yellowing of skin/eyes (jaundice)</li>
-                        <li>Purple skin lesions (Kaposi's sarcoma)</li>
-                        <li>Nail changes (discoloration)</li>
-                    </ul>
+                <div class="about-image">
+                    <img src="images/logo14.jpg" alt="Team of healthcare professionals">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="testing" class="section">
+    <section id="quick-links" class="section bg-light">
         <div class="container">
-            <h2><i class="fas fa-vial"></i> Testing & Diagnosis</h2>
-            <div class="symptom-grid">
-                <div class="symptom-card">
-                    <img src="images/test.jpg" alt="Blood test sample" class="section-image">
-                    <h3>When to Get Tested</h3>
-                    <p>Get tested if you experience acute symptoms or have risk factors (unprotected sex, shared needles). Many people have no symptoms for years.</p>
+            <div class="section-header">
+                <h2><i class="fas fa-link"></i> Quick Links</h2>
+                <div class="accessibility-controls">
+                    <button class="asl-section-btn" data-section="quick-links">
+                        <i class="fas fa-sign-language"></i> NSL
+                    </button>
+                    <button class="audio-section-btn" data-section="quick-links">
+                        <i class="fas fa-volume-up"></i> Audio
+                    </button>
                 </div>
-                <div class="symptom-card">
-                    <img src="images/lab.jpg" alt="Lab technician working" class="section-image">
-                    <h3>Test Types</h3>
-                    <p>Antibody tests, antigen/antibody tests, and nucleic acid tests (NAT). Most tests can detect HIV within 2-6 weeks of exposure.</p>
+            </div>
+            <div class="quick-links">
+                <a href="index.html#prevention-methods" class="quick-link-card">
+                    <i class="fas fa-shield-virus"></i>
+                    <h3>Prevention Methods</h3>
+                    <p>Learn how to protect yourself and others</p>
+                </a>
+                <a href="index.html#testing" class="quick-link-card">
+                    <i class="fas fa-vial"></i>
+                    <h3>Testing Locations</h3>
+                    <p>Find confidential HIV testing near you</p>
+                </a>
+                <a href="relationships.html" class="quick-link-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Healthy Relationships</h3>
+                    <p>Navigating relationships with HIV</p>
+                </a>
+                <a href="motivation.html" class="quick-link-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Support Groups</h3>
+                    <p>Connect with others in your community</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-quote-left"></i> Community Voices</h2>
+                <div class="accessibility-controls">
+                    <button class="asl-section-btn" data-section="testimonials">
+                        <i class="fas fa-sign-language"></i> NSL
+                    </button>
+                    <button class="audio-section-btn" data-section="testimonials">
+                        <i class="fas fa-volume-up"></i> Audio
+                    </button>
                 </div>
-                <div class="symptom-card">
-                    <img src="images/doc.jpg" alt="Doctor consulting patient" class="section-image">
-                    <h3>Confirming Diagnosis</h3>
-                    <p>Positive results require follow-up testing. Viral load and CD4 count tests help determine disease progression.</p>
+            </div>
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <p>This platform gave me the courage to get tested and the knowledge to protect myself. The resources here literally changed my life.</p>
+                    <div class="author">- Marcus, 28</div>
                 </div>
-                <div class="symptom-card">
-                    <img src="images/rapid.jpg" alt="Rapid HIV test kit" class="section-image">
-                    <h3>At-Home Testing</h3>
-                    <p>Oral fluid and fingerstick blood tests available. Positive results need confirmation from a healthcare provider.</p>
+                <div class="testimonial-card">
+                    <p>As someone newly diagnosed, finding accurate information and a supportive community made all the difference in my journey.</p>
+                    <div class="author">- Anonymous</div>
+                </div>
+                <div class="testimonial-card">
+                    <p>I use these resources in my counseling practice to help clients understand their options for prevention and treatment.</p>
+                    <div class="author">- Dr. Thompson, Healthcare Provider</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="resources" class="section bg-light">
-        <div class="container">
-            <h2><i class="fas fa-info-circle"></i> Resources & Support</h2>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <img src="images/logo10.jpg" alt="HIV testing center" class="section-image">
-                    <h3>MyHealth</h3>
-                    <ul>
-                        <li>HIV disease management for medical aid schemes.</li>
-                        <li>They handle the overall management of HIV cases within the medical aid schemes they serve. </li>
-                        <li><a href="https://www.mhnamibia.com/index.php">Visit MyHealth</a></li>
-                    </ul>
-                </div>
-                <div class="resource-card">
-                    <img src="images/logo11.jpeg" alt="Medical information book" class="section-image">
-                    <h3>MetHealth</h3>
-                    <ul>
-                        <li>Provide administration and managed healthcare services to medical aid funds and schemes.</li>
-                        <li>They handle the day-to-day operations of the funds, including claims processing and membership management.</li>
-                        <li><a href="https://www.methealth.com.na/index">Visit MetHealth</a></li>
-                    </ul>
-                </div>
-                <div class="resource-card">
-                    <img src="images/logo12.png" alt="Phone with medical symbol" class="section-image">
-                    <h3>Namibia Medical Care(NMC)</h3>
-                    <ul>
-                        <li>It provides medical coverage to its members.</li>
-                        <li>NMC offers a range of benefit options, including Traditional Options like Topaz and Opal, and New Generation options like Emerald and Amber. </li>
-                        <li><a href="https://www.nmcfund.com/">Visit NMC</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- ASL Video Player -->
+    <div class="asl-video-player" id="aslVideoPlayer">
+        <button class="close-asl-video" onclick="closeASLVideo()">&times;</button>
+        <video id="aslVideo" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Text-to-Speech Button -->
+    <div class="tts-btn" id="ttsBtn" title="Read page content">
+        <i class="fas fa-volume-up"></i>
+    </div>
 
     <!-- ASL Toggle Button -->
-    <div class="asl-toggle-btn" id="aslToggle">
+    <div class="asl-toggle-btn" id="aslToggle" title="Toggle ASL Features">
         <i class="fas fa-sign-language"></i>
     </div>
 
-    <!-- ASL Options Menu -->
-    <div class="asl-options-menu" id="aslOptionsMenu">
-        <div class="asl-option asl" onclick="enableASLMode()">
-            <i class="fas fa-sign-language"></i> NSL Videos
-        </div>
-        <div class="asl-option audio-desc" onclick="enableAudioDescriptionMode()">
-            <i class="fas fa-audio-description"></i> Audio Descriptions
-        </div>
-        <div class="asl-option close" onclick="closeOptionsMenu()">
-            <i class="fas fa-times"></i> Close Menu
-        </div>
-    </div>
-
-    <!-- Enhanced ASL Modal -->
-    <div id="aslModal" class="asl-modal">
-        <div class="asl-modal-content">
-            <span class="close-asl" onclick="closeASLModal()">&times;</span>
-            <div class="asl-video-container">
-                <video id="aslVideo" class="asl-video" controls>
-                    <source src="" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+     <footer>
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">HIV Inclusive app</a></li>
+                        <li><a href="https://www.nmcfund.com/">NMC</a></li>
+                        <li><a href="https://www.methealth.com.na/index">MetHealth</a></li>
+                        <li><a href="https://www.mhnamibia.com/contact_us.php">MyHealth</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Phone</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> HIV Inclusive : *6345#</li>
+                         <li><i class="fas fa-phone"></i> NMC : 061 287 6000</li>
+                         <li><i class="fas fa-phone"></i> MetHealth: 061 287 6000</li>
+                         <li><i class="fas fa-phone"></i> MyHealth: 061 375 950</li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Email</h4>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hivinclusive@gmail.com</li>
+                        <li><i class="fas fa-envelope"></i> enquiries@methealth.com.na</li>
+                        <li><i class="fas fa-envelope"></i> enquiries@methealth.com.na</li>
+                        <li><i class="fas fa-envelope"></i> wellness1@methealth.com.na</li>
+                    </ul>
+                </div>
             </div>
-            <div class="asl-transcript">
-                <p id="aslTranscriptText">Sign language interpretation for this content. Video will show proper signing for this section.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Audio Description Modal -->
-    <div id="audioDescModal" class="asl-modal">
-        <div class="asl-modal-content">
-            <span class="close-asl" onclick="closeAudioDescModal()">&times;</span>
-            <div class="asl-video-container">
-                <video id="audioDescVideo" class="asl-video" controls>
-                    <source src="" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="asl-transcript">
-                <p id="audioDescTranscriptText">Audio description for this content. Video will describe visual elements in detail.</p>
+            <div class="footer-bottom">
+                <p>&copy; 2023 HIV Inclusive. All rights reserved.</p>
+                <p class="confidentiality">All information is kept confidential.</p>
             </div>
         </div>
-    </div>
+    </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Accessibility Widget Elements
-  const ttsToggleBtn = document.getElementById('ttsToggleBtn');
-  const aslToggleBtn = document.getElementById('aslToggleBtn');
-  const accessibilityOptions = document.getElementById('accessibilityOptions');
-  const closeAccessibilityBtn = document.getElementById('closeAccessibilityBtn');
-  const toggleTTSOption = document.getElementById('toggleTTSOption');
-  const toggleASLOption = document.getElementById('toggleASLOption');
-  
-  // ASL Modal Elements
-  const aslModal = document.getElementById('aslModal');
-  const aslVideo = document.getElementById('aslVideo');
-  const aslTranscriptText = document.getElementById('aslTranscriptText');
-  const closeASLModal = document.getElementById('closeASLModal');
-  
-  // TTS Variables
-  let currentUtterance = null;
-  
-  // Video transcripts for each section
-  const videoTranscripts = {
-    // Main sections
-    'prevention-methods': 'This video explains HIV prevention methods in sign language.',
-    'testing': 'Sign language interpretation of HIV testing information.',
-    'myths': 'This video demonstrates myths vs facts about HIV in sign language.',
-    'stats': 'Sign language interpretation of HIV statistics and prevention effectiveness.',
-    
-    // Prevention methods cards
-    'safe-sex-practices': 'Sign language explanation of safe sex practices to prevent HIV.',
-    'prep-(pre-exposure-prophylaxis)': 'This video shows how PrEP works in sign language.',
-    'pep-(post-exposure-prophylaxis)': 'Sign language interpretation of PEP emergency treatment.',
-    'harm-reduction': 'This video demonstrates harm reduction techniques in sign language.',
-    
-    // Myths cards
-    'myth:-hiv-can-spread-through-casual-contact': 'Sign language explanation debunking casual contact myth.',
-    'myth:-mosquitoes-can-transmit-hiv': 'This video explains why mosquitoes cannot transmit HIV in sign language.',
-    'myth:-hiv-is-a-death-sentence': 'Sign language interpretation about HIV treatment advances.',
-    
-    // Stats cards
-    '40%-decline': 'Sign language explanation of HIV infection decline statistics.',
-    '99%-effective': 'This video demonstrates PrEP effectiveness in sign language.',
-    'early-detection': 'Sign language interpretation about the importance of early HIV detection.'
-  };
-
-  // Toggle accessibility options menu
-  function toggleAccessibilityMenu() {
-    accessibilityOptions.classList.toggle('show');
-  }
-  
-  ttsToggleBtn.addEventListener('click', toggleAccessibilityMenu);
-  aslToggleBtn.addEventListener('click', toggleAccessibilityMenu);
-  
-  closeAccessibilityBtn.addEventListener('click', function() {
-    accessibilityOptions.classList.remove('show');
-  });
-  
-  // Close menu when clicking outside
-  document.addEventListener('click', function(event) {
-    if (!event.target.closest('.accessibility-toggle-btn') && 
-        !event.target.closest('.accessibility-options')) {
-      accessibilityOptions.classList.remove('show');
-    }
-  });
-
-  // Toggle TTS Mode
-  toggleTTSOption.addEventListener('click', function() {
-    document.body.classList.toggle('tts-mode');
-    accessibilityOptions.classList.remove('show');
-    
-    // Stop any ongoing speech when toggling off
-    if (!document.body.classList.contains('tts-mode')) {
-      stopSpeech();
-    }
-  });
-
-  // Toggle ASL Mode
-  toggleASLOption.addEventListener('click', function() {
-    document.body.classList.toggle('asl-mode');
-    accessibilityOptions.classList.remove('show');
-  });
-
-  // ASL Modal Functions
-  function openASLModal(sectionId) {
-    // Set video source based on section ID
-    aslVideo.src = `asl/${sectionId}.mp4`;
-    
-    // Set transcript text
-    aslTranscriptText.textContent = videoTranscripts[sectionId] || 
-      'Sign language interpretation for this content. Video will show proper signing for this section.';
-    
-    // Show modal
-    aslModal.style.display = 'flex';
-    
-    // Load and play video
-    aslVideo.load();
-    aslVideo.play();
-  }
-
-  function closeASLModal() {
-    aslModal.style.display = 'none';
-    aslVideo.pause();
-  }
-
-  // Close when clicking outside modal
-  aslModal.addEventListener('click', function(e) {
-    if (e.target === aslModal) {
-      closeASLModal();
-    }
-  });
-
-  closeASLModal.addEventListener('click', closeASLModal);
-
-  // Add click handlers to all ASL buttons
-  function addASLButtons() {
-    document.querySelectorAll('.asl-section-btn').forEach(button => {
-      button.addEventListener('click', function() {
-        const sectionId = this.getAttribute('data-section') || 
-                         this.getAttribute('data-card');
-        if (sectionId) {
-          openASLModal(sectionId);
-        }
-      });
-    });
-  }
-
-  // Text-to-Speech Functionality
-  function speakText(text) {
-    // Stop any ongoing speech
-    stopSpeech();
-    
-    if ('speechSynthesis' in window) {
-      currentUtterance = new SpeechSynthesisUtterance(text);
-      currentUtterance.volume = 1;
-      currentUtterance.rate = 1;
-      currentUtterance.pitch = 1;
-      
-      speechSynthesis.speak(currentUtterance);
-      
-      currentUtterance.onend = function() {
-        currentUtterance = null;
-      };
-    } else {
-      alert('Text-to-speech is not supported in your browser.');
-    }
-  }
-
-  function stopSpeech() {
-    if ('speechSynthesis' in window && speechSynthesis.speaking) {
-      speechSynthesis.cancel();
-      currentUtterance = null;
-    }
-  }
-
-  // Add TTS functionality to all TTS buttons
-  function addTTSButtons() {
-    document.querySelectorAll('.tts-section-btn').forEach(button => {
-      button.addEventListener('click', function() {
-        // Get the text to speak based on button type
-        let textToSpeak = '';
-        const sectionId = this.getAttribute('data-section');
-        const cardId = this.getAttribute('data-card');
-
-        if (sectionId) {
-          // For section buttons
-          const section = document.getElementById(sectionId);
-          if (section) {
-            const container = section.querySelector('.container');
-            if (container) {
-              const elementsToRead = Array.from(container.children).filter(
-                el => !el.classList.contains('section-tts-controls') &&
-                      !el.classList.contains('asl-section-btn')
-              );
-              textToSpeak = elementsToRead.map(el => el.textContent).join('. ');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Speech Synthesis
+            const speechSynthesis = window.speechSynthesis;
+            
+            // ASL Video Functionality
+            const aslVideoPlayer = document.getElementById('aslVideoPlayer');
+            const aslVideo = document.getElementById('aslVideo');
+            const ttsBtn = document.getElementById('ttsBtn');
+            const aslToggle = document.getElementById('aslToggle');
+            
+            let isSpeaking = false;
+            let currentUtterance = null;
+            let aslMode = false;
+            
+            // Close ASL Video
+            function closeASLVideo() {
+                aslVideoPlayer.style.display = 'none';
+                aslVideo.pause();
+                document.querySelectorAll('.asl-section-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
             }
-          }
-        } else if (cardId) {
-          // For card buttons
-          const card = this.closest('.method-card, .myth-card, .stat-card');
-          if (card) {
-            const elementsToRead = Array.from(card.children).filter(
-              el => !el.classList.contains('section-tts-controls') && 
-                    !el.classList.contains('asl-section-btn')
-            );
-            textToSpeak = elementsToRead.map(el => el.textContent).join('. ');
-          }
-        }
+            
+            // Play ASL Video for a section
+            function playASLVideo(sectionId) {
+                const videoPath = `asl/${sectionId}.mp4`;
+                aslVideo.src = videoPath;
+                aslVideo.load();
+                aslVideo.play().catch(e => {
+                    console.error("Video play failed:", e);
+                    alert("ASL video could not be loaded for this section.");
+                });
+                aslVideoPlayer.style.display = 'block';
+            }
+            
+            // Read section content aloud
+            function readSectionContent(sectionId) {
+                if (speechSynthesis.speaking) {
+                    speechSynthesis.cancel();
+                }
+                
+                const section = document.getElementById(sectionId);
+                if (!section) return;
+                
+                // Get all text content except from buttons and accessibility controls
+                const sectionText = Array.from(section.querySelectorAll('*'))
+                    .filter(el => 
+                        !['button', 'div'].includes(el.tagName.toLowerCase()) && 
+                        !el.classList.contains('accessibility-controls')
+                    )
+                    .map(el => el.innerText)
+                    .join('\n\n')
+                    .trim();
+                
+                if (sectionText) {
+                    currentUtterance = new SpeechSynthesisUtterance(sectionText);
+                    currentUtterance.onend = function() {
+                        document.querySelector(`.audio-section-btn[data-section="${sectionId}"]`)
+                            .classList.remove('active');
+                    };
+                    currentUtterance.onerror = function() {
+                        document.querySelector(`.audio-section-btn[data-section="${sectionId}"]`)
+                            .classList.remove('active');
+                    };
+                    
+                    speechSynthesis.speak(currentUtterance);
+                }
+            }
+            
+            // Toggle ASL mode
+            function toggleASLMode() {
+                aslMode = !aslMode;
+                
+                if (aslMode) {
+                    // Show ASL controls and TTS button
+                    document.querySelectorAll('.asl-section-btn').forEach(btn => {
+                        btn.style.display = 'flex';
+                    });
+                    ttsBtn.style.display = 'flex';
+                    aslToggle.innerHTML = '<i class="fas fa-times"></i>';
+                    aslToggle.style.background = '#c0392b';
+                } else {
+                    // Hide ASL controls and TTS button
+                    document.querySelectorAll('.asl-section-btn').forEach(btn => {
+                        btn.style.display = 'none';
+                    });
+                    ttsBtn.style.display = 'none';
+                    aslToggle.innerHTML = '<i class="fas fa-sign-language"></i>';
+                    aslToggle.style.background = '#e74c3c';
+                    closeASLVideo();
+                    stopSpeech();
+                }
+            }
+            
+            // Read entire page content
+            function readPageContent() {
+                if (speechSynthesis.speaking) {
+                    speechSynthesis.cancel();
+                }
 
-        if (textToSpeak.trim()) {
-          speakText(textToSpeak);
+                // Get all the main content sections
+                const sections = document.querySelectorAll('section');
+                let fullText = '';
+                
+                sections.forEach(section => {
+                    // Skip hidden sections
+                    if (section.offsetParent !== null) {
+                        // Get all text content from the section
+                        const sectionText = section.innerText.trim();
+                        if (sectionText) {
+                            fullText += sectionText + '\n\n';
+                        }
+                    }
+                });
+
+                if (fullText) {
+                    currentUtterance = new SpeechSynthesisUtterance(fullText);
+                    currentUtterance.onend = function() {
+                        isSpeaking = false;
+                        ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                        ttsBtn.style.background = '#3498db';
+                    };
+                    currentUtterance.onerror = function() {
+                        isSpeaking = false;
+                        ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                        ttsBtn.style.background = '#3498db';
+                    };
+                    
+                    speechSynthesis.speak(currentUtterance);
+                    isSpeaking = true;
+                    ttsBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    ttsBtn.style.background = '#e74c3c';
+                }
+            }
+
+            // Stop speech
+            function stopSpeech() {
+                if (speechSynthesis.speaking) {
+                    speechSynthesis.cancel();
+                    isSpeaking = false;
+                    ttsBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    ttsBtn.style.background = '#3498db';
+                }
+            }
+
+            // Set up event listeners for all ASL buttons
+            document.querySelectorAll('.asl-section-btn').forEach(btn => {
+                btn.style.display = 'none'; // Initially hidden
+                
+                btn.addEventListener('click', function() {
+                    const sectionId = this.dataset.section;
+                    const isActive = this.classList.toggle('active');
+                    
+                    // Reset all other ASL buttons
+                    document.querySelectorAll('.asl-section-btn').forEach(otherBtn => {
+                        if (otherBtn !== this) otherBtn.classList.remove('active');
+                    });
+                    
+                    // Reset all audio buttons
+                    document.querySelectorAll('.audio-section-btn').forEach(audioBtn => {
+                        audioBtn.classList.remove('active');
+                    });
+                    
+                    if (isActive) {
+                        playASLVideo(sectionId);
+                        stopSpeech(); // Stop any ongoing audio
+                    } else {
+                        closeASLVideo();
+                    }
+                });
+            });
+            
+            // Set up event listeners for all audio buttons
+            document.querySelectorAll('.audio-section-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const sectionId = this.dataset.section;
+                    const isActive = this.classList.toggle('active');
+                    
+                    // Reset all other audio buttons
+                    document.querySelectorAll('.audio-section-btn').forEach(otherBtn => {
+                        if (otherBtn !== this) otherBtn.classList.remove('active');
+                    });
+                    
+                    // Reset all ASL buttons and close video
+                    document.querySelectorAll('.asl-section-btn').forEach(aslBtn => {
+                        aslBtn.classList.remove('active');
+                    });
+                    closeASLVideo();
+                    
+                    if (isActive) {
+                        readSectionContent(sectionId);
+                    } else {
+                        stopSpeech();
+                    }
+                });
+            });
+            
+            // Close video when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!aslVideoPlayer.contains(e.target) && e.target !== aslToggle) {
+                    closeASLVideo();
+                }
+            });
+            
+            // Global TTS Button
+            ttsBtn.addEventListener('click', function() {
+                if (isSpeaking) {
+                    stopSpeech();
+                } else {
+                    readPageContent();
+                }
+            });
+
+            // ASL Toggle Button
+            aslToggle.addEventListener('click', function() {
+                toggleASLMode();
+            });
+
+            // Stop speech when leaving the page
+            window.addEventListener('beforeunload', function() {
+                speechSynthesis.cancel();
+            });
+        });
+
+          // Language selection functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const langBtn = document.querySelector('.language-btn');
+        const langDropdown = document.querySelector('.language-dropdown-content');
+        
+        // Toggle dropdown on button click
+        langBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (langDropdown.style.display === 'block') {
+                langDropdown.style.display = 'none';
+            } else {
+                langDropdown.style.display = 'block';
+            }
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            langDropdown.style.display = 'none';
+        });
+        
+        // Language selection
+        const langLinks = document.querySelectorAll('.language-dropdown-content a');
+        langLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const lang = this.getAttribute('data-lang');
+                changeLanguage(lang);
+                langDropdown.style.display = 'none';
+            });
+        });
+        
+        // Check for saved language preference
+        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        if (savedLang !== 'en') {
+            changeLanguage(savedLang);
         }
-      });
     });
-  }
-
-  // Initialize buttons when page loads
-  addASLButtons();
-  addTTSButtons();
-  
-  // Cancel speech when leaving the page
-  window.addEventListener('beforeunload', function() {
-    stopSpeech();
-  });
-});
-</script>
+    
+    function changeLanguage(lang) {
+        // Update button text
+        const langBtn = document.querySelector('.language-btn');
+        const langText = {
+            'en': 'EN',
+            'es': 'AF',
+            'fr': 'OTJ',
+            'zh': 'OSH',
+            'ar': 'KK'
+        };
+        langBtn.innerHTML = `<i class="fas fa-globe"></i> ${langText[lang]} <i class="fas fa-caret-down"></i>`;
+        
+    }
+    </script>
 </body>
 </html>
